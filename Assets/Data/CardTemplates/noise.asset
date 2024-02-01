@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: noise
   m_EditorClassIdentifier: 
   id: 0
-  name: 
-  cost: 0
-  illustration: {fileID: 0}
-  type: {fileID: 0}
+  name: get away
+  cost: 1
+  illustration: {fileID: 21300000, guid: c34bd77facf784754b39c071c8d81187, type: 3}
+  type: {fileID: 11400000, guid: 3b5e13aed438e064ebc62171d6ac039f, type: 2}

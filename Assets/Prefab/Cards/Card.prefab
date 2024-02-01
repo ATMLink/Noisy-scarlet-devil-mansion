@@ -693,6 +693,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2374068322431355430}
   - component: {fileID: 4273715615817154729}
+  - component: {fileID: 3952053353660109885}
+  - component: {fileID: 5136337128226262076}
   m_Layer: 0
   m_Name: Card
   m_TagString: Untagged
@@ -772,6 +774,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!210 &3952053353660109885
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4218343695338870498}
+  m_Enabled: 1
+  m_SortingLayerID: -1098680739
+  m_SortingLayer: 1
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
+--- !u!114 &5136337128226262076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4218343695338870498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 313bae8af772bd0428e266ba8b729324, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  costText: {fileID: 7717852661743763257}
+  nameText: {fileID: 5771577625102331017}
+  typeText: {fileID: 8514522697368644}
+  descriptionText: {fileID: 5884477888625613067}
+  illustration: {fileID: 618392446018641426}
+  template: {fileID: 0}
 --- !u!1 &4770692332100280361
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c226744ce3d6974f9208c8856cf3b4e, type: 3}
   m_Name: silence
   m_EditorClassIdentifier: 
-  id: 0
-  name: 
-  cost: 0
-  illustration: {fileID: 0}
-  type: {fileID: 0}
+  id: 1
+  name: silence
+  cost: 1
+  illustration: {fileID: 21300000, guid: 9b0fd2da10f404ed6973b1a2a9aa9dc2, type: 3}
+  type: {fileID: 11400000, guid: 5fe459210564f0c44867c817aa706a63, type: 2}

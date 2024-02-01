@@ -312,11 +312,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: Card
       objectReference: {fileID: 0}
+    - target: {fileID: 5136337128226262076, guid: 016f76a12219e3d44af8dd62860aec30, type: 3}
+      propertyPath: template
+      value: 
+      objectReference: {fileID: 11400000, guid: 0eb027f50145e6940beaa548bc9396fa, type: 2}
+    - target: {fileID: 5136337128226262076, guid: 016f76a12219e3d44af8dd62860aec30, type: 3}
+      propertyPath: illustration
+      value: 
+      objectReference: {fileID: 2083588036}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1119212196800305315, guid: 016f76a12219e3d44af8dd62860aec30, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 498700947429350301, guid: 016f76a12219e3d44af8dd62860aec30, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 3062211139392068261, guid: 016f76a12219e3d44af8dd62860aec30, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 4770692332100280361, guid: 016f76a12219e3d44af8dd62860aec30, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 016f76a12219e3d44af8dd62860aec30, type: 3}
@@ -357,7 +374,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 000000005d7683be
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -402,6 +419,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &2083588036 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 618392446018641426, guid: 016f76a12219e3d44af8dd62860aec30, type: 3}
+  m_PrefabInstance: {fileID: 557861523}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
