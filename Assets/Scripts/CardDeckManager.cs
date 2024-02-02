@@ -17,7 +17,8 @@ public class CardDeckManager : MonoBehaviour
         var deckSize = 0;
         foreach(var template in playerDeck)
         {
-            if(template ==null) continue;
+            if(template ==null) 
+                continue;
             var card = new RuntimeCard
             {
                 Template = template
@@ -28,11 +29,18 @@ public class CardDeckManager : MonoBehaviour
         }
         return deckSize;
     }
+    /// <summary>
+    /// 洗牌
+    /// </summary>
     public void shuffleDeck()
     {
         _deck.shuffle();
     }
 
+    /// <summary>
+    /// 抽牌
+    /// </summary>
+    /// <param name="amount"></param>
     public void drawCardsFromDeck(int amount)
     {
         var deckSize = _deck.Count;
@@ -40,7 +48,7 @@ public class CardDeckManager : MonoBehaviour
         {
             var previousDeckSize = deckSize;
             var drawnCards = new List<RuntimeCard>(amount);
-            for(var i = 0;i<amount; i++)
+            for(var i = 0; i<amount; i++)
             {
                 var card = _deck[0];
                 _deck.RemoveAt(0);
