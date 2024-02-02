@@ -19,6 +19,8 @@ public class CardDisplayManager : MonoBehaviour
     private readonly Vector3 _center = new(-15.0f, 18.5f, 0.0f);
     private readonly Vector3 _originalCardScale = new(-0.5f, 0.5f, 1.0f);
 
+    private bool _isMoving;
+
     public void initialize(CardsManager cardsManager)
     {
         _cardsManager = cardsManager;
