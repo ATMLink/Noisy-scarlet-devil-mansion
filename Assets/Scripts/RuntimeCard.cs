@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class RuntimeCard
 {
-    public CardTemplate template;
+    public CardTemplate Template;
 }

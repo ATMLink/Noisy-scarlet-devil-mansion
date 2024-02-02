@@ -9,7 +9,7 @@ public class CardDeckManager : MonoBehaviour
 
     private void Awake()
     {
-        _deck = new List<RuntimeCard>();
+        _deck = new List<RuntimeCard>(deckCapacity);
     }
 
     public int loadDeck(List<CardTemplate> playerDeck)
@@ -20,7 +20,7 @@ public class CardDeckManager : MonoBehaviour
             if(template ==null) continue;
             var card = new RuntimeCard
             {
-                template = template
+                Template = template
             };
 
             _deck.Add(card);

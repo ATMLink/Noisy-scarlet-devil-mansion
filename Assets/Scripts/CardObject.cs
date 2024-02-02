@@ -20,14 +20,14 @@ public class CardObject : MonoBehaviour
     {
         var testCard = new RuntimeCard
         {
-            template = template
+            Template = template
         };
         SetInfo(testCard);
     }
     public void SetInfo(RuntimeCard card)
     {
         runtimeCard = card;
-        template = card.template;
+        template = card.Template;
         costText.text = template.cost.ToString();
         nameText.text = template.name;
         typeText.text = template.type.typeName;
