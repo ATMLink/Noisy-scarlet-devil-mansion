@@ -14,7 +14,7 @@ public class GameDriver : MonoBehaviour
     {
         cardsManager.initialize();
         createPlayer();
-        initialize();
+        
     }
     private void createPlayer()
     {
@@ -25,15 +25,12 @@ public class GameDriver : MonoBehaviour
                 _playerDeck.Add(item.card);
             }
         }
-        shuffleAndDrawCards(10);
+        initialize();
     }
     public void initialize()
     {
         cardDeckManager.loadDeck(_playerDeck);
-    }
-    private void shuffleAndDrawCards(int numCards)
-    {
         cardDeckManager.shuffleDeck();
-        cardDeckManager.drawCardsFromDeck(numCards);
+        cardDeckManager.drawCardsFromDeck(10);
     }
 }
