@@ -7,6 +7,8 @@ public class GameDriver : MonoBehaviour
     public CardBank startingDeck;
     [Header("Manager")]
     [SerializeField] private CardsManager cardsManager;
+
+    [SerializeField] private CardDisplayManager cardDisplayManager;
     [SerializeField] private CardDeckManager cardDeckManager;
 
     private List<CardTemplate> _playerDeck = new List<CardTemplate>();
@@ -31,6 +33,7 @@ public class GameDriver : MonoBehaviour
     {
         cardDeckManager.loadDeck(_playerDeck);
         cardDeckManager.shuffleDeck();
+        cardDisplayManager.initialize(cardsManager);
         cardDeckManager.drawCardsFromDeck(10);
     }
 }

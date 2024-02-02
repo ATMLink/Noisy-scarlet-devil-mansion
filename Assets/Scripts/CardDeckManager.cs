@@ -7,6 +7,7 @@ public class CardDeckManager : MonoBehaviour
     private List<RuntimeCard> _deck;
     private const int deckCapacity = 30;
 
+    public CardDisplayManager cardDisplayManager;
     private void Awake()
     {
         _deck = new List<RuntimeCard>(deckCapacity);
@@ -53,7 +54,10 @@ public class CardDeckManager : MonoBehaviour
                 var card = _deck[0];
                 _deck.RemoveAt(0);
                 drawnCards.Add(card);
-            }        
+            }
+            cardDisplayManager.createHandCards(drawnCards);       
         }
+        
+        
     }
 }

@@ -19,7 +19,7 @@ public class CardsManager : MonoBehaviour
     {
         for(int i = 0; i < size; i++)
         {
-            var obj = createInstance();//´´½¨ÊµÀý»¯cardobject¡£
+            var obj = createInstance();//åˆ›å»ºå®žä¾‹åŒ–cardobjectã€‚
             obj.SetActive(false);
             _instances.Push(obj);
         }
@@ -29,5 +29,12 @@ public class CardsManager : MonoBehaviour
     {
         var cardObject = Instantiate(cardPrefab, transform, true);
         return cardObject;
+    }
+
+    public GameObject getObject()
+    {
+        var obj = _instances.Count > 0 ? _instances.Pop() : createInstance();
+        obj.SetActive(true);
+        return obj;
     }
 }
