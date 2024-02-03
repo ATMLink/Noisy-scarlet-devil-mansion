@@ -34,6 +34,6 @@ public class GameDriver : MonoBehaviour
         cardDeckManager.loadDeck(_playerDeck);
         cardDeckManager.shuffleDeck();
         cardDisplayManager.initialize(cardsManager);
-        cardDeckManager.drawCardsFromDeck(10);
+        cardDeckManager.drawCardsFromDeck(5);
     }
 }
