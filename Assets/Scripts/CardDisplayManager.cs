@@ -25,10 +25,10 @@ public class CardDisplayManager : MonoBehaviour
     private readonly List<GameObject> _handCards = new List<GameObject>(positionNumber);
     
     private const float radius = 16.0f;
-    private readonly Vector3 _center = new(-15.0f, -18.5f, 0.0f);
+    private readonly Vector3 _center = new(0.0f, -18.5f, 0.0f);
     private readonly Vector3 _originalCardScale = new(0.5f, 0.5f, 1.0f);
 
-    private bool _isCardMoving;
+    public bool _isCardMoving;
 
     public void initialize(CardsManager cardsManager)
     {
@@ -49,6 +49,7 @@ public class CardDisplayManager : MonoBehaviour
         foreach (var card in cardsInHand)
         {
             var cardGameObject = createCardGameObject(card);
+            cardGameObject.transform.position = new Vector3(8.5f, 0.0f, 0.0f);
             _handCards.Add(cardGameObject);
             drawnCards.Add(cardGameObject);
         }
@@ -78,7 +79,7 @@ public class CardDisplayManager : MonoBehaviour
         
         organizeHandCards();
 
-        var interval = 0.0f;//the time span between each card moves
+        var interval = 0.0f;//the time span between each card moves幕间
 
         for (var i = 0; i < _handCards.Count; i++)
         {
