@@ -12,9 +12,9 @@ public class CardSelectionWithoutArrow : CardSelectionBase
 
     private void Update()
     {
-        if (cardDisplayManager._isCardMoving)
+        if (cardDisplayManager.getIsCardMoving())
         {
-            
+            return;
         }
     }
 }

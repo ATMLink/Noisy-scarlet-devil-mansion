@@ -28,7 +28,7 @@ public class CardDisplayManager : MonoBehaviour
     private readonly Vector3 _center = new(0.0f, -18.5f, 0.0f);
     private readonly Vector3 _originalCardScale = new(0.5f, 0.5f, 1.0f);
 
-    public bool _isCardMoving;
+    private bool _isCardMoving;
 
     public void initialize(CardsManager cardsManager)
     {
@@ -147,5 +147,10 @@ public class CardDisplayManager : MonoBehaviour
             _center.y + radius*Mathf.Cos(Mathf.Deg2Rad*angle),
             0.0f
             );//z 单独设定
+    }
+
+    public bool getIsCardMoving()
+    {
+        return _isCardMoving;
     }
 }
