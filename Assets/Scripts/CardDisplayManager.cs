@@ -13,11 +13,17 @@ public class CardDisplayManager : MonoBehaviour
     private const int sortingOrdersNumber = 20;
 
     private CardsManager _cardsManager;
-    private List<Vector3> _positions=new(positionNumber);
-    private List<Quaternion> _rotations= new(rotationNumber);
-    private List<int> _sortingOrders=new(sortingOrdersNumber);
+    
+    // private List<Vector3> _positions=new(positionNumber);
+    // private List<Quaternion> _rotations= new(rotationNumber);
+    // private List<int> _sortingOrders=new(sortingOrdersNumber);
 
+    private List<Vector3> _positions;
+    private List<Quaternion> _rotations;
+    private List<int> _sortingOrders;
+    
     private readonly List<GameObject> _handCards = new List<GameObject>(positionNumber);
+    
     private const float radius = 16.0f;
     private readonly Vector3 _center = new(-15.0f, -18.5f, 0.0f);
     private readonly Vector3 _originalCardScale = new(0.5f, 0.5f, 1.0f);
@@ -29,7 +35,7 @@ public class CardDisplayManager : MonoBehaviour
         _cardsManager = cardsManager;
     }
 
-    private void Start()
+    private void Awake()
     {
         _positions = new(positionNumber);
         _rotations = new(rotationNumber);
