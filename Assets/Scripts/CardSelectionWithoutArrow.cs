@@ -14,15 +14,15 @@ public class CardSelectionWithoutArrow : CardSelectionBase
 
     private void Update()
     {
-        if (cardDisplayManager.getIsCardMoving())
+        if (cardDisplayManager.getIsCardMoving())//检测牌是否在执行移动的动画，若是则不能选择
             return;
         
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))//卡牌是否被鼠标选中
         {
             detectCardSelection();
         }
 
-        if (selectedCard != null)
+        if (selectedCard != null)//卡牌跟随鼠标移动
         {
             updateSelectedCard();
         }
@@ -33,9 +33,12 @@ public class CardSelectionWithoutArrow : CardSelectionBase
     {
         if (selectedCard != null)
             return;
-
+        
+        //屏幕左标转换为世界坐标
         var mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        var hitInfo = Physics2D.Raycast(mousePosition,new Vector3(0,0,-1), Mathf.Infinity,
+        // 在控制台中打印世界坐标
+        Debug.Log("Mouse world position: " + mousePosition);
+        var hitInfo = Physics2D.Raycast(mousePosition,Vector3.forward, Mathf.Infinity,
             cardLayer);
 
         if (hitInfo.collider != null)
@@ -45,6 +48,10 @@ public class CardSelectionWithoutArrow : CardSelectionBase
             originalCardPosition = selectedCard.transform.position;
             originalCardRotation = selectedCard.transform.rotation;
             originalCardSortingOrder = selectedCard.GetComponent<SortingGroup>().sortingOrder;
+        }
+        else
+        {
+            Debug.Log("no collider");
         }
     }
 

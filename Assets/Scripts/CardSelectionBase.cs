@@ -12,7 +12,7 @@ public class CardSelectionBase : MonoBehaviour
 
     protected GameObject selectedCard;
 
-    protected virtual void Start()
+    protected virtual void Awake()
     {
         mainCamera = Camera.main;
     }
