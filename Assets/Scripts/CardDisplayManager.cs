@@ -42,6 +42,10 @@ public class CardDisplayManager : MonoBehaviour
         _sortingOrders = new(sortingOrdersNumber);
     }
 
+    /// <summary>
+    /// 生成手牌
+    /// </summary>
+    /// <param name="cardsInHand"></param>
     public void createHandCards(List<RuntimeCard> cardsInHand)
     {
         var drawnCards = new List<GameObject>(cardsInHand.Count);
@@ -57,6 +61,11 @@ public class CardDisplayManager : MonoBehaviour
         putDeckCardsToHand(drawnCards);//执行卡牌动画
     }
 
+    /// <summary>
+    /// 克隆game object出来
+    /// </summary>
+    /// <param name="card"></param>
+    /// <returns></returns>
     private GameObject createCardGameObject(RuntimeCard card)
     {
         var gameObj = _cardsManager.getObject();
@@ -141,6 +150,11 @@ public class CardDisplayManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 根据角度计算在这个弧形中每张卡应该在的位置
+    /// </summary>
+    /// <param name="angle"></param>
+    /// <returns></returns>
     private Vector3 calculateCardPosition(float angle)
     {
         return new Vector3(_center.x - radius * Mathf.Sin(Mathf.Deg2Rad * angle),
@@ -148,7 +162,7 @@ public class CardDisplayManager : MonoBehaviour
             0.0f
             );//z 单独设定
     }
-
+    
     public bool getIsCardMoving()
     {
         return _isCardMoving;
