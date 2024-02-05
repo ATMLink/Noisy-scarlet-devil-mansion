@@ -15,7 +15,7 @@ public class CardSelectionBase : MonoBehaviour
 
     protected GameObject selectedCard;
     
-    protected Quaternion selectedRotation = Quaternion.Euler(0,0,0);//卡片竖直状态的角度;
+    // protected Quaternion selectedRotation = Quaternion.Euler(0,0,0);//卡片竖直状态的角度;
 
 
     protected virtual void Start()

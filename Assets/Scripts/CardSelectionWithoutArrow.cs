@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
 using DG.Tweening;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -57,7 +58,7 @@ public class CardSelectionWithoutArrow : CardSelectionBase
             originalCardPosition = selectedCard.transform.position;
             originalCardRotation = selectedCard.transform.rotation;
             originalCardSortingOrder = selectedCard.GetComponent<SortingGroup>().sortingOrder;
-            selectedCard.transform.DORotateQuaternion(selectedRotation, _cardRecoverRotationTime);
+            selectedCard.transform.DORotateQuaternion(quaternion.Euler(Vector3.zero), _cardRecoverRotationTime);
         }
         // else
         // {
