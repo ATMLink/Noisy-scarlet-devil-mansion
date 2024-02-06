@@ -1,8 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Text;
+using DG.Tweening;
+using UnityEngine.Rendering;
 
 public class CardObject : MonoBehaviour
 {
@@ -15,6 +18,19 @@ public class CardObject : MonoBehaviour
 
     public CardTemplate template;
     public RuntimeCard runtimeCard;
+
+    private Vector3 _savedPosition;
+    private Quaternion _savedRoation;
+    private int _savedSortingOrder;
+
+    private float _animationTime;
+
+    private SortingGroup _sortingGroup;
+
+    private void Awake()
+    {
+        _sortingGroup = GetComponent<SortingGroup>();
+    }
 
     private void Start()
     {
@@ -34,5 +50,19 @@ public class CardObject : MonoBehaviour
         var builder = new StringBuilder();
         descriptionText.text = builder.ToString();
         illustration.sprite = template.illustration;
+    }
+
+    public void saveTransform(Vector3 position, Quaternion rotation)
+    {
+        _savedPosition = position;
+        _savedRoation = rotation;
+        _savedSortingOrder = _sortingGroup.sortingOrder;
+    }
+    public void reset(Action onComplete)
+    {
+        transform.DOMove(_savedPosition, _animationTime);
+        transform.DORotateQuaternion(_savedRoation, _animationTime);
+        _sortingGroup.sortingOrder = _savedSortingOrder;
+        onComplete();
     }
 }

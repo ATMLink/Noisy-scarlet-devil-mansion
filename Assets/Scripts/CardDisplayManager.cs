@@ -97,7 +97,7 @@ public class CardDisplayManager : MonoBehaviour
             const float time = 0.5f;//动画完成时间
             var card = _handCards[i];
 
-            if (drawnCards.Contains(card)&&_isCardMoving)//check if the card was in hand already
+            if (drawnCards.Contains(card))//check if the card was in hand already
             {
                 var cardObject = card.GetComponent<CardObject>();
 
@@ -110,7 +110,11 @@ public class CardDisplayManager : MonoBehaviour
                     cardObject.transform.DOScale(_originalCardScale, time);
 
                     if (j == _handCards.Count - 1)
-                        move.OnComplete(() => _isCardMoving = false);//标志动画结束
+                        move.OnComplete(() =>
+                        {
+                            _isCardMoving = false;
+                            cardObject.saveTransform(_positions[j], _rotations[j]);
+                        });//标志动画结束
                 });
             }
 

@@ -40,7 +40,7 @@ public class CardSelectionWithArrow : CardSelectionBase
             updateCardAndTargetingArrow();
         }
     }
-
+     
     /// <summary>
     /// 检测是否点击左键选中
     /// </summary>
@@ -78,6 +78,14 @@ public class CardSelectionWithArrow : CardSelectionBase
                 selectedCard.GetComponent<SortingGroup>().sortingOrder = _originalCardSortingOrder;
                 selectedCard = null;
             });
+
+            // var card = selectedCard.GetComponent<CardObject>();
+            // //selectedCard.transform.DOKill();
+            //
+            // card.reset(() =>
+            // {
+            //     selectedCard = null;
+            // });
         }
     }
 
