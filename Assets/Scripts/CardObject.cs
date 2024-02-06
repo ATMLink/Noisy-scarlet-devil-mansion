@@ -23,7 +23,7 @@ public class CardObject : MonoBehaviour
     private Quaternion _savedRoation;
     private int _savedSortingOrder;
 
-    private float _animationTime;
+    private float _animationTime = 0.2f;
 
     private SortingGroup _sortingGroup;
 
@@ -58,11 +58,11 @@ public class CardObject : MonoBehaviour
         _savedRoation = rotation;
         _savedSortingOrder = _sortingGroup.sortingOrder;
     }
-    public void reset(Action onComplete)
+    public void reset(Action OnComplete) 
     {
-        transform.DOMove(_savedPosition, _animationTime);
+        transform.DOMove(_savedPosition, _animationTime).SetEase(Ease.OutBack);
         transform.DORotateQuaternion(_savedRoation, _animationTime);
         _sortingGroup.sortingOrder = _savedSortingOrder;
-        onComplete();
+        OnComplete();
     }
 }

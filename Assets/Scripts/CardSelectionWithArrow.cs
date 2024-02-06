@@ -76,28 +76,16 @@ public class CardSelectionWithArrow : CardSelectionBase
     {
         if (selectedCard != null)
         {
-            var sequence = DOTween.Sequence();
-            sequence.AppendCallback(() =>
+            var card = selectedCard.GetComponent<CardObject>();
+            selectedCard.transform.DOKill();
+            
+            card.reset(() =>
             {
-                selectedCard.transform.DOMove(_originalCardPosition, _cardCancelAnimationTime).SetEase(_cardAnimationEase);
-                selectedCard.transform.DORotate(_originalCardRotation.eulerAngles, _cardCancelAnimationTime);
-            });
-            sequence.OnComplete(() =>
-            {
-                selectedCard.GetComponent<SortingGroup>().sortingOrder = _originalCardSortingOrder;
+                isArrowCreated = false;
                 selectedCard = null;
             });
             
-            isArrowCreated = false;
             _attackArrow.enableArrow(false);
-
-            // var card = selectedCard.GetComponent<CardObject>();
-            // //selectedCard.transform.DOKill();
-            //
-            // card.reset(() =>
-            // {
-            //     selectedCard = null;
-            // });
         }
     }
 

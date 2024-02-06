@@ -105,7 +105,11 @@ public class CardDisplayManager : MonoBehaviour
                 seq.AppendInterval(interval);
                 seq.AppendCallback(() =>
                 {
-                    var move = cardObject.transform.DOMove(_positions[j], time);//move
+                    var move = card.transform.DOMove(_positions[j], time).OnComplete(() =>
+                    {
+                        cardObject.saveTransform(_positions[j], _rotations[j]);
+                    });//move
+                    
                     cardObject.transform.DORotateQuaternion(_rotations[j], time);
                     cardObject.transform.DOScale(_originalCardScale, time);
 
