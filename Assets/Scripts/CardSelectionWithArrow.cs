@@ -20,6 +20,15 @@ public class CardSelectionWithArrow : CardSelectionBase
     private const float _selectedCardYOffset = -1.0f;
     private const float _attackCardInMiddlePositionX = 0;
 
+    private AttackArrow _attackArrow;
+    private bool isArrowCreated;
+
+    protected override void Start()
+    {
+        base.Start();
+        _attackArrow = FindFirstObjectByType<AttackArrow>();
+    }
+
     private void Update()
     {
         if (cardDisplayManager.getIsCardMoving())
@@ -52,9 +61,9 @@ public class CardSelectionWithArrow : CardSelectionBase
         if (hitInfo.collider != null)
         {
             selectedCard = hitInfo.collider.gameObject;
-            _originalCardPosition = selectedCard.transform.position;
-            _originalCardRotation = selectedCard.transform.rotation;
-            _originalCardSortingOrder = selectedCard.GetComponent<SortingGroup>().sortingOrder;
+            // _originalCardPosition = selectedCard.transform.position;
+            // _originalCardRotation = selectedCard.transform.rotation;
+            // _originalCardSortingOrder = selectedCard.GetComponent<SortingGroup>().sortingOrder;
             selectedCard.GetComponent<SortingGroup>().sortingOrder += 10;
             previousClickPosition = mousePosition;
         }
@@ -78,6 +87,9 @@ public class CardSelectionWithArrow : CardSelectionBase
                 selectedCard.GetComponent<SortingGroup>().sortingOrder = _originalCardSortingOrder;
                 selectedCard = null;
             });
+            
+            isArrowCreated = false;
+            _attackArrow.enableArrow(false);
 
             // var card = selectedCard.GetComponent<CardObject>();
             // //selectedCard.transform.DOKill();
@@ -94,11 +106,12 @@ public class CardSelectionWithArrow : CardSelectionBase
         var mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         var pullDistance = mousePosition.y - previousClickPosition.y;//拖动卡牌移动的距离
 
-        if (pullDistance > _cardDetectionOffset)//检查是否超过阈值
+        if (!isArrowCreated && pullDistance > _cardDetectionOffset)//检查是否超过阈值
         {
+            isArrowCreated = true;
             var position = selectedCard.transform.position;
 
-            //selectedCard.transform.DOKill();//重置位置
+            selectedCard.transform.DOKill();//重置位置
 
             var sequence = DOTween.Sequence();
             sequence.AppendCallback(() =>
@@ -107,6 +120,12 @@ public class CardSelectionWithArrow : CardSelectionBase
                     _cardAnimationTime);
 
                 selectedCard.transform.DORotate(Vector3.zero, _cardAnimationTime);
+            });
+
+            sequence.AppendInterval(0.15f);
+            sequence.OnComplete(() =>
+            {
+                _attackArrow.enableArrow(true);
             });
         }
     }
