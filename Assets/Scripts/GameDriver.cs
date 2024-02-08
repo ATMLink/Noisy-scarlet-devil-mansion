@@ -9,6 +9,7 @@ public class GameDriver : MonoBehaviour
 {
     public CardBank startingDeck;
 
+    private GameObject player; 
     private List<GameObject> enemies = new List<GameObject>();
     
     [Header("Manager")]
@@ -20,26 +21,41 @@ public class GameDriver : MonoBehaviour
     private List<CardTemplate> _playerDeck = new List<CardTemplate>();
 
     [Header("Character pivots")] [SerializeField]
+    public Transform playerPivot;
+    [SerializeField]
     public Transform enemyPivot;
 
     [SerializeField] private AssetReference _enemyTemplate;
+    [SerializeField] private AssetReference _playerTemplate;
     
     private void Start()
     {
         cardsManager.initialize();
-        createPlayer();
+        createPlayer(_playerTemplate);
         createEnemy(_enemyTemplate);
     }
-    private void createPlayer()
+    private void createPlayer(AssetReference playerTemplateReference)
     {
-        foreach (var item in startingDeck.Items)
+        var handle = Addressables.LoadAssetAsync<RemiTemplate>(playerTemplateReference);
+        handle.Completed += operationResult =>
         {
-            for(int i = 0;i<item.amount;i++)
+            var template = operationResult.Result;
+            player = Instantiate(template.prefab, playerPivot);
+            Assert.IsNotNull(player);
+            
+            foreach (var item in template.startingDeck.Items)
             {
-                _playerDeck.Add(item.card);
+                for(int i = 0;i<item.amount;i++)
+                {
+                    _playerDeck.Add(item.card);
+                }
             }
-        }
-        initialize();
+            
+            initialize();
+            
+        };
+        
+        
     }
 
     private void createEnemy(AssetReference templateReference)

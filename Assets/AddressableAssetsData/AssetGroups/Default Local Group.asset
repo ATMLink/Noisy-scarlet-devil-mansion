@@ -16,7 +16,17 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 66320eb5dceac7a4db9f119619414681
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: c5b0ca1418949ab4397a29f41471f9fb
+    m_Address: kaapa
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 24f375a185cea6f4cafcbd2bd776fdb8
+    m_Address: Assets/Data/Remi/Remi.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: fec32961faabc804cbc28d9ce0d31e41, type: 2}
   m_SchemaSet:
