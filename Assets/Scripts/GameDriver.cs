@@ -22,13 +22,13 @@ public class GameDriver : MonoBehaviour
     [Header("Character pivots")] [SerializeField]
     public Transform enemyPivot;
 
-    [SerializeField] private AssetReference enemyTemplate;
+    [SerializeField] private AssetReference _enemyTemplate;
     
     private void Start()
     {
         cardsManager.initialize();
         createPlayer();
-        
+        createEnemy(_enemyTemplate);
     }
     private void createPlayer()
     {
@@ -44,14 +44,20 @@ public class GameDriver : MonoBehaviour
 
     private void createEnemy(AssetReference templateReference)
     {
-        var handle = Addressables.LoadSceneAsync(templateReference);
+        var handle = Addressables.LoadAssetAsync<EnemyTemplate>(templateReference);
         handle.Completed += operationResult =>
         {
             var pivot = enemyPivot;
             var template = operationResult.Result;
-            // var enemy = Instantiate(template, pivot);
+            var enemy = Instantiate(template.prefab, pivot);
             
-            // Assert.IsNotNull(enemy);
+            Assert.IsNotNull(enemy);
+
+            var obj = enemy.GetComponent<CharacterObject>();
+            obj.characterTemplate = template;
+            
+            enemies.Add(enemy);
+
         };
 
     }
