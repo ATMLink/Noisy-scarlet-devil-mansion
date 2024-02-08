@@ -23,7 +23,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 24f375a185cea6f4cafcbd2bd776fdb8
-    m_Address: Assets/Data/Remi/Remi.asset
+    m_Address: Remi
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

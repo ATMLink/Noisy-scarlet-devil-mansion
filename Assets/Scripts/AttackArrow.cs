@@ -8,11 +8,25 @@ public class AttackArrow : MonoBehaviour
 {
     [SerializeField] private GameObject _bodyPrefab;
     [SerializeField] private GameObject _heaadPrefab;
+    
+    //敌人包围框预制体
+    [SerializeField] private GameObject topLeftFrame;
+    [SerializeField] private GameObject topRightFrame;
+    [SerializeField] private GameObject bottomLeftFrame;
+    [SerializeField] private GameObject bottomRightFrame;
+
+    private GameObject topLeftPoint;
+    private GameObject topRightPoint;
+    private GameObject bottomLeftPoint;
+    private GameObject bottomRightPoint;
 
     private const int _attackArrowPartsNumber = 17;
     private readonly List<GameObject> _arrow = new List<GameObject>(_attackArrowPartsNumber);
 
     private Camera mainCamera;
+
+    [SerializeField] private LayerMask enemyLayer;
+    private GameObject selectedEnemy;
 
     private bool isArrowEnable;
 
@@ -31,6 +45,15 @@ public class AttackArrow : MonoBehaviour
         {
             part.SetActive(false);
         }
+
+        //生成包围框各个位置对象
+        topLeftPoint = Instantiate(topLeftFrame, gameObject.transform);
+        topRightPoint = Instantiate(topRightFrame, gameObject.transform);
+        bottomLeftPoint = Instantiate(bottomLeftFrame, gameObject.transform);
+        bottomRightPoint = Instantiate(bottomRightFrame, gameObject.transform);
+        
+        disableSelectionBox();
+        
         mainCamera = Camera.main;
     }
 
@@ -40,6 +63,11 @@ public class AttackArrow : MonoBehaviour
         foreach (var part in _arrow)
         {
             part.SetActive(arrowEnabled);
+        }
+
+        if (!arrowEnabled)
+        {
+            cancelSelectEnemy();
         }
     }
     
@@ -53,6 +81,21 @@ public class AttackArrow : MonoBehaviour
         var mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         var mouseX = mousePos.x;
         var mouseY = mousePos.y;
+
+        var hitInfo = Physics2D.Raycast(mousePos, Vector3.forward, Mathf.Infinity, enemyLayer);
+
+        if (hitInfo.collider != null)
+        {
+            if (hitInfo.collider.gameObject != selectedEnemy ||
+                selectedEnemy == null)
+            {
+                selectEnemy(hitInfo.collider.gameObject);
+            }
+        }
+        else
+        {
+            cancelSelectEnemy();
+        }
         
         const float centerX = 0.0f;
         const float centerY = -1.0f;
@@ -122,5 +165,62 @@ public class AttackArrow : MonoBehaviour
                 1.0f - 0.03f * (_arrow.Count - 1 - i),
                 0);
         }
+    }
+
+    private void selectEnemy(GameObject enemyObj)
+    {
+        selectedEnemy = enemyObj;
+
+        var boxCollider = enemyObj.GetComponent<BoxCollider2D>();
+        var size = boxCollider.size;
+        var offset = boxCollider.offset;
+        
+        //通过boxcollider的大小size和偏移量offset，计算出包围框4个角的位置
+        var topLeftLocation = offset + new Vector2(-size.x * 0.5f, size.y * 0.5f);
+        var topLeftWorld = enemyObj.transform.TransformPoint(topLeftLocation);
+        var topRightLocation = offset + new Vector2(size.x * 0.5f, size.y * 0.5f);
+        var topRightWorld = enemyObj.transform.TransformPoint(topRightLocation);
+        var bottomLeftLocation = offset + new Vector2(-size.x * 0.5f, -size.y * 0.5f);
+        var bottomLeftWorld = enemyObj.transform.TransformPoint(bottomLeftLocation);
+        var bottomRightLocation = offset + new Vector2(size.x * 0.5f, -size.y * 0.5f);
+        var bottomRightWorld = enemyObj.transform.TransformPoint(bottomRightLocation);
+
+        topLeftPoint.transform.position = topLeftWorld;
+        topRightPoint.transform.position = topRightWorld;
+        bottomLeftPoint.transform.position = bottomLeftWorld;
+        bottomRightPoint.transform.position = bottomRightWorld;
+
+        enableSelectionBox();
+    }
+
+    private void cancelSelectEnemy()
+    {
+        selectedEnemy = null;
+        disableSelectionBox();
+        foreach (var part in _arrow)
+        {
+            part.GetComponent<SpriteRenderer>().material.color = UnityEngine.Color.white;
+        }
+    }
+
+    private void enableSelectionBox()
+    {
+        topLeftPoint.SetActive(true);
+        topRightPoint.SetActive(true);
+        bottomLeftPoint.SetActive(true);
+        bottomRightPoint.SetActive(true);
+
+        foreach (var part in _arrow)
+        {
+            part.GetComponent<SpriteRenderer>().material.color = UnityEngine.Color.magenta;
+        }
+    }
+    
+    private void disableSelectionBox()
+    {
+        topLeftPoint.SetActive(false);
+        topRightPoint.SetActive(false);
+        bottomLeftPoint.SetActive(false);
+        bottomRightPoint.SetActive(false);
     }
 }
