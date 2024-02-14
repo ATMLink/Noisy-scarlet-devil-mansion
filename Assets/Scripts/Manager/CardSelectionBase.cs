@@ -12,8 +12,11 @@ public class CardSelectionBase : MonoBehaviour
     public LayerMask cardLayer;
 
     public CardDisplayManager cardDisplayManager;
+    public EffectResolutionManager effectResolutionManager;
 
     protected GameObject selectedCard;
+
+    public LayerMask enemyLayer; 
     
     // protected Quaternion selectedRotation = Quaternion.Euler(0,0,0);//卡片竖直状态的角度;
 
@@ -21,5 +24,10 @@ public class CardSelectionBase : MonoBehaviour
     protected virtual void Start()
     {
         mainCamera = Camera.main;
+    }
+
+    protected virtual void playSelectedCard()
+    {
+        cardDisplayManager.reorganizeHandCards(selectedCard);//reorganize hand cards
     }
 }

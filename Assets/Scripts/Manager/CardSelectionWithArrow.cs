@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using UnityEditor.AddressableAssets.Build.BuildPipelineTasks;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -22,6 +23,7 @@ public class CardSelectionWithArrow : CardSelectionBase
 
     private AttackArrow _attackArrow;
     private bool isArrowCreated;
+    private GameObject _selectedEnemy;
 
     protected override void Start()
     {
@@ -39,7 +41,13 @@ public class CardSelectionWithArrow : CardSelectionBase
         if (Input.GetMouseButtonDown(0))//卡牌是否被鼠标选中
         {
             detectCardSelection();
-        }else if (Input.GetMouseButtonDown(1))
+            detectEnemySelection();
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            detectEnemySelection();
+        }
+        else if (Input.GetMouseButtonDown(1))
         {
             detectCardCancelSelection();
         }
@@ -49,7 +57,31 @@ public class CardSelectionWithArrow : CardSelectionBase
             updateCardAndTargetingArrow();
         }
     }
-     
+
+    /// <summary>
+    /// detect if selected a enemy
+    /// </summary>
+    private void detectEnemySelection()
+    {
+        if (selectedCard != null)
+        {
+            //check if mouse selected a enemy
+            var mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+            var hitInfo = Physics2D.Raycast(mousePosition, Vector3.forward, Mathf.Infinity, enemyLayer);
+            if (hitInfo.collider != null)
+            {
+                _selectedEnemy = hitInfo.collider.gameObject;
+                playSelectedCard();
+
+                selectedCard = null;
+                
+                //clear the arrow
+                isArrowCreated = false;
+                _attackArrow.enableArrow(false);
+            }
+        }
+    }
+    
     /// <summary>
     /// 检测是否点击左键选中
     /// </summary>
@@ -87,6 +119,13 @@ public class CardSelectionWithArrow : CardSelectionBase
             
             _attackArrow.enableArrow(false);
         }
+    }
+
+    protected override void playSelectedCard()
+    {
+        base.playSelectedCard();
+        var card = selectedCard.GetComponent<CardObject>().runtimeCard;//get real time card data
+        effectResolutionManager.ResolveCardEffect(card, _selectedEnemy.GetComponent<CharacterObject>());
     }
 
     private void updateCardAndTargetingArrow()

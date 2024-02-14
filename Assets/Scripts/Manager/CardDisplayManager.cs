@@ -79,7 +79,7 @@ public class CardDisplayManager : MonoBehaviour
     }
 
     /// <summary>
-    /// the logic of display animation
+    /// dynamically put deck cards to hand by DoTween
     /// </summary>
     /// <param name="drawnCards"></param>
     private void putDeckCardsToHand(List<GameObject> drawnCards)
@@ -155,6 +155,29 @@ public class CardDisplayManager : MonoBehaviour
             
             //sorting layer setting
             _sortingOrders.Add(i);//设定sorting layer 加入越早放越低（被盖住）
+        }
+    }
+
+    /// <summary>
+    /// reorganize hand cards when player used a card
+    /// </summary>
+    /// <param name="selectedCard"></param>
+    public void reorganizeHandCards(GameObject selectedCard)
+    {
+        _handCards.Remove(selectedCard);
+        
+        //reorganize cards position
+        organizeHandCards();
+        
+        //dynamically reorganize cards graphical position by DoTween
+        for (var i = 0; i < _handCards.Count; i++)
+        {
+            var card = _handCards[i];
+            const float time = 0.3f;
+            card.transform.DOMove(_positions[i], time);
+            card.transform.DORotateQuaternion(_rotations[i], time);
+            card.GetComponent<SortingGroup>().sortingOrder = _sortingOrders[i];
+            card.GetComponent<CardObject>().saveTransform(_positions[i], _rotations[i]);
         }
     }
 
