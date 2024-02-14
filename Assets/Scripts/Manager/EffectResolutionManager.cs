@@ -16,6 +16,10 @@ public class EffectResolutionManager : BaseManager
             if (targetableEffect != null)
             {
                 var targets = getTargets(targetableEffect, playerSelectedTarget, true);
+                foreach (var target in targets)
+                {
+                    targetableEffect.Resolve(player.character, target.character);
+                }
             }
         }
     }

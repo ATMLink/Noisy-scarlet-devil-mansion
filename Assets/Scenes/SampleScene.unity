@@ -157,7 +157,7 @@ MonoBehaviour:
   cardDisplayManager: {fileID: 1425886022}
   cardDeckManager: {fileID: 774715210}
   effectResolutionManager: {fileID: 1499062859}
-  cardSelectionWithArrow: {fileID: 0}
+  cardSelectionWithArrow: {fileID: 1408563840}
   playerPivot: {fileID: 1857802892}
   enemyPivot: {fileID: 350402313}
   _enemyTemplate:
@@ -874,10 +874,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   cardDisplayManager: {fileID: 1425886022}
-  effectResolutionManager: {fileID: 0}
+  effectResolutionManager: {fileID: 1499062859}
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
 --- !u!4 &1408563841
 Transform:
   m_ObjectHideFlags: 0
