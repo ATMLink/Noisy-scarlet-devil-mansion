@@ -5,4 +5,5 @@ using UnityEngine;
 public class CharacterObject : MonoBehaviour
 {
     public CharacterTemplate characterTemplate;
+    public RuntimeCharacter character;
 }

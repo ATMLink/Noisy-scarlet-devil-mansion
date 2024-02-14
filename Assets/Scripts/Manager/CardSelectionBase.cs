@@ -6,7 +6,7 @@ using UnityEngine;
 /// <summary>
 /// 卡牌选择基类
 /// </summary>
-public class CardSelectionBase : MonoBehaviour
+public class CardSelectionBase : BaseManager
 {
     protected Camera mainCamera;
     public LayerMask cardLayer;

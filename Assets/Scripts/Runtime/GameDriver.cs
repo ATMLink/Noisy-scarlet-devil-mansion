@@ -12,11 +12,13 @@ public class GameDriver : MonoBehaviour
     private GameObject player; 
     private List<GameObject> enemies = new List<GameObject>();
     
-    [Header("Manager")]
+    [Header("Managers")]
     [SerializeField] private CardsManager cardsManager;
 
     [SerializeField] private CardDisplayManager cardDisplayManager;
     [SerializeField] private CardDeckManager cardDeckManager;
+    [SerializeField] private EffectResolutionManager effectResolutionManager;
+    [SerializeField] private CardSelectionWithArrow cardSelectionWithArrow;
 
     private List<CardTemplate> _playerDeck = new List<CardTemplate>();
 
@@ -50,6 +52,16 @@ public class GameDriver : MonoBehaviour
                     _playerDeck.Add(item.card);
                 }
             }
+
+            var obj = player.GetComponent<CharacterObject>();
+            obj.characterTemplate = template;
+            obj.character = new RuntimeCharacter()
+            {
+                hp = 100,
+                sheild = 100,
+                mp = 100,
+                maxHp = 100
+            };
             
             initialize();
             
@@ -71,6 +83,13 @@ public class GameDriver : MonoBehaviour
 
             var obj = enemy.GetComponent<CharacterObject>();
             obj.characterTemplate = template;
+            obj.character = new RuntimeCharacter()
+            {
+                hp = 100,
+                sheild = 100,
+                mp = 100,
+                maxHp = 100
+            };
             
             enemies.Add(enemy);
 
@@ -84,5 +103,16 @@ public class GameDriver : MonoBehaviour
         cardDeckManager.shuffleDeck();
         cardDisplayManager.initialize(cardsManager);
         cardDeckManager.drawCardsFromDeck(5);
+
+        var playerCharacter = player.GetComponent<CharacterObject>();
+        var enemyCharacter = new List<CharacterObject>(enemies.Count);
+
+        foreach (var enemy in enemies)
+        {
+            enemyCharacter.Add(enemy.GetComponent<CharacterObject>());
+        }
+
+        cardSelectionWithArrow.Initialize(playerCharacter, enemyCharacter);
+        effectResolutionManager.Initialize(playerCharacter, enemyCharacter);
     }
 }
