@@ -37,4 +37,21 @@ public class CardsManager : MonoBehaviour
         obj.SetActive(true);
         return obj;
     }
+
+    public void returnObject(GameObject gameObj)
+    {
+        var pooledObject = gameObj.GetComponent<ManagedPoolObject>();
+        Assert.IsNotNull(pooledObject);
+        Assert.IsTrue(pooledObject.cardsManager == this);
+        
+        gameObj.SetActive(false);
+        if (!_instances.Contains(gameObj))
+        {
+            _instances.Push(gameObj);
+        }
+    }
+    public class ManagedPoolObject : MonoBehaviour
+    {
+        public CardsManager cardsManager;
+    }
 }

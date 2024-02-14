@@ -30,6 +30,8 @@ public class CardDisplayManager : MonoBehaviour
 
     private bool _isCardMoving;
 
+    public static float cardToDiscardPileAnimationTime = 0.3f;
+
     public void initialize(CardsManager cardsManager)
     {
         _cardsManager = cardsManager;
@@ -197,5 +199,21 @@ public class CardDisplayManager : MonoBehaviour
     public bool getIsCardMoving()
     {
         return _isCardMoving;
+    }
+
+    public void moveCardToDiscardPile(GameObject gameObj)
+    {
+        var sequence = DOTween.Sequence();
+        sequence.AppendCallback(() =>
+        {
+            gameObj.transform.DOScale(Vector3.zero, cardToDiscardPileAnimationTime).OnComplete(() =>
+            {
+                gameObj.GetComponent<CardsManager.ManagedPoolObject>().cardsManager.returnObject(gameObj);
+            });
+        });
+        sequence.AppendCallback(() =>
+        {
+            _handCards.Remove(gameObj);
+        });
     }
 }

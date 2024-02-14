@@ -29,5 +29,6 @@ public class CardSelectionBase : BaseManager
     protected virtual void playSelectedCard()
     {
         cardDisplayManager.reorganizeHandCards(selectedCard);//reorganize hand cards
+        cardDisplayManager.moveCardToDiscardPile(selectedCard);
     }
 }
