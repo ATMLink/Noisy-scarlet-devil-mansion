@@ -156,6 +156,8 @@ MonoBehaviour:
   cardsManager: {fileID: 1371702547}
   cardDisplayManager: {fileID: 1425886022}
   cardDeckManager: {fileID: 774715210}
+  effectResolutionManager: {fileID: 1499062859}
+  cardSelectionWithArrow: {fileID: 0}
   playerPivot: {fileID: 1857802892}
   enemyPivot: {fileID: 350402313}
   _enemyTemplate:
