@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EffectResolutionManager : BaseManager
 {
+    public CardSelectionWithArrow _cardSelectionWithArrow;
+    
     private CharacterObject _currentEnemy;
 
     //analyse effect
@@ -19,6 +21,23 @@ public class EffectResolutionManager : BaseManager
                 foreach (var target in targets)
                 {
                     targetableEffect.Resolve(player.character, target.character);
+
+                    foreach (var groupManager in targetableEffect.sourceAction)
+                    {
+                        foreach (var action in groupManager.group.actions)
+                        {
+                            action.execute(player.gameObject);
+                        }
+                    }
+                    
+                    foreach (var groupManager in targetableEffect.targetAction)
+                    {
+                        foreach (var action in groupManager.group.actions)
+                        {
+                            var enemy = _cardSelectionWithArrow.getSelectedEnemy();
+                            action.execute(enemy.gameObject);
+                        }
+                    }
                 }
             }
         }

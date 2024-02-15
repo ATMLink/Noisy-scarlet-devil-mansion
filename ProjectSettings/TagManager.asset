@@ -44,3 +44,6 @@ TagManager:
   - name: Card
     uniqueID: 3196286557
     locked: 0
+  - name: Character
+    uniqueID: 2820930857
+    locked: 0

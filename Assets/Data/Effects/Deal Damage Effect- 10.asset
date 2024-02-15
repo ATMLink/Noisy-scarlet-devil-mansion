@@ -12,5 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34aac94e25d05db4481e3b037d2b3e69, type: 3}
   m_Name: Deal Damage Effect- 10
   m_EditorClassIdentifier: 
+  sourceAction:
+  - group: {fileID: 11400000, guid: 55b402ca2258581448805298d44c17fa, type: 2}
+  targetAction:
+  - group: {fileID: 11400000, guid: bdc8feb05ea001b4897e0f579f977eaa, type: 2}
+  - group: {fileID: 11400000, guid: 378b9bab0835abe44b1b66f32adacbb1, type: 2}
   target: 1
   value: 10

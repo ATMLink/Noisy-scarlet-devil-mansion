@@ -156,4 +156,9 @@ public class CardSelectionWithArrow : CardSelectionBase
             });
         }
     }
+
+    public GameObject getSelectedEnemy()
+    {
+        return _selectedEnemy;
+    }
 }
