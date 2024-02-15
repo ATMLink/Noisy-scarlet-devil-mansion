@@ -58,8 +58,8 @@ public class GameDriver : MonoBehaviour
             obj.character = new RuntimeCharacter()
             {
                 hp = 100,
-                sheild = 100,
-                mp = 100,
+                shield = 100,
+                sp = 100,
                 maxHp = 100
             };
             
@@ -86,8 +86,8 @@ public class GameDriver : MonoBehaviour
             obj.character = new RuntimeCharacter()
             {
                 hp = 100,
-                sheild = 100,
-                mp = 100,
+                shield = 100,
+                sp = 100,
                 maxHp = 100
             };
             
