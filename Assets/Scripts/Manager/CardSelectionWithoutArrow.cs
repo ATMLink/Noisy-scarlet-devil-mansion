@@ -18,10 +18,22 @@ public class CardSelectionWithoutArrow : CardSelectionBase
     private const float _cardCancelAnimationTime = 0.2f;//动画执行时间
     private const float _cardRecoverRotationTime = 0.3f;//动画执行时间
     private const Ease _cardAnimationEase = Ease.OutBack;//dotween animation type
+
+    private const float _cardAboutToBePlayedOffsetY = 1.5f;
+    private const float _CardAnimationTime = 0.4f;
+    [SerializeField] private BoxCollider2D cardArea;
+
+    private bool isCardAboutToBePlayed;
+    
     private void Update()
     {
         if (cardDisplayManager.getIsCardMoving())//检测牌是否在执行移动的动画，若是则不能选择
             return;
+
+        if (isCardAboutToBePlayed)
+        {
+            return;
+        }
         
         if (Input.GetMouseButtonDown(0))//卡牌是否被鼠标选中
         {
@@ -54,11 +66,17 @@ public class CardSelectionWithoutArrow : CardSelectionBase
 
         if (hitInfo.collider != null)
         {
-            selectedCard = hitInfo.collider.gameObject;
-            originalCardPosition = selectedCard.transform.position;
-            originalCardRotation = selectedCard.transform.rotation;
-            originalCardSortingOrder = selectedCard.GetComponent<SortingGroup>().sortingOrder;
-            selectedCard.transform.DORotateQuaternion(quaternion.Euler(Vector3.zero), _cardRecoverRotationTime);
+            var card = hitInfo.collider.GetComponent<CardObject>();
+            var cardTemplate = card.template;
+
+            if (!CardUtilities.cardHasTargetableEffect(cardTemplate))
+            {
+                selectedCard = hitInfo.collider.gameObject;
+                originalCardPosition = selectedCard.transform.position;
+                originalCardRotation = selectedCard.transform.rotation;
+                originalCardSortingOrder = selectedCard.GetComponent<SortingGroup>().sortingOrder;
+                selectedCard.transform.DORotateQuaternion(quaternion.Euler(Vector3.zero), _cardRecoverRotationTime);
+            }
         }
         // else
         // {

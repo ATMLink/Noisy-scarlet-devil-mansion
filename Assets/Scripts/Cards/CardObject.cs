@@ -5,6 +5,7 @@ using UnityEngine;
 using TMPro;
 using System.Text;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine.Rendering;
 
 public class CardObject : MonoBehaviour
@@ -26,6 +27,25 @@ public class CardObject : MonoBehaviour
     private float _animationTime = 0.2f;
 
     private SortingGroup _sortingGroup;
+
+    public enum CardState
+    {
+        InHand,// card in hand state
+        AboutToBePlayed// card ready to use
+    }
+
+    private CardState _currentState;
+    public CardState State => _currentState;
+
+    private void OnEnable()
+    {
+        setState(CardState.InHand);
+    }
+
+    public void setState(CardState state)
+    {
+        _currentState = state;
+    }
 
     private void Awake()
     {

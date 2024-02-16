@@ -92,12 +92,18 @@ public class CardSelectionWithArrow : CardSelectionBase
 
         if (hitInfo.collider != null)
         {
-            selectedCard = hitInfo.collider.gameObject;
-            // _originalCardPosition = selectedCard.transform.position;
-            // _originalCardRotation = selectedCard.transform.rotation;
-            // _originalCardSortingOrder = selectedCard.GetComponent<SortingGroup>().sortingOrder;
-            selectedCard.GetComponent<SortingGroup>().sortingOrder += 10;
-            previousClickPosition = mousePosition;
+            var card = hitInfo.collider.GetComponent<CardObject>();
+            var cardTemplate = card.template;
+
+            if (CardUtilities.cardHasTargetableEffect(cardTemplate))
+            {
+                selectedCard = hitInfo.collider.gameObject;
+                // _originalCardPosition = selectedCard.transform.position;
+                // _originalCardRotation = selectedCard.transform.rotation;
+                // _originalCardSortingOrder = selectedCard.GetComponent<SortingGroup>().sortingOrder;
+                selectedCard.GetComponent<SortingGroup>().sortingOrder += 10;
+                previousClickPosition = mousePosition;
+            }
         }
     }
     

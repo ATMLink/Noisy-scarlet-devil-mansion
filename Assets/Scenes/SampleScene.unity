@@ -162,6 +162,8 @@ MonoBehaviour:
   enemyPivot: {fileID: 350402313}
   _canvas: {fileID: 588680263}
   hpWidget: {fileID: 5413707640302368337, guid: ebcaa688c658ed4488bdfc8852f9c07c, type: 3}
+  _enemyHp: {fileID: 11400000, guid: 05c232fa577328b4d8e20d5a69bb727b, type: 2}
+  _playerHp: {fileID: 11400000, guid: 7a481d1fd84d12b4788bd7d100baf0c6, type: 2}
   _enemyTemplate:
     m_AssetGUID: c5b0ca1418949ab4397a29f41471f9fb
     m_SubObjectName: 
@@ -1247,6 +1249,83 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1857802892}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2046622160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2046622162}
+  - component: {fileID: 2046622161}
+  m_Layer: 0
+  m_Name: CardArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &2046622161
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046622160}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.017229557, y: 0.7236353}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.9965277, y: 3.8256223}
+  m_EdgeRadius: 0
+--- !u!4 &2046622162
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046622160}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2083588036 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 618392446018641426, guid: 016f76a12219e3d44af8dd62860aec30, type: 3}
@@ -1268,7 +1347,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2134293416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1285,10 +1364,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   cardDisplayManager: {fileID: 1425886022}
-  effectResolutionManager: {fileID: 0}
+  effectResolutionManager: {fileID: 1499062859}
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
+  cardArea: {fileID: 0}
 --- !u!4 &2134293417
 Transform:
   m_ObjectHideFlags: 0
@@ -1318,4 +1398,5 @@ SceneRoots:
   - {fileID: 603790777}
   - {fileID: 588680266}
   - {fileID: 1875753594}
+  - {fileID: 2046622162}
   - {fileID: 221225601}
