@@ -212,7 +212,7 @@ public class AttackArrow : MonoBehaviour
 
         foreach (var part in _arrow)
         {
-            part.GetComponent<SpriteRenderer>().material.color = UnityEngine.Color.red;
+            part.GetComponent<SpriteRenderer>().material.color = UnityEngine.Color.magenta;
         }
     }
     

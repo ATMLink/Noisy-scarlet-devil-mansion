@@ -7,6 +7,7 @@ using UnityEngine.Assertions;
 
 public class GameDriver : MonoBehaviour
 {
+    private Camera _mainCamera;
     public CardBank startingDeck;
 
     private GameObject player; 
@@ -27,14 +28,22 @@ public class GameDriver : MonoBehaviour
     [SerializeField]
     public Transform enemyPivot;
 
+    [Header("UI")]
+    [SerializeField] private Canvas _canvas;
+    [SerializeField] private GameObject hpWidget;
+    
+    [Header("Character Template")]
     [SerializeField] private AssetReference _enemyTemplate;
     [SerializeField] private AssetReference _playerTemplate;
+
+    
     
     private void Start()
     {
         cardsManager.initialize();
         createPlayer(_playerTemplate);
         createEnemy(_enemyTemplate);
+        _mainCamera = Camera.main;
     }
     private void createPlayer(AssetReference playerTemplateReference)
     {
@@ -81,6 +90,8 @@ public class GameDriver : MonoBehaviour
             
             Assert.IsNotNull(enemy);
 
+            createHpWidget(hpWidget, enemy, 20,20);
+            
             var obj = enemy.GetComponent<CharacterObject>();
             obj.characterTemplate = template;
             obj.character = new RuntimeCharacter()
@@ -114,5 +125,17 @@ public class GameDriver : MonoBehaviour
 
         cardSelectionWithArrow.Initialize(playerCharacter, enemyCharacter);
         effectResolutionManager.Initialize(playerCharacter, enemyCharacter);
+    }
+
+    private void createHpWidget(GameObject prefab, GameObject character, int hp, int maxHp)
+    {
+        var hpWidget = Instantiate(prefab, _canvas.transform, false);
+        var pivot = character.transform;
+        var localScale = character.GetComponentInChildren<Transform>().localScale;
+        var canvasPosition = _mainCamera.WorldToViewportPoint(pivot.position + 
+                                                              new Vector3(0.0f, -(localScale.y*2), 0.0f));
+        hpWidget.GetComponent<RectTransform>().anchorMin = canvasPosition;
+        hpWidget.GetComponent<RectTransform>().anchorMax = canvasPosition;
+        hpWidget.GetComponent<HpWidget>().Initialize(hp, maxHp);
     }
 }
