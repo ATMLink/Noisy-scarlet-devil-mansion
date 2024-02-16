@@ -30,7 +30,8 @@ public class GameDriver : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] private Canvas _canvas;
-    [SerializeField] private GameObject hpWidget;
+    [SerializeField] private GameObject _enemyHpWidget;
+    [SerializeField] private GameObject _playerHpWidget;
 
     [Header("Variavles")]
     [SerializeField] private IntVariable _enemyHp;
@@ -57,6 +58,8 @@ public class GameDriver : MonoBehaviour
             var template = operationResult.Result;
             player = Instantiate(template.prefab, playerPivot);
             Assert.IsNotNull(player);
+            
+            createHpWidget(_playerHpWidget, player, _playerHp, 20);
             
             foreach (var item in template.startingDeck.Items)
             {
@@ -95,7 +98,7 @@ public class GameDriver : MonoBehaviour
             Assert.IsNotNull(enemy);
 
             _enemyHp.Value = 20;
-            createHpWidget(hpWidget, enemy, _enemyHp,20);
+            createHpWidget(_enemyHpWidget, enemy, _enemyHp,20);
             
             var obj = enemy.GetComponent<CharacterObject>();
             obj.characterTemplate = template;
@@ -138,7 +141,7 @@ public class GameDriver : MonoBehaviour
         var pivot = character.transform;
         var localScale = character.GetComponentInChildren<Transform>().localScale;
         var canvasPosition = _mainCamera.WorldToViewportPoint(pivot.position + 
-                                                              new Vector3(0.0f, -(localScale.y*2), 0.0f));
+                                                              new Vector3(0.0f, -2.0f, 0.0f));
         hpWidget.GetComponent<RectTransform>().anchorMin = canvasPosition;
         hpWidget.GetComponent<RectTransform>().anchorMax = canvasPosition;
         hpWidget.GetComponent<HpWidget>().Initialize(hp, maxHp);
