@@ -1368,7 +1368,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
-  cardArea: {fileID: 0}
+  cardArea: {fileID: 2046622161}
 --- !u!4 &2134293417
 Transform:
   m_ObjectHideFlags: 0

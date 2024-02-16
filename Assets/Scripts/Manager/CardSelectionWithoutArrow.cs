@@ -110,12 +110,60 @@ public class CardSelectionWithoutArrow : CardSelectionBase
     /// </summary>
     private void updateSelectedCard()
     {
+        //resolve the logic when mouse left key up
+        if (Input.GetMouseButtonUp(0))
+        {
+            var card = selectedCard.GetComponent<CardObject>();
+            
+            //if selected card mouse left key is released and on ready to use state
+            if (card.State == CardObject.CardState.AboutToBePlayed)
+            {
+                //turn off to pull card
+                isCardAboutToBePlayed = true;
+                
+                //move card which is not attack card to the effect area
+                var sequence = DOTween.Sequence();
+
+                sequence.Append(selectedCard.transform.DOMove(cardArea.bounds.center, _CardAnimationTime))
+                    .SetEase(_cardAnimationEase);
+                sequence.AppendInterval(_CardAnimationTime + 0.1f);
+                sequence.AppendCallback(() =>
+                {
+                    //play effect
+                    playSelectedCard();
+                    selectedCard = null;
+                    isCardAboutToBePlayed = false;
+                });
+                //selectedCard.transform.DORotate(Vector3.zero, _cardAnimationTime);
+                
+            }
+
+            // if when selected the card but regret, and card have not moved so far 
+            // then reset card state put it to original position rotation
+            else
+            {
+                card.setState(CardObject.CardState.InHand);
+                selectedCard.GetComponent<CardObject>().reset(()=>selectedCard = null);
+            }
+        }
+        
         if (selectedCard != null)
         {
             var mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = 0;
             selectedCard.transform.position = mousePosition;
             //Debug.Log("card position" + selectedCard.transform.position);
+
+            var card = selectedCard.GetComponent<CardObject>();
+            // detect non-attack card if moved far enough to change card state
+            if (mousePosition.y > originalCardPosition.y + _cardAboutToBePlayedOffsetY)
+            {
+                card.setState(CardObject.CardState.AboutToBePlayed);
+            }
+            else
+            {
+                card.setState(CardObject.CardState.InHand);
+            }
         }
     }
 }
