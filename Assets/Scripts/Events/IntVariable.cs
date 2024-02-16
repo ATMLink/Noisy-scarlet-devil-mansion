@@ -8,13 +8,13 @@ using UnityEngine;
     order = 0)]
 public class IntVariable : ScriptableObject
 {
-    public int value;
+    public int Value;
 
     public GameEventInt valueChangedEvent;
 
     public void setValue(int value)
     {
-        this.value = value;
+        Value = value;
         Debug.Log("hp = "+value);
         valueChangedEvent?.raise(value);//if valueChangeEvent is not null execute raise()
     }

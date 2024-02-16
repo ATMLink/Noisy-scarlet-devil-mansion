@@ -94,7 +94,7 @@ public class GameDriver : MonoBehaviour
             
             Assert.IsNotNull(enemy);
 
-            _enemyHp.value = 20;
+            _enemyHp.Value = 20;
             createHpWidget(hpWidget, enemy, _enemyHp,20);
             
             var obj = enemy.GetComponent<CharacterObject>();

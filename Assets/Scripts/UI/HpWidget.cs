@@ -17,7 +17,7 @@ public class HpWidget : MonoBehaviour
     public void Initialize(IntVariable hp, int max)
     {
         maxValue = max;
-        setHp(hp.value);
+        setHp(hp.Value);
     }
 
     private void setHp(int value)
