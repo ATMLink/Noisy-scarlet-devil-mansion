@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RuntimeCharacter
 {
-    public int hp;
+    public IntVariable hp;
     public int shield;
     public int sp;
     public int life;

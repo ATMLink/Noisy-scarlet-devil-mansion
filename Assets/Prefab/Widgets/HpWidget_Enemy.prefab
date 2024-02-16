@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1792716145964038748, guid: ad73e723a8b7e479aa17468702bfd512, type: 3}
+      propertyPath: eventInt
+      value: 
+      objectReference: {fileID: 11400000, guid: 45e342b595fa04c46890c28b2fe454d1, type: 2}
     - target: {fileID: 2238900094587200568, guid: ad73e723a8b7e479aa17468702bfd512, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -90,7 +94,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2238900094587200569, guid: ad73e723a8b7e479aa17468702bfd512, type: 3}
       propertyPath: m_Name
-      value: HpWidget
+      value: HpWidget_Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

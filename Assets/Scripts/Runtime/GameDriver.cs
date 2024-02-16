@@ -31,6 +31,10 @@ public class GameDriver : MonoBehaviour
     [Header("UI")]
     [SerializeField] private Canvas _canvas;
     [SerializeField] private GameObject hpWidget;
+
+    [Header("Variavles")]
+    [SerializeField] private IntVariable _enemyHp;
+    [SerializeField] private IntVariable _playerHp;
     
     [Header("Character Template")]
     [SerializeField] private AssetReference _enemyTemplate;
@@ -66,7 +70,7 @@ public class GameDriver : MonoBehaviour
             obj.characterTemplate = template;
             obj.character = new RuntimeCharacter()
             {
-                hp = 100,
+                hp = _playerHp,
                 shield = 100,
                 sp = 100,
                 maxHp = 100
@@ -90,13 +94,14 @@ public class GameDriver : MonoBehaviour
             
             Assert.IsNotNull(enemy);
 
-            createHpWidget(hpWidget, enemy, 20,20);
+            _enemyHp.value = 20;
+            createHpWidget(hpWidget, enemy, _enemyHp,20);
             
             var obj = enemy.GetComponent<CharacterObject>();
             obj.characterTemplate = template;
             obj.character = new RuntimeCharacter()
             {
-                hp = 100,
+                hp = _enemyHp,
                 shield = 100,
                 sp = 100,
                 maxHp = 100
@@ -127,7 +132,7 @@ public class GameDriver : MonoBehaviour
         effectResolutionManager.Initialize(playerCharacter, enemyCharacter);
     }
 
-    private void createHpWidget(GameObject prefab, GameObject character, int hp, int maxHp)
+    private void createHpWidget(GameObject prefab, GameObject character, IntVariable hp, int maxHp)
     {
         var hpWidget = Instantiate(prefab, _canvas.transform, false);
         var pivot = character.transform;
