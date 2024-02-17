@@ -7,6 +7,9 @@ using UnityEngine.Assertions;
 
 public class GameDriver : MonoBehaviour
 {
+    public Texture2D cursorTexture;
+    public CursorMode cursorMode = CursorMode.Auto;
+    
     private Camera _mainCamera;
     public CardBank startingDeck;
 
@@ -48,10 +51,23 @@ public class GameDriver : MonoBehaviour
     private void Start()
     {
         cardsManager.initialize();
+        
+        //set cursor texture
+        setCursorTexture();
+        
         createPlayer(_playerTemplate);
         createEnemy(_enemyTemplate);
         _mainCamera = Camera.main;
     }
+
+    private void setCursorTexture()
+    {
+        float x, y;
+        x = cursorTexture.width / 2.0f;
+        y = cursorTexture.height / 2.0f;
+        Cursor.SetCursor(cursorTexture, new Vector2(x,y), cursorMode);
+    }
+        
     private void createPlayer(AssetReference playerTemplateReference)
     {
         var handle = Addressables.LoadAssetAsync<RemiTemplate>(playerTemplateReference);

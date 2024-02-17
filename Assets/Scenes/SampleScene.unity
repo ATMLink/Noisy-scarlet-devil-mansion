@@ -157,6 +157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b25bd4ce9866f546a8709a189c9389d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: 318470170a291874a81094e600e4ed35, type: 3}
+  cursorMode: 0
   startingDeck: {fileID: 11400000, guid: fcaad616f20efb649b7f73dab18c66ba, type: 2}
   cardsManager: {fileID: 1371702547}
   cardDisplayManager: {fileID: 1425886022}
