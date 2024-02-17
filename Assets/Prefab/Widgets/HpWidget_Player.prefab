@@ -96,6 +96,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HpWidget_Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8804803574714695038, guid: ad73e723a8b7e479aa17468702bfd512, type: 3}
+      propertyPath: eventInt
+      value: 
+      objectReference: {fileID: 11400000, guid: fb9b6525f0d1e6b4cbbe595196909180, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -24,9 +24,9 @@ public class CardDisplayManager : MonoBehaviour
     
     private readonly List<GameObject> _handCards = new List<GameObject>(positionNumber);
     
-    private const float radius = 16.0f;
-    private readonly Vector3 _center = new(0.0f, -18.5f, 0.0f);
-    private readonly Vector3 _originalCardScale = new(0.5f, 0.5f, 1.0f);
+    private const float radius = 18.0f;
+    private readonly Vector3 _center = new(0.0f, -22.3f, 0.0f);
+    private readonly Vector3 _originalCardScale = new(0.6f, 0.6f, 1.0f);
 
     private bool _isCardMoving;
 

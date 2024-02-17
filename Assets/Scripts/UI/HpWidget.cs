@@ -40,15 +40,6 @@ public class HpWidget : MonoBehaviour
         hpBorderText.text = $"{value.ToString()} / {maxValue.ToString()}";
     }
 
-    public void onHpChanged(int value)
-    {
-        setHp(value);
-        if (value <= 0)
-        {
-            gameObject.SetActive(false);
-        }
-    }
-
     private void setShield(int value)
     {
         shieldText.text = $"{value.ToString()}";
@@ -59,5 +50,19 @@ public class HpWidget : MonoBehaviour
     private void setShieldActive(bool shieldActive)
     {
         shieldGroup.SetActive(shieldActive);
+    }
+    
+    public void onHpChanged(int value)
+    {
+        setHp(value);
+        if (value <= 0)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
+    public void onShieldChanged(int value)
+    {
+        setShield(value);
     }
 }

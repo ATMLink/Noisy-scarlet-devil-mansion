@@ -222,6 +222,7 @@ GameObject:
   - component: {fileID: 2238900094587200571}
   - component: {fileID: 4433699495801742287}
   - component: {fileID: 1792716145964038748}
+  - component: {fileID: 8804803574714695038}
   m_Layer: 5
   m_Name: HpWidget
   m_TagString: Untagged
@@ -238,8 +239,8 @@ RectTransform:
   m_GameObject: {fileID: 2238900094587200569}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6651346028594518984}
   - {fileID: 7819233658865485929}
@@ -331,6 +332,34 @@ MonoBehaviour:
       - m_Target: {fileID: 4433699495801742287}
         m_TargetAssemblyTypeName: HpWidget, Assembly-CSharp
         m_MethodName: onHpChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8804803574714695038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2238900094587200569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d66bdf7e6b390864daa3e840eedaa41a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventInt: {fileID: 0}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4433699495801742287}
+        m_TargetAssemblyTypeName: HpWidget, Assembly-CSharp
+        m_MethodName: onShieldChanged
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -991,7 +1020,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 99
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4ab1ff494ca6951438f6c7f1f42813f6, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: -6639535469878751128, guid: 4ab1ff494ca6951438f6c7f1f42813f6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

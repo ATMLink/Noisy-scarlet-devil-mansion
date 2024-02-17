@@ -61,7 +61,8 @@ public class GameDriver : MonoBehaviour
             player = Instantiate(template.prefab, playerPivot);
             Assert.IsNotNull(player);
 
-            _playerHp.Value = 15;
+            _playerHp.Value = 20;
+            _playerShield.Value = 0;
             createHpWidget(_playerHpWidget, player, _playerHp, 20, _playerShield);
             
             foreach (var item in template.startingDeck.Items)
@@ -77,9 +78,9 @@ public class GameDriver : MonoBehaviour
             obj.character = new RuntimeCharacter()
             {
                 hp = _playerHp,
-                shield = 100,
+                shield = _playerShield,
                 sp = 100,
-                maxHp = 100
+                maxHp = 20
             };
             
             initialize();
@@ -101,6 +102,7 @@ public class GameDriver : MonoBehaviour
             Assert.IsNotNull(enemy);
 
             _enemyHp.Value = 20;
+            _enemyShield.Value = 0;
             createHpWidget(_enemyHpWidget, enemy, _enemyHp,20, _enemyShield);
             
             var obj = enemy.GetComponent<CharacterObject>();
@@ -108,9 +110,9 @@ public class GameDriver : MonoBehaviour
             obj.character = new RuntimeCharacter()
             {
                 hp = _enemyHp,
-                shield = 100,
+                shield = _enemyShield,
                 sp = 100,
-                maxHp = 100
+                maxHp = 20
             };
             
             enemies.Add(enemy);

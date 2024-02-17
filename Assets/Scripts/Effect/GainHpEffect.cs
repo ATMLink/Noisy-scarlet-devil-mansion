@@ -20,10 +20,11 @@ public class GainHpEffect : IntegerEffect, IEntityEffect
 
         if (finalHp > target.maxHp)
         {
+            Debug.Log("final hp is max hp now");
             finalHp = target.maxHp;
         }
         
-        targetHp.setValue(finalHp);
+        target.hp.setValue(finalHp);
         Debug.Log("Gain Hp");
     }
 }

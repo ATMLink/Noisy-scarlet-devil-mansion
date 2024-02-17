@@ -15,7 +15,7 @@ public class IntVariable : ScriptableObject
     public void setValue(int value)
     {
         Value = value;
-        Debug.Log("hp = "+value);
+        // Debug.Log("hp = "+Value);
         valueChangedEvent?.raise(value);//if valueChangeEvent is not null execute raise()
     }
 }

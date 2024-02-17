@@ -17,3 +17,5 @@ MonoBehaviour:
   cost: 1
   illustration: {fileID: 21300000, guid: 9b0fd2da10f404ed6973b1a2a9aa9dc2, type: 3}
   type: {fileID: 11400000, guid: 5fe459210564f0c44867c817aa706a63, type: 2}
+  Effects:
+  - {fileID: 11400000, guid: 883009e19902fcf4bb62e76fb4a3fa89, type: 2}
