@@ -32,7 +32,9 @@ public class GameDriver : MonoBehaviour
     [SerializeField] private Canvas _canvas;
     [SerializeField] private GameObject _enemyHpWidget;
     [SerializeField] private GameObject _playerHpWidget;
-
+    [SerializeField] private IntVariable _playerShield;
+    [SerializeField] private IntVariable _enemyShield;
+ 
     [Header("Variavles")]
     [SerializeField] private IntVariable _enemyHp;
     [SerializeField] private IntVariable _playerHp;
@@ -60,7 +62,7 @@ public class GameDriver : MonoBehaviour
             Assert.IsNotNull(player);
 
             _playerHp.Value = 15;
-            createHpWidget(_playerHpWidget, player, _playerHp, 20);
+            createHpWidget(_playerHpWidget, player, _playerHp, 20, _playerShield);
             
             foreach (var item in template.startingDeck.Items)
             {
@@ -99,7 +101,7 @@ public class GameDriver : MonoBehaviour
             Assert.IsNotNull(enemy);
 
             _enemyHp.Value = 20;
-            createHpWidget(_enemyHpWidget, enemy, _enemyHp,20);
+            createHpWidget(_enemyHpWidget, enemy, _enemyHp,20, _enemyShield);
             
             var obj = enemy.GetComponent<CharacterObject>();
             obj.characterTemplate = template;
@@ -136,7 +138,7 @@ public class GameDriver : MonoBehaviour
         effectResolutionManager.Initialize(playerCharacter, enemyCharacter);
     }
 
-    private void createHpWidget(GameObject prefab, GameObject character, IntVariable hp, int maxHp)
+    private void createHpWidget(GameObject prefab, GameObject character, IntVariable hp, int maxHp, IntVariable shield)
     {
         var hpWidget = Instantiate(prefab, _canvas.transform, false);
         var pivot = character.transform;
@@ -145,6 +147,6 @@ public class GameDriver : MonoBehaviour
                                                               new Vector3(0.0f, -2.0f, 0.0f));
         hpWidget.GetComponent<RectTransform>().anchorMin = canvasPosition;
         hpWidget.GetComponent<RectTransform>().anchorMax = canvasPosition;
-        hpWidget.GetComponent<HpWidget>().Initialize(hp, maxHp);
+        hpWidget.GetComponent<HpWidget>().Initialize(hp, maxHp, shield);
     }
 }

@@ -309,6 +309,9 @@ MonoBehaviour:
   hpBarBackground: {fileID: 2827123840647635859}
   hpText: {fileID: 840883824064139714}
   hpBorderText: {fileID: 425723081097863226}
+  shieldGroup: {fileID: 8433899002501405414}
+  shieldTetxBorder: {fileID: 2535492350903430461}
+  shieldText: {fileID: 8145126752444843781}
 --- !u!114 &1792716145964038748
 MonoBehaviour:
   m_ObjectHideFlags: 0

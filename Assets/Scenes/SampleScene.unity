@@ -163,6 +163,8 @@ MonoBehaviour:
   _canvas: {fileID: 588680263}
   _enemyHpWidget: {fileID: 5413707640302368337, guid: ebcaa688c658ed4488bdfc8852f9c07c, type: 3}
   _playerHpWidget: {fileID: 8064718915905596853, guid: 692ac44bc6489f145a596672115d6ec7, type: 3}
+  _playerShield: {fileID: 11400000, guid: 6f4b1bff482a88c44be832106d60e899, type: 2}
+  _enemyShield: {fileID: 11400000, guid: 265ed6f7decf5124f9c16f2fcca80a11, type: 2}
   _enemyHp: {fileID: 11400000, guid: 05c232fa577328b4d8e20d5a69bb727b, type: 2}
   _playerHp: {fileID: 11400000, guid: 7a481d1fd84d12b4788bd7d100baf0c6, type: 2}
   _enemyTemplate:

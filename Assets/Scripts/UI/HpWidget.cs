@@ -18,10 +18,11 @@ public class HpWidget : MonoBehaviour
 
     private int maxValue;
 
-    public void Initialize(IntVariable hp, int max)
+    public void Initialize(IntVariable hp, int max, IntVariable shield)
     {
         maxValue = max;
         setHp(hp.Value);
+        setShield(shield.Value);
     }
 
     private void setHp(int value)
@@ -48,7 +49,12 @@ public class HpWidget : MonoBehaviour
         }
     }
 
-    
+    private void setShield(int value)
+    {
+        shieldText.text = $"{value.ToString()}";
+        shieldTetxBorder.text = $"{value.ToString()}";
+        setShieldActive(value>0);
+    }
     
     private void setShieldActive(bool shieldActive)
     {
