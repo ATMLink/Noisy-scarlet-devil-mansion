@@ -12,6 +12,10 @@ public class HpWidget : MonoBehaviour
     [SerializeField] private TextMeshProUGUI hpText;
     [SerializeField] private TextMeshProUGUI hpBorderText;
 
+    [SerializeField] private GameObject shieldGroup;
+    [SerializeField] private TextMeshProUGUI shieldTetxBorder;
+    [SerializeField] private TextMeshProUGUI shieldText;
+
     private int maxValue;
 
     public void Initialize(IntVariable hp, int max)
@@ -42,5 +46,12 @@ public class HpWidget : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+    }
+
+    
+    
+    private void setShieldActive(bool shieldActive)
+    {
+        shieldGroup.SetActive(shieldActive);
     }
 }

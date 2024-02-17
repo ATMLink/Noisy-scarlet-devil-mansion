@@ -166,5 +166,15 @@ public class CardSelectionWithoutArrow : CardSelectionBase
             }
         }
     }
+    
+    // refactor base class method `playSelectedCard` to resolve non-attack card
+    protected override void playSelectedCard()
+    {
+        base.playSelectedCard();
+
+        var card = selectedCard.GetComponent<CardObject>().runtimeCard;
+        effectResolutionManager.ResolveCardEffect(card);
+        
+    }
 }
  

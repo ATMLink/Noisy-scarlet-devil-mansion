@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(
-    menuName = "CardGame/Effect/IntegerEffect",
-    fileName = "IntegerEffect",
+    menuName = "CardGame/Effects/IntegerEffect/Deal Damage Effect",
+    fileName = "DealDamageEffect",
     order = 4)]
 public class DealDamageEffect : IntegerEffect, IEntityEffect
 {

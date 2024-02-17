@@ -58,7 +58,8 @@ public class GameDriver : MonoBehaviour
             var template = operationResult.Result;
             player = Instantiate(template.prefab, playerPivot);
             Assert.IsNotNull(player);
-            
+
+            _playerHp.Value = 15;
             createHpWidget(_playerHpWidget, player, _playerHp, 20);
             
             foreach (var item in template.startingDeck.Items)
