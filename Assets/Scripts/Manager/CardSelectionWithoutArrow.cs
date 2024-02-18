@@ -176,5 +176,10 @@ public class CardSelectionWithoutArrow : CardSelectionBase
         effectResolutionManager.ResolveCardEffect(card);
         
     }
+
+    public bool HasSelectedCard()
+    {
+        return selectedCard != null;
+    }
 }
  

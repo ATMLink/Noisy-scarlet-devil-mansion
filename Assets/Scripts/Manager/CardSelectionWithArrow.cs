@@ -167,4 +167,9 @@ public class CardSelectionWithArrow : CardSelectionBase
     {
         return _selectedEnemy;
     }
+
+    public bool HasSelectedCard()
+    {
+        return selectedCard != null;
+    }
 }

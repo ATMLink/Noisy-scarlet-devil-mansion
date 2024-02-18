@@ -18,11 +18,11 @@ public class GameDriver : MonoBehaviour
     
     [Header("Managers")]
     [SerializeField] private CardsManager cardsManager;
-
     [SerializeField] private CardDisplayManager cardDisplayManager;
     [SerializeField] private CardDeckManager cardDeckManager;
     [SerializeField] private EffectResolutionManager effectResolutionManager;
     [SerializeField] private CardSelectionWithArrow cardSelectionWithArrow;
+    [SerializeField] private TurnManager turnManager;
 
     private List<CardTemplate> _playerDeck = new List<CardTemplate>();
 
@@ -154,6 +154,8 @@ public class GameDriver : MonoBehaviour
 
         cardSelectionWithArrow.Initialize(playerCharacter, enemyCharacter);
         effectResolutionManager.Initialize(playerCharacter, enemyCharacter);
+        
+        turnManager.BeginGame();
     }
 
     private void createHpWidget(GameObject prefab, GameObject character, IntVariable hp, int maxHp, IntVariable shield)

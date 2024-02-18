@@ -165,6 +165,7 @@ MonoBehaviour:
   cardDeckManager: {fileID: 774715210}
   effectResolutionManager: {fileID: 1499062859}
   cardSelectionWithArrow: {fileID: 1408563840}
+  turnManager: {fileID: 732795006}
   playerPivot: {fileID: 1857802892}
   enemyPivot: {fileID: 350402313}
   _canvas: {fileID: 588680263}
@@ -984,6 +985,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 732795005}
+  - component: {fileID: 732795006}
   m_Layer: 0
   m_Name: TurnManager
   m_TagString: Untagged
@@ -1006,6 +1008,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 333644584}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &732795006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732795004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aaf7c0e8c5885b428bec316fd5cbb33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTurnBegan: {fileID: 11400000, guid: 654e662f7deec8b45b7c92ccbd667527, type: 2}
+  playerTurnEnded: {fileID: 11400000, guid: 5e26cedb3cc4c09458214eccd71683f7, type: 2}
+  enemyTurnBegan: {fileID: 11400000, guid: d12de842d08d2804ca63e56d3d5a58a3, type: 2}
+  enemyTurnEnded: {fileID: 11400000, guid: aea92610b9adfc04cb8c7aaf609ea656, type: 2}
 --- !u!1 &774715209
 GameObject:
   m_ObjectHideFlags: 0
