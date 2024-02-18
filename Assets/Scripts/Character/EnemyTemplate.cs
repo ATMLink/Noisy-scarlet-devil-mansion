@@ -9,5 +9,5 @@ using UnityEngine;
     order = 2)]
 public class EnemyTemplate : CharacterTemplate
 {
-    
+    public List<Pattern> patterns = new List<Pattern>();
 }

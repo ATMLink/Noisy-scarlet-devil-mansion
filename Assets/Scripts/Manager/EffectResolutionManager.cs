@@ -62,6 +62,28 @@ public class EffectResolutionManager : BaseManager
         }
     }
 
+    public void SetCurrentEnemy(CharacterObject enemy)
+    {
+        _currentEnemy = enemy;
+    }
+
+    public void ResolveEnemyEffects(CharacterObject enemy, List<Effect> effects)
+    {
+        foreach (var effect in effects)
+        {
+            var targetableEffect = effect as TargetableEffect;
+            if (targetableEffect != null)
+            {
+                var targets = getTargets(targetableEffect, null, false);
+
+                foreach (var target in targets)
+                {
+                    targetableEffect.Resolve(enemy.character, target.character);
+                }
+            }
+        }
+    }
+    
     private List<CharacterObject> getTargets(TargetableEffect effect, 
         CharacterObject playerSelectedTarget,
         bool playerSource)

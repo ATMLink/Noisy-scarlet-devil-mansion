@@ -23,6 +23,7 @@ public class GameDriver : MonoBehaviour
     [SerializeField] private EffectResolutionManager effectResolutionManager;
     [SerializeField] private CardSelectionWithArrow cardSelectionWithArrow;
     [SerializeField] private TurnManager turnManager;
+    [SerializeField] private EnemyAIManager enemyAIManager;
 
     private List<CardTemplate> _playerDeck = new List<CardTemplate>();
 
@@ -145,15 +146,16 @@ public class GameDriver : MonoBehaviour
         cardDeckManager.drawCardsFromDeck(5);
 
         var playerCharacter = player.GetComponent<CharacterObject>();
-        var enemyCharacter = new List<CharacterObject>(enemies.Count);
+        var enemyCharacters = new List<CharacterObject>(enemies.Count);
 
         foreach (var enemy in enemies)
         {
-            enemyCharacter.Add(enemy.GetComponent<CharacterObject>());
+            enemyCharacters.Add(enemy.GetComponent<CharacterObject>());
         }
 
-        cardSelectionWithArrow.Initialize(playerCharacter, enemyCharacter);
-        effectResolutionManager.Initialize(playerCharacter, enemyCharacter);
+        cardSelectionWithArrow.Initialize(playerCharacter, enemyCharacters);
+        enemyAIManager.Initialize(playerCharacter, enemyCharacters);
+        effectResolutionManager.Initialize(playerCharacter, enemyCharacters);
         
         turnManager.BeginGame();
     }
