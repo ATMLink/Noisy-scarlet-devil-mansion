@@ -9,6 +9,7 @@ using UnityEngine;
 public class ReplicatePattern : Pattern
 {
     public int times;
+    public Sprite sprite;
     
     public override string GetName()
     {

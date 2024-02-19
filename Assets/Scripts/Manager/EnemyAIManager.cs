@@ -11,6 +11,8 @@ public class EnemyAIManager : BaseManager
 {
     [SerializeField] private EffectResolutionManager effectResolutionManager;
 
+    [SerializeField] private List<IntentChangeEvent> intentChangeEvents;
+
     private int _currentReplicateCount;
 
     private List<EnemyAI> _brains;
@@ -44,6 +46,7 @@ public class EnemyAIManager : BaseManager
                     brain.patternIndex = 0;
                 }
 
+                Sprite sprite = null;
                 var pattern = template.patterns[brain.patternIndex];
 
                 if (pattern is ReplicatePattern replicatePattern)
@@ -56,6 +59,7 @@ public class EnemyAIManager : BaseManager
                     }
 
                     brain.effects = pattern.effects;
+                    sprite = replicatePattern.sprite;
                 }
                 else if (pattern is RandomPattern randomPattern)
                 {
@@ -78,7 +82,24 @@ public class EnemyAIManager : BaseManager
                     var selectedEffect = randomPattern.effects[effects[randomIndex]];
                     brain.effects = new List<Effect>{selectedEffect};
 
+                    for (var i = 0; i < pattern.effects.Count; i++)
+                    {
+                        var effect = pattern.effects[i];
+
+                        if (effect == selectedEffect)
+                        {
+                            sprite = randomPattern.probabilities[i].sprite;
+                            break;
+                        }
+                    }
+                    
                     brain.patternIndex += 1;
+                }
+
+                var currentEffect = brain.effects[0];
+                if (currentEffect)
+                {
+                    intentChangeEvents[enemyIndex].Raise(sprite, (currentEffect as IntegerEffect).value);
                 }
             }
         }

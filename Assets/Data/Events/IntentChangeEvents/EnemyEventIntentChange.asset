@@ -9,9 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe73c98327daab74aa75532b36268f83, type: 3}
-  m_Name: ReplicatePattern
+  m_Script: {fileID: 11500000, guid: ed806f79349aee5469bf6c32ca48ca07, type: 3}
+  m_Name: EnemyEventIntentChange
   m_EditorClassIdentifier: 
-  effects:
-  - {fileID: 11400000, guid: 883009e19902fcf4bb62e76fb4a3fa89, type: 2}
-  times: 1

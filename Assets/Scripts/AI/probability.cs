@@ -7,4 +7,6 @@ using UnityEngine;
 public class Probability
 {
     public int value;
+    public Sprite sprite;
 }
+    

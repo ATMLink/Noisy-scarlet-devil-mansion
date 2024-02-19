@@ -36,6 +36,7 @@ public class GameDriver : MonoBehaviour
     [SerializeField] private Canvas _canvas;
     [SerializeField] private GameObject _enemyHpWidget;
     [SerializeField] private GameObject _playerHpWidget;
+    [SerializeField] private GameObject _enemyIntentWidget;
     [SerializeField] private IntVariable _playerShield;
     [SerializeField] private IntVariable _enemyShield;
  
@@ -121,6 +122,7 @@ public class GameDriver : MonoBehaviour
             _enemyHp.Value = 20;
             _enemyShield.Value = 0;
             createHpWidget(_enemyHpWidget, enemy, _enemyHp,20, _enemyShield);
+            CreateIntentWidget(_enemyIntentWidget, enemy);
             
             var obj = enemy.GetComponent<CharacterObject>();
             obj.characterTemplate = template;
@@ -170,5 +172,19 @@ public class GameDriver : MonoBehaviour
         hpWidget.GetComponent<RectTransform>().anchorMin = canvasPosition;
         hpWidget.GetComponent<RectTransform>().anchorMax = canvasPosition;
         hpWidget.GetComponent<HpWidget>().Initialize(hp, maxHp, shield);
+    }
+
+    private void CreateIntentWidget(GameObject prefab, GameObject character)
+    {
+        var widget = Instantiate(prefab, _canvas.transform, false);
+        var pivot = character.transform;
+        var size = character.GetComponent<BoxCollider2D>().bounds.size;
+
+        var canvasPosition = _mainCamera.WorldToViewportPoint(
+            pivot.position + new Vector3(0.2f, size.y +0.7f, 0.0f)
+            );
+        widget.GetComponent<RectTransform>().anchorMin = canvasPosition;
+        widget.GetComponent<RectTransform>().anchorMax = canvasPosition;
+        
     }
 }

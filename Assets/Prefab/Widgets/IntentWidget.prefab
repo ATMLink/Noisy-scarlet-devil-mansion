@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 6004579814679689426}
   - component: {fileID: 4551970510096274879}
   - component: {fileID: 3861837537844829838}
+  - component: {fileID: 8439539021168026341}
+  - component: {fileID: 4553651806151227224}
+  - component: {fileID: 835308861403512810}
   m_Layer: 5
   m_Name: IntentWidget
   m_TagString: Untagged
@@ -76,6 +79,76 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8439539021168026341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253467307405554335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2b2aaea6418f2a4b99f7ce15f9c76c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intentImage: {fileID: 3861837537844829838}
+  amountText: {fileID: 687395544561184053}
+--- !u!114 &4553651806151227224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253467307405554335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a03bd7654a9dfa249bde7d05d05c6433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: d12de842d08d2804ca63e56d3d5a58a3, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8439539021168026341}
+        m_TargetAssemblyTypeName: IntentWidget, Assembly-CSharp
+        m_MethodName: OnEnemyTurnBegan
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &835308861403512810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253467307405554335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75c89ad803214a540b8eaaa874ca212a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intentChangeEvent: {fileID: 0}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8439539021168026341}
+        m_TargetAssemblyTypeName: IntentWidget, Assembly-CSharp
+        m_MethodName: OnIntentChange
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7381617385933057553
 GameObject:
   m_ObjectHideFlags: 0
