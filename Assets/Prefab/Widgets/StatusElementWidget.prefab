@@ -219,6 +219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5630234215874035981}
   - component: {fileID: 4298933418618733852}
+  - component: {fileID: 4937383459295706588}
   m_Layer: 0
   m_Name: StatusElementWidget
   m_TagString: Untagged
@@ -259,3 +260,18 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &4937383459295706588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7295866821074086044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08f467ec68d65c4da97302531b4eede, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 3108833052036416581}
+  text: {fileID: 6186052613140648281}
+  Type: 0

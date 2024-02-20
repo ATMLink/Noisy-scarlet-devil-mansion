@@ -293,8 +293,10 @@ MonoBehaviour:
   _enemyIntentWidget: {fileID: 8925898010794102450, guid: b889b4a68d4524d4292e1fed9760c578, type: 3}
   _playerShield: {fileID: 11400000, guid: 6f4b1bff482a88c44be832106d60e899, type: 2}
   _enemyShield: {fileID: 11400000, guid: 265ed6f7decf5124f9c16f2fcca80a11, type: 2}
+  _playerStatusWidget: {fileID: 6071048346792047865, guid: bf54f871c78872c43968ba9983f6260a, type: 3}
   _enemyHp: {fileID: 11400000, guid: 05c232fa577328b4d8e20d5a69bb727b, type: 2}
   _playerHp: {fileID: 11400000, guid: 7a481d1fd84d12b4788bd7d100baf0c6, type: 2}
+  _playerStatusVariable: {fileID: 11400000, guid: d8b8b8050b1cd5145a0ac6fb91ee1b84, type: 2}
   _enemyTemplate:
     m_AssetGUID: c5b0ca1418949ab4397a29f41471f9fb
     m_SubObjectName: 

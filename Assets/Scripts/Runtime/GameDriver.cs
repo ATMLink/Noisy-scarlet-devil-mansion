@@ -24,6 +24,7 @@ public class GameDriver : MonoBehaviour
     [SerializeField] private CardSelectionWithArrow cardSelectionWithArrow;
     [SerializeField] private TurnManager turnManager;
     [SerializeField] private EnemyAIManager enemyAIManager;
+    [SerializeField] private PlayerSpManager playerSpManager;
 
     private List<CardTemplate> _playerDeck = new List<CardTemplate>();
 
@@ -39,10 +40,12 @@ public class GameDriver : MonoBehaviour
     [SerializeField] private GameObject _enemyIntentWidget;
     [SerializeField] private IntVariable _playerShield;
     [SerializeField] private IntVariable _enemyShield;
+    [SerializeField] private GameObject _playerStatusWidget;
  
     [Header("Variavles")]
     [SerializeField] private IntVariable _enemyHp;
     [SerializeField] private IntVariable _playerHp;
+    [SerializeField] private StatusVariable _playerStatusVariable;
     
     [Header("Character Template")]
     [SerializeField] private AssetReference _enemyTemplate;
@@ -81,7 +84,12 @@ public class GameDriver : MonoBehaviour
 
             _playerHp.Value = 20;
             _playerShield.Value = 0;
+            playerSpManager.SetDefaultSp(3);
+            
             createHpWidget(_playerHpWidget, player, _playerHp, 20, _playerShield);
+            CreateStatusWidget(_playerStatusWidget, player);
+            
+            
             
             foreach (var item in template.startingDeck.Items)
             {
@@ -97,9 +105,11 @@ public class GameDriver : MonoBehaviour
             {
                 hp = _playerHp,
                 shield = _playerShield,
+                status = _playerStatusVariable,
                 sp = 100,
                 maxHp = 20
             };
+            obj.character.status.value.Clear();
             
             initialize();
             
@@ -186,5 +196,15 @@ public class GameDriver : MonoBehaviour
         widget.GetComponent<RectTransform>().anchorMin = canvasPosition;
         widget.GetComponent<RectTransform>().anchorMax = canvasPosition;
         
+    }
+
+    private void CreateStatusWidget(GameObject prefab, GameObject character)
+    {
+        var hpWidget = Instantiate(prefab, _canvas.transform, false);
+        var pivot = character.transform;
+        var canvasPosition = _mainCamera.WorldToViewportPoint(pivot.position + 
+                                                              new Vector3(0.0f, -0.8f, 0.0f));
+        hpWidget.GetComponent<RectTransform>().anchorMin = canvasPosition;
+        hpWidget.GetComponent<RectTransform>().anchorMax = canvasPosition;
     }
 }

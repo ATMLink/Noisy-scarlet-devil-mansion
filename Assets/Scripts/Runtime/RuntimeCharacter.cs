@@ -13,4 +13,5 @@ public class RuntimeCharacter
     public int maxSp;
     public int maxExtraHp;
     public const int maxLife = 3;
+    public StatusVariable status;
 }
