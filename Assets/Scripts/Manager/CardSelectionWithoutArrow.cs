@@ -69,7 +69,8 @@ public class CardSelectionWithoutArrow : CardSelectionBase
             var card = hitInfo.collider.GetComponent<CardObject>();
             var cardTemplate = card.template;
 
-            if (!CardUtilities.cardHasTargetableEffect(cardTemplate))
+            if (CardUtilities.CardCanBePlayed(cardTemplate, playerSp)&&
+                !CardUtilities.cardHasTargetableEffect(cardTemplate))
             {
                 selectedCard = hitInfo.collider.gameObject;
                 originalCardPosition = selectedCard.transform.position;

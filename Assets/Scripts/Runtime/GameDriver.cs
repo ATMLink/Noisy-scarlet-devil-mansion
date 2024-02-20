@@ -41,6 +41,7 @@ public class GameDriver : MonoBehaviour
     [SerializeField] private IntVariable _playerShield;
     [SerializeField] private IntVariable _enemyShield;
     [SerializeField] private GameObject _playerStatusWidget;
+    [SerializeField] private SpWidget _playerSpWidget;
  
     [Header("Variavles")]
     [SerializeField] private IntVariable _enemyHp;
@@ -89,7 +90,7 @@ public class GameDriver : MonoBehaviour
             createHpWidget(_playerHpWidget, player, _playerHp, 20, _playerShield);
             CreateStatusWidget(_playerStatusWidget, player);
             
-            
+            _playerSpWidget.Initialize(playerSpManager.playerSpVariable);
             
             foreach (var item in template.startingDeck.Items)
             {

@@ -285,6 +285,7 @@ MonoBehaviour:
   cardSelectionWithArrow: {fileID: 1408563840}
   turnManager: {fileID: 732795006}
   enemyAIManager: {fileID: 370066287}
+  playerSpManager: {fileID: 2083738066}
   playerPivot: {fileID: 1857802892}
   enemyPivot: {fileID: 350402313}
   _canvas: {fileID: 588680263}
@@ -294,6 +295,7 @@ MonoBehaviour:
   _playerShield: {fileID: 11400000, guid: 6f4b1bff482a88c44be832106d60e899, type: 2}
   _enemyShield: {fileID: 11400000, guid: 265ed6f7decf5124f9c16f2fcca80a11, type: 2}
   _playerStatusWidget: {fileID: 6071048346792047865, guid: bf54f871c78872c43968ba9983f6260a, type: 3}
+  _playerSpWidget: {fileID: 1177507320}
   _enemyHp: {fileID: 11400000, guid: 05c232fa577328b4d8e20d5a69bb727b, type: 2}
   _playerHp: {fileID: 11400000, guid: 7a481d1fd84d12b4788bd7d100baf0c6, type: 2}
   _playerStatusVariable: {fileID: 11400000, guid: d8b8b8050b1cd5145a0ac6fb91ee1b84, type: 2}
@@ -360,6 +362,7 @@ Transform:
   - {fileID: 732795005}
   - {fileID: 1898926310}
   - {fileID: 370066284}
+  - {fileID: 2083738064}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &338065842
@@ -1393,6 +1396,17 @@ Transform:
   - {fileID: 1857802892}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1177507320 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 133379479739144321, guid: ad1f0d085e217fc4b8cf3b8f86478f98, type: 3}
+  m_PrefabInstance: {fileID: 1408114784}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecb15e172d7bfbb4db70d54ed7bb52d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1371702546
 GameObject:
   m_ObjectHideFlags: 0
@@ -1570,6 +1584,7 @@ MonoBehaviour:
     m_Bits: 64
   cardDisplayManager: {fileID: 1425886022}
   effectResolutionManager: {fileID: 1499062859}
+  playerSp: {fileID: 11400000, guid: c26e56f1e7fb04643977fe2f306837e1, type: 2}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -2206,6 +2221,80 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 618392446018641426, guid: 016f76a12219e3d44af8dd62860aec30, type: 3}
   m_PrefabInstance: {fileID: 557861523}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2083738063
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2083738064}
+  - component: {fileID: 2083738066}
+  - component: {fileID: 2083738065}
+  m_Layer: 0
+  m_Name: PlayerSpManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2083738064
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083738063}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 333644584}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2083738065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083738063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a03bd7654a9dfa249bde7d05d05c6433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 654e662f7deec8b45b7c92ccbd667527, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2083738066}
+        m_TargetAssemblyTypeName: PlayerSpManager, Assembly-CSharp
+        m_MethodName: OnPlayerTurnBegan
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2083738066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083738063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43a0f22d2fd5b8b4e8a754ef3d8623ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSpVariable: {fileID: 11400000, guid: c26e56f1e7fb04643977fe2f306837e1, type: 2}
 --- !u!1 &2134293415
 GameObject:
   m_ObjectHideFlags: 0
@@ -2240,6 +2329,7 @@ MonoBehaviour:
     m_Bits: 64
   cardDisplayManager: {fileID: 1425886022}
   effectResolutionManager: {fileID: 1499062859}
+  playerSp: {fileID: 11400000, guid: c26e56f1e7fb04643977fe2f306837e1, type: 2}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256

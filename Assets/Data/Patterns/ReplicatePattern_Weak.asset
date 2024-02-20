@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ReplicatePattern_Weak
   m_EditorClassIdentifier: 
   effects:
-  - {fileID: 11400000, guid: 883009e19902fcf4bb62e76fb4a3fa89, type: 2}
+  - {fileID: 11400000, guid: 6277cdfe0342e4241a60321f7b3ced6f, type: 2}
   times: 1
   sprite: {fileID: 21300000, guid: 5d47612d3445f4de4a2c87201ec8bef2, type: 3}

@@ -4,6 +4,11 @@ using UnityEngine;
 
 public static class CardUtilities
 {
+    public static bool CardCanBePlayed(CardTemplate card, IntVariable playerSp)
+    {
+        return card.cost <= playerSp.Value;
+    }
+    
     public static bool cardHasTargetableEffect(CardTemplate card)
     {
         //for judge the card if need attack arrow by check the list of effects contain a targetable effect

@@ -15,6 +15,7 @@ public class CardSelectionBase : BaseManager
     public EffectResolutionManager effectResolutionManager;
 
     protected GameObject selectedCard;
+    public IntVariable playerSp;
 
     public LayerMask enemyLayer; 
     
@@ -28,6 +29,10 @@ public class CardSelectionBase : BaseManager
 
     protected virtual void playSelectedCard()
     {
+        var cardObject = selectedCard.GetComponent<CardObject>();
+        var cardTemplate = cardObject.template;
+        playerSp.setValue(playerSp.Value - cardTemplate.cost);
+        
         cardDisplayManager.reorganizeHandCards(selectedCard);//reorganize hand cards
         cardDisplayManager.moveCardToDiscardPile(selectedCard);
     }
