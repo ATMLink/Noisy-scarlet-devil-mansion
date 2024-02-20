@@ -83,10 +83,10 @@ public class GameDriver : MonoBehaviour
             player = Instantiate(template.prefab, playerPivot);
             Assert.IsNotNull(player);
 
-            _playerHp.Value = 20;
+            _playerHp.Value = 30;
             _playerShield.Value = 0;
             playerSpManager.SetDefaultSp(3);
-            createHpWidget(_playerHpWidget, player, _playerHp, 20, _playerShield);
+            createHpWidget(_playerHpWidget, player, _playerHp, 30, _playerShield);
             CreateStatusWidget(_playerStatusWidget, player);
             
             _playerSpWidget.Initialize(playerSpManager.playerSpVariable, playerSpManager.GetMaxSp());
@@ -106,8 +106,7 @@ public class GameDriver : MonoBehaviour
                 hp = _playerHp,
                 shield = _playerShield,
                 status = _playerStatusVariable,
-                maxSp = 3,
-                maxHp = 30
+                maxHp = 30// !!!remember write a batch of set get function to change or use these properties!!!
             };
             obj.character.status.value.Clear();
             
