@@ -86,11 +86,10 @@ public class GameDriver : MonoBehaviour
             _playerHp.Value = 20;
             _playerShield.Value = 0;
             playerSpManager.SetDefaultSp(3);
-            
             createHpWidget(_playerHpWidget, player, _playerHp, 20, _playerShield);
             CreateStatusWidget(_playerStatusWidget, player);
             
-            _playerSpWidget.Initialize(playerSpManager.playerSpVariable);
+            _playerSpWidget.Initialize(playerSpManager.playerSpVariable, playerSpManager.GetMaxSp());
             
             foreach (var item in template.startingDeck.Items)
             {
@@ -107,8 +106,8 @@ public class GameDriver : MonoBehaviour
                 hp = _playerHp,
                 shield = _playerShield,
                 status = _playerStatusVariable,
-                sp = 100,
-                maxHp = 20
+                maxSp = 3,
+                maxHp = 30
             };
             obj.character.status.value.Clear();
             
@@ -141,7 +140,6 @@ public class GameDriver : MonoBehaviour
             {
                 hp = _enemyHp,
                 shield = _enemyShield,
-                sp = 100,
                 maxHp = 20
             };
             

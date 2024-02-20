@@ -10,9 +10,9 @@ public class SpWidget : MonoBehaviour
 
     private int maxValue;
 
-    public void Initialize(IntVariable sp)
+    public void Initialize(IntVariable sp, int maxSp)
     {
-        maxValue = sp.Value;
+        maxValue = maxSp;
         SetValue(sp.Value);
     }
 
