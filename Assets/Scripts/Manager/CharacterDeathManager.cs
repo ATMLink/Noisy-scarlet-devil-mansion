@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CharacterDeathManager : BaseManager
 {
+    [SerializeField] private float endBattlePopupDelay = 1.0f;
+    [SerializeField] private EndBattlePopup endBattlePopup;
+    
     public void OnPlayerHpChanged(int hp)
     {
         if (hp <= 0)
@@ -28,7 +31,23 @@ public class CharacterDeathManager : BaseManager
 
     private IEnumerator ShowEndBattlePopup(bool characterDead)
     {
-        yield return new WaitForSeconds(0.2f);
-        Debug.Log("game over");
+        yield return new WaitForSeconds(endBattlePopupDelay);
+
+        if (endBattlePopup != null)
+        {
+            endBattlePopup.Show();
+
+            if (characterDead)
+            {
+                endBattlePopup.SetDefeatText();
+            }
+            else
+            {
+                endBattlePopup.SetVictoryText();
+            }
+
+            var turnManagement = FindFirstObjectByType<TurnManager>();
+            turnManagement.SetEndOfGame(true);
+        }
     }
 }
