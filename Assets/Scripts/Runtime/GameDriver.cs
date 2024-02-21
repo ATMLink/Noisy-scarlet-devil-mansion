@@ -25,6 +25,7 @@ public class GameDriver : MonoBehaviour
     [SerializeField] private TurnManager turnManager;
     [SerializeField] private EnemyAIManager enemyAIManager;
     [SerializeField] private PlayerSpManager playerSpManager;
+    [SerializeField] private CharacterDeathManager characterDeathManager;
 
     private List<CardTemplate> _playerDeck = new List<CardTemplate>();
 
@@ -168,6 +169,7 @@ public class GameDriver : MonoBehaviour
         cardSelectionWithArrow.Initialize(playerCharacter, enemyCharacters);
         enemyAIManager.Initialize(playerCharacter, enemyCharacters);
         effectResolutionManager.Initialize(playerCharacter, enemyCharacters);
+        characterDeathManager.Initialize(playerCharacter, enemyCharacters);
         
         turnManager.BeginGame();
     }
