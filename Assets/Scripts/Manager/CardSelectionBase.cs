@@ -13,6 +13,7 @@ public class CardSelectionBase : BaseManager
 
     public CardDisplayManager cardDisplayManager;
     public EffectResolutionManager effectResolutionManager;
+    public CardDeckManager deckManager;
 
     protected GameObject selectedCard;
     public IntVariable playerSp;
@@ -34,6 +35,8 @@ public class CardSelectionBase : BaseManager
         playerSp.setValue(playerSp.Value - cardTemplate.cost);
         
         cardDisplayManager.reorganizeHandCards(selectedCard);//reorganize hand cards
-        cardDisplayManager.moveCardToDiscardPile(selectedCard);
+        cardDisplayManager.MoveCardToDiscardPile(selectedCard);
+        
+        deckManager.MoveCardToDiscardPile(cardObject.runtimeCard);
     }
 }

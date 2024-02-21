@@ -296,6 +296,8 @@ MonoBehaviour:
   _enemyShield: {fileID: 11400000, guid: 265ed6f7decf5124f9c16f2fcca80a11, type: 2}
   _playerStatusWidget: {fileID: 6071048346792047865, guid: bf54f871c78872c43968ba9983f6260a, type: 3}
   _playerSpWidget: {fileID: 1177507320}
+  _deckWidget: {fileID: 1424283735}
+  _discardPileWidget: {fileID: 2102300831}
   _enemyHp: {fileID: 11400000, guid: 05c232fa577328b4d8e20d5a69bb727b, type: 2}
   _playerHp: {fileID: 11400000, guid: 7a481d1fd84d12b4788bd7d100baf0c6, type: 2}
   _playerStatusVariable: {fileID: 11400000, guid: d8b8b8050b1cd5145a0ac6fb91ee1b84, type: 2}
@@ -1267,6 +1269,8 @@ GameObject:
   m_Component:
   - component: {fileID: 774715211}
   - component: {fileID: 774715210}
+  - component: {fileID: 774715212}
+  - component: {fileID: 774715213}
   m_Layer: 0
   m_Name: CardDeckManager
   m_TagString: Untagged
@@ -1302,6 +1306,62 @@ Transform:
   m_Children: []
   m_Father: {fileID: 333644584}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &774715212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774715209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a03bd7654a9dfa249bde7d05d05c6433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 654e662f7deec8b45b7c92ccbd667527, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 774715210}
+        m_TargetAssemblyTypeName: CardDeckManager, Assembly-CSharp
+        m_MethodName: drawCardsFromDeck
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &774715213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774715209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a03bd7654a9dfa249bde7d05d05c6433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 5e26cedb3cc4c09458214eccd71683f7, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 774715209}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &996518865
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1584,6 +1644,7 @@ MonoBehaviour:
     m_Bits: 64
   cardDisplayManager: {fileID: 1425886022}
   effectResolutionManager: {fileID: 1499062859}
+  deckManager: {fileID: 774715210}
   playerSp: {fileID: 11400000, guid: c26e56f1e7fb04643977fe2f306837e1, type: 2}
   enemyLayer:
     serializedVersion: 2
@@ -1608,6 +1669,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6265548721992693204, guid: eb5fdb53ca1c5844da3687f2b6a64b82, type: 3}
   m_PrefabInstance: {fileID: 338065842}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1424283735 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 559374881437336024, guid: eb5fdb53ca1c5844da3687f2b6a64b82, type: 3}
+  m_PrefabInstance: {fileID: 338065842}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2caee8cabd579554c96d7ab59985a34d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1425886021
 GameObject:
   m_ObjectHideFlags: 0
@@ -2295,6 +2367,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpVariable: {fileID: 11400000, guid: c26e56f1e7fb04643977fe2f306837e1, type: 2}
+--- !u!114 &2102300831 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7471021292120533897, guid: 57bf0d66a828a964399af20d2d3d4e44, type: 3}
+  m_PrefabInstance: {fileID: 694131591}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f32ca281a612408479cfee81c889810b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2134293415
 GameObject:
   m_ObjectHideFlags: 0
@@ -2329,6 +2412,7 @@ MonoBehaviour:
     m_Bits: 64
   cardDisplayManager: {fileID: 1425886022}
   effectResolutionManager: {fileID: 1499062859}
+  deckManager: {fileID: 774715210}
   playerSp: {fileID: 11400000, guid: c26e56f1e7fb04643977fe2f306837e1, type: 2}
   enemyLayer:
     serializedVersion: 2

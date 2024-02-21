@@ -42,6 +42,8 @@ public class GameDriver : MonoBehaviour
     [SerializeField] private IntVariable _enemyShield;
     [SerializeField] private GameObject _playerStatusWidget;
     [SerializeField] private SpWidget _playerSpWidget;
+    [SerializeField] private DeckWidget _deckWidget;
+    [SerializeField] private DiscardPileWidget _discardPileWidget;
  
     [Header("Variavles")]
     [SerializeField] private IntVariable _enemyHp;
@@ -150,10 +152,10 @@ public class GameDriver : MonoBehaviour
 
     public void initialize()
     {
+        cardDeckManager.Initialize(_deckWidget, _discardPileWidget);
         cardDeckManager.loadDeck(_playerDeck);
         cardDeckManager.shuffleDeck();
-        cardDisplayManager.initialize(cardsManager);
-        cardDeckManager.drawCardsFromDeck(5);
+        cardDisplayManager.initialize(cardsManager, _deckWidget, _discardPileWidget);
 
         var playerCharacter = player.GetComponent<CharacterObject>();
         var enemyCharacters = new List<CharacterObject>(enemies.Count);

@@ -13,6 +13,8 @@ public class CardDisplayManager : MonoBehaviour
     private const int sortingOrdersNumber = 20;
 
     private CardsManager _cardsManager;
+    private DeckWidget _deckWidget;
+    private DiscardPileWidget _discardPileWidget;
     
     // private List<Vector3> _positions=new(positionNumber);
     // private List<Quaternion> _rotations= new(rotationNumber);
@@ -32,9 +34,12 @@ public class CardDisplayManager : MonoBehaviour
 
     public static float cardToDiscardPileAnimationTime = 0.3f;
 
-    public void initialize(CardsManager cardsManager)
+    public void initialize(CardsManager cardsManager, DeckWidget deckWidget, DiscardPileWidget discardPileWidget)
     {
         _cardsManager = cardsManager;
+
+        _deckWidget = deckWidget;
+        _discardPileWidget = discardPileWidget;
     }
 
     private void Awake()
@@ -48,7 +53,7 @@ public class CardDisplayManager : MonoBehaviour
     /// 生成手牌
     /// </summary>
     /// <param name="cardsInHand"></param>
-    public void createHandCards(List<RuntimeCard> cardsInHand)
+    public void createHandCards(List<RuntimeCard> cardsInHand, int deckSize)
     {
         var drawnCards = new List<GameObject>(cardsInHand.Count);
 
@@ -59,6 +64,8 @@ public class CardDisplayManager : MonoBehaviour
             _handCards.Add(cardGameObject);
             drawnCards.Add(cardGameObject);
         }
+        
+        _deckWidget.SetAmount(deckSize);
         
         putDeckCardsToHand(drawnCards);//执行卡牌动画
     }
@@ -107,6 +114,7 @@ public class CardDisplayManager : MonoBehaviour
                 seq.AppendInterval(interval);
                 seq.AppendCallback(() =>
                 {
+                    _deckWidget.RemoveCard();
                     var move = card.transform.DOMove(_positions[j], time).OnComplete(() =>
                     {
                         cardObject.saveTransform(_positions[j], _rotations[j]);
@@ -201,7 +209,8 @@ public class CardDisplayManager : MonoBehaviour
         return _isCardMoving;
     }
 
-    public void moveCardToDiscardPile(GameObject gameObj)
+    // execute when hand card used to move this used hand card to discard pile
+    public void MoveCardToDiscardPile(GameObject gameObj)
     {
         var sequence = DOTween.Sequence();
         sequence.AppendCallback(() =>
@@ -213,7 +222,25 @@ public class CardDisplayManager : MonoBehaviour
         });
         sequence.AppendCallback(() =>
         {
+            _discardPileWidget.AddCard();
             _handCards.Remove(gameObj);
         });
     }
+
+    // execute when player turn end move all of hand cards to discard pile
+    public void MoveCardsToDiscardPile()
+    {
+        foreach (var handCard in _handCards)
+        {
+            MoveCardToDiscardPile(handCard);
+        }
+        _handCards.Clear();
+    }
+   
+    public void UpdateDiscardPileSize(int size)
+    {
+        _discardPileWidget.SetAmount(size);
+    }
+    
+    
 }
