@@ -12,7 +12,12 @@ public class CardDisplayManager : MonoBehaviour
     private const int rotationNumber = 20;
     private const int sortingOrdersNumber = 20;
 
+    // [Header("UI")]
     // [SerializeField] private GameObject deckWidgetObject;
+    // [SerializeField] private Canvas canvas;
+    // private Camera _mainCamera;
+    [SerializeField] private GameObject deckWidgetPivot;
+    [SerializeField] private GameObject discardPileWidgetPivot;
     
     private CardsManager _cardsManager;
     private DeckWidget _deckWidget;
@@ -34,7 +39,8 @@ public class CardDisplayManager : MonoBehaviour
 
     private bool _isCardMoving;
 
-    public static float cardToDiscardPileAnimationTime = 0.3f;
+    public static float cardToDiscardPileShrinkAnimationTime = 0.5f;
+    public static float cardToDiscardPileMoveAnimationTime = 0.3f;
 
     public void initialize(CardsManager cardsManager, DeckWidget deckWidget, DiscardPileWidget discardPileWidget)
     {
@@ -51,6 +57,11 @@ public class CardDisplayManager : MonoBehaviour
         _sortingOrders = new(sortingOrdersNumber);
     }
 
+    // private void Start()
+    // {
+    //     _mainCamera = Camera.main;
+    // }
+
     /// <summary>
     /// 生成手牌
     /// </summary>
@@ -62,8 +73,16 @@ public class CardDisplayManager : MonoBehaviour
         foreach (var card in cardsInHand)
         {
             var cardGameObject = createCardGameObject(card);
-            cardGameObject.transform.position = new Vector3(0.0f, 0.0f, 0.0f);// to control where the cards come from
-            // cardGameObject.transform.position = deckWidgetObject.transform.position;
+            // // 获取 UI 元素在 Canvas 上的本地坐标
+            // RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, deckWidgetObject.transform.position, null, out Vector2 localPoint);
+            //
+            // // 将 UI 元素的本地坐标转换为世界坐标
+            // Vector3 worldPosition = canvas.transform.TransformPoint(localPoint);
+            //
+            // // 将世界坐标转换为游戏场景中的视图坐标
+            // Vector3 viewportPosition = _mainCamera.WorldToViewportPoint(worldPosition);
+            // cardGameObject.transform.position = new Vector3(0.0f, 0.0f, 0.0f);// to control where the cards come from
+            cardGameObject.transform.position = deckWidgetPivot.transform.position;
             _handCards.Add(cardGameObject);
             drawnCards.Add(cardGameObject);
         }
@@ -218,7 +237,8 @@ public class CardDisplayManager : MonoBehaviour
         var sequence = DOTween.Sequence();
         sequence.AppendCallback(() =>
         {
-            gameObj.transform.DOScale(Vector3.zero, cardToDiscardPileAnimationTime).OnComplete(() =>
+            gameObj.transform.DOMove(discardPileWidgetPivot.transform.position, cardToDiscardPileMoveAnimationTime).SetEase(Ease.InSine);
+            gameObj.transform.DOScale(Vector3.zero, cardToDiscardPileShrinkAnimationTime).OnComplete(() =>
             {
                 gameObj.GetComponent<CardsManager.ManagedPoolObject>().cardsManager.returnObject(gameObj);
             });
