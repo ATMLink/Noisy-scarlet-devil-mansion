@@ -37,6 +37,7 @@ public class GameDriver : MonoBehaviour
     [Header("UI")]
     [SerializeField] private Canvas _canvas;
     [SerializeField] private GameObject _enemyHpWidget;
+    [SerializeField] private GameObject _enemyExtraHpWidget;
     [SerializeField] private GameObject _playerHpWidget;
     [SerializeField] private GameObject _enemyIntentWidget;
     [SerializeField] private IntVariable _playerShield;
@@ -48,6 +49,7 @@ public class GameDriver : MonoBehaviour
  
     [Header("Variavles")]
     [SerializeField] private IntVariable _enemyHp;
+    [SerializeField] private IntVariable _enemyExtraHp;
     [SerializeField] private IntVariable _playerHp;
     [SerializeField] private StatusVariable _playerStatusVariable;
     
@@ -134,6 +136,7 @@ public class GameDriver : MonoBehaviour
             _enemyHp.Value = 20;
             _enemyShield.Value = 0;
             createHpWidget(_enemyHpWidget, enemy, _enemyHp,20, _enemyShield);
+            createHpWidget(_enemyExtraHpWidget, enemy, _enemyExtraHp, 40, _enemyShield, 1.0f);
             CreateIntentWidget(_enemyIntentWidget, enemy);
             
             var obj = enemy.GetComponent<CharacterObject>();
@@ -174,17 +177,27 @@ public class GameDriver : MonoBehaviour
         turnManager.BeginGame();
     }
 
-    private void createHpWidget(GameObject prefab, GameObject character, IntVariable hp, int maxHp, IntVariable shield)
+    private void createHpWidget(GameObject prefab, GameObject character, IntVariable hp, int maxHp, IntVariable shield, float offset = 0.0f)
     {
         var hpWidget = Instantiate(prefab, _canvas.transform, false);
         var pivot = character.transform;
         var localScale = character.GetComponentInChildren<Transform>().localScale;
         var canvasPosition = _mainCamera.WorldToViewportPoint(pivot.position + 
-                                                              new Vector3(0.0f, -2.0f, 0.0f));
+                                                              new Vector3(0.0f, -(2.0f+offset), 0.0f));
         hpWidget.GetComponent<RectTransform>().anchorMin = canvasPosition;
         hpWidget.GetComponent<RectTransform>().anchorMax = canvasPosition;
         hpWidget.GetComponent<HpWidget>().Initialize(hp, maxHp, shield);
     }
+
+    // private void createEnemyHpWidget(GameObject prefab, GameObject character, IntVariable value, int maximum, float offset = 0)
+    // {
+    //     var enemyHpWidget = Instantiate(prefab, _canvas.transform, false);
+    //     var pivot = character.transform;
+    //     var canvasPosition = _mainCamera.WorldToViewportPoint(pivot.position + new Vector3(0.0f, -(2.0f+offset), 0.0f));
+    //     enemyHpWidget.GetComponent<RectTransform>().anchorMin = canvasPosition;
+    //     enemyHpWidget.GetComponent<RectTransform>().anchorMax = canvasPosition;
+    //     enemyHpWidget.GetComponent<HpWidget>().Initialize(value, maximum,);
+    // }
 
     private void CreateIntentWidget(GameObject prefab, GameObject character)
     {

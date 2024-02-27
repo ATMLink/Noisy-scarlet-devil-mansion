@@ -12,6 +12,8 @@ public class CardDisplayManager : MonoBehaviour
     private const int rotationNumber = 20;
     private const int sortingOrdersNumber = 20;
 
+    // [SerializeField] private GameObject deckWidgetObject;
+    
     private CardsManager _cardsManager;
     private DeckWidget _deckWidget;
     private DiscardPileWidget _discardPileWidget;
@@ -60,7 +62,8 @@ public class CardDisplayManager : MonoBehaviour
         foreach (var card in cardsInHand)
         {
             var cardGameObject = createCardGameObject(card);
-            cardGameObject.transform.position = new Vector3(8.5f, 0.0f, 0.0f);
+            cardGameObject.transform.position = new Vector3(0.0f, 0.0f, 0.0f);// to control where the cards come from
+            // cardGameObject.transform.position = deckWidgetObject.transform.position;
             _handCards.Add(cardGameObject);
             drawnCards.Add(cardGameObject);
         }
