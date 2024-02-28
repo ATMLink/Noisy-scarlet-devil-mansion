@@ -4,7 +4,8 @@ using UnityEngine;
 
 [CreateAssetMenu(
     menuName = "CardGame/Effects/IntegerEffect/Gain Shield Effect",
-    fileName = "Gain Shield Effect")]
+    fileName = "Gain Shield Effect",
+    order = 6)]
 
 public class GainShieldEffect : IntegerEffect, IEntityEffect
 {

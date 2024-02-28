@@ -82,7 +82,7 @@ public class CardDisplayManager : MonoBehaviour
             // // 将世界坐标转换为游戏场景中的视图坐标
             // Vector3 viewportPosition = _mainCamera.WorldToViewportPoint(worldPosition);
             // cardGameObject.transform.position = new Vector3(0.0f, 0.0f, 0.0f);// to control where the cards come from
-            cardGameObject.transform.position = deckWidgetPivot.transform.position;
+            cardGameObject.transform.position = deckWidgetPivot.transform.position;// make cards come from deck.
             _handCards.Add(cardGameObject);
             drawnCards.Add(cardGameObject);
         }

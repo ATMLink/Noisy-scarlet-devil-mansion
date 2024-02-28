@@ -7,7 +7,7 @@ public class RuntimeCharacter
     public IntVariable hp;
     public IntVariable shield;
     public int life;
-    public int extraHp;
+    public IntVariable extraHp;
     public int maxHp;
     public int maxSp;
     public int maxExtraHp;
