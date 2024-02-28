@@ -47,7 +47,7 @@ public class GameDriver : MonoBehaviour
     [SerializeField] private DeckWidget _deckWidget;
     [SerializeField] private DiscardPileWidget _discardPileWidget;
  
-    [Header("Variavles")]
+    [Header("Variables")]
     [SerializeField] private IntVariable _enemyHp;
     [SerializeField] private IntVariable _enemyExtraHp;
     [SerializeField] private IntVariable _playerHp;
@@ -137,7 +137,7 @@ public class GameDriver : MonoBehaviour
             _enemyExtraHp.Value = 40;
             _enemyShield.Value = 0;
             createHpWidget(_enemyHpWidget, enemy, _enemyHp,20, _enemyShield);
-            createHpWidget(_enemyExtraHpWidget, enemy, _enemyExtraHp, 40, _enemyShield, 0.5f);
+            createHpWidget(_enemyExtraHpWidget, enemy, _enemyExtraHp, 40, _enemyShield, 0.2f);
             CreateIntentWidget(_enemyIntentWidget, enemy);
             
             var obj = enemy.GetComponent<CharacterObject>();

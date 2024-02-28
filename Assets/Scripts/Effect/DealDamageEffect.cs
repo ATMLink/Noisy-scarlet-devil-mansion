@@ -26,6 +26,13 @@ public class DealDamageEffect : IntegerEffect, IEntityEffect
             {
                 damage = (int)Mathf.Floor(damage * 0.75f);
             }
+            
+            var strength = source.status.GetValue("Strength");
+
+            if (strength > 0)
+            {
+                damage = (int)Mathf.Floor(damage * 1.25f);
+            }
         }
 
         if (damage >= shield)
