@@ -29,7 +29,11 @@ public class CardDeckManager : MonoBehaviour
         _deckWidget = deckWidget;
         _discardPileWidget = discardPileWidget;
     }
-    
+    /// <summary>
+    /// load cards add cards template into the deck
+    /// </summary>
+    /// <param name="playerDeck"></param>
+    /// <returns></returns>
     public int loadDeck(List<CardTemplate> playerDeck)
     {
         var deckSize = 0;

@@ -134,9 +134,10 @@ public class GameDriver : MonoBehaviour
             Assert.IsNotNull(enemy);
 
             _enemyHp.Value = 20;
+            _enemyExtraHp.Value = 40;
             _enemyShield.Value = 0;
             createHpWidget(_enemyHpWidget, enemy, _enemyHp,20, _enemyShield);
-            createHpWidget(_enemyExtraHpWidget, enemy, _enemyExtraHp, 40, _enemyShield, 1.0f);
+            createHpWidget(_enemyExtraHpWidget, enemy, _enemyExtraHp, 40, _enemyShield, 0.5f);
             CreateIntentWidget(_enemyIntentWidget, enemy);
             
             var obj = enemy.GetComponent<CharacterObject>();
@@ -145,7 +146,9 @@ public class GameDriver : MonoBehaviour
             {
                 hp = _enemyHp,
                 shield = _enemyShield,
-                maxHp = 20
+                extraHp = _enemyExtraHp,
+                maxHp = 20,
+                maxExtraHp = 40
             };
             
             enemies.Add(enemy);

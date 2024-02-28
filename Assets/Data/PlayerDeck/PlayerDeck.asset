@@ -15,8 +15,10 @@ MonoBehaviour:
   name: playerdeck
   Items:
   - card: {fileID: 11400000, guid: a656af11ca6a9c14b9444e494772eee3, type: 2}
-    amount: 4
+    amount: 3
   - card: {fileID: 11400000, guid: 0eb027f50145e6940beaa548bc9396fa, type: 2}
-    amount: 4
+    amount: 2
   - card: {fileID: 11400000, guid: acaa1ea045218b0499b6f087c4180cce, type: 2}
     amount: 2
+  - card: {fileID: 11400000, guid: ca55c1aa305b7094cb92fea595df5a89, type: 2}
+    amount: 3

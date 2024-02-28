@@ -1201,7 +1201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 603790777}
   - component: {fileID: 603790776}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: AttackArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1281,7 +1281,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 000000005d7683be29fd23a8
+  m_ApplyToSortingLayers: 000000005d7683be29fd23a8b9e113ce0b8131ea
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -1645,7 +1645,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1020824454}
   - component: {fileID: 1020824453}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1690,8 +1690,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1098680739
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 446f56c7fd1ed434e9bd00bc2a24b2df, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1712,7 +1712,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020824452}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3005,13 +3005,13 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 619394802}
+  - {fileID: 603790777}
   - {fileID: 1020824454}
   - {fileID: 557861523}
   - {fileID: 996518865}
   - {fileID: 569878859}
   - {fileID: 247164679}
   - {fileID: 333644584}
-  - {fileID: 603790777}
   - {fileID: 588680266}
   - {fileID: 1799733192}
   - {fileID: 1875753594}

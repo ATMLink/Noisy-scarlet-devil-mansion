@@ -44,5 +44,9 @@ public class DealExtraDamageEffect : IntegerEffect, IEntityEffect
             targetExtraHp.setValue(newExtraHp);
             targetShield.setValue(0);
         }
+        else
+        {
+            targetShield.setValue(shield - damage);
+        }
     }
 }
