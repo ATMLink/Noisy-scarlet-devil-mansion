@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: eventInt
       value: 
       objectReference: {fileID: 11400000, guid: 1ac59e73ab5ee1e4a8aaf6aaf8452854, type: 2}
+    - target: {fileID: 1792716145964038748, guid: ad73e723a8b7e479aa17468702bfd512, type: 3}
+      propertyPath: response.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: onHpChanged
+      objectReference: {fileID: 0}
     - target: {fileID: 2238900094587200568, guid: ad73e723a8b7e479aa17468702bfd512, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
