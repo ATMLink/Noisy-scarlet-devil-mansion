@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dda51013f27cf34b971043a35886a60, type: 3}
   m_Name: MoveEnemy
   m_EditorClassIdentifier: 
-  actions: []
+  actions:
+  - {fileID: 11400000, guid: a813422e49ceb824fabc51a552b99b80, type: 2}

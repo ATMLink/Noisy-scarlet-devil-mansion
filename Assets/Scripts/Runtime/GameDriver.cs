@@ -91,7 +91,7 @@ public class GameDriver : MonoBehaviour
             _playerHp.Value = 30;
             _playerShield.Value = 0;
             playerSpManager.SetDefaultSp(3);
-            createHpWidget(_playerHpWidget, player, _playerHp, 30, _playerShield);
+            createHpWidget(_playerHpWidget, player, _playerHp, _playerHp.Value, _playerShield);
             CreateStatusWidget(_playerStatusWidget, player);
             
             _playerSpWidget.Initialize(playerSpManager.playerSpVariable, playerSpManager.GetMaxSp());
@@ -111,7 +111,7 @@ public class GameDriver : MonoBehaviour
                 hp = _playerHp,
                 shield = _playerShield,
                 status = _playerStatusVariable,
-                maxHp = 30// !!!remember write a batch of set get function to change or use these properties!!!
+                maxHp = _playerHp.Value
             };
             obj.character.status.value.Clear();
             
@@ -136,8 +136,8 @@ public class GameDriver : MonoBehaviour
             _enemyHp.Value = 20;
             _enemyExtraHp.Value = 30;
             _enemyShield.Value = 0;
-            createHpWidget(_enemyHpWidget, enemy, _enemyHp,20, _enemyShield);
-            createHpWidget(_enemyExtraHpWidget, enemy, _enemyExtraHp, 30, _enemyShield, 0.3f);
+            createHpWidget(_enemyHpWidget, enemy, _enemyHp,_enemyHp.Value, _enemyShield);
+            createHpWidget(_enemyExtraHpWidget, enemy, _enemyExtraHp, _enemyExtraHp.Value, _enemyShield, 0.3f);
             CreateIntentWidget(_enemyIntentWidget, enemy);
             
             var obj = enemy.GetComponent<CharacterObject>();
@@ -147,8 +147,8 @@ public class GameDriver : MonoBehaviour
                 hp = _enemyHp,
                 shield = _enemyShield,
                 extraHp = _enemyExtraHp,
-                maxHp = 20,
-                maxExtraHp = 30
+                maxHp = _enemyHp.Value,
+                maxExtraHp = _enemyExtraHp.Value
             };
             
             enemies.Add(enemy);
