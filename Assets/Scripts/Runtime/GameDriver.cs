@@ -137,7 +137,7 @@ public class GameDriver : MonoBehaviour
             _enemyExtraHp.Value = 30;
             _enemyShield.Value = 0;
             createHpWidget(_enemyHpWidget, enemy, _enemyHp,20, _enemyShield);
-            createHpWidget(_enemyExtraHpWidget, enemy, _enemyExtraHp, 30, _enemyShield, 0.2f);
+            createHpWidget(_enemyExtraHpWidget, enemy, _enemyExtraHp, 30, _enemyShield, 0.3f);
             CreateIntentWidget(_enemyIntentWidget, enemy);
             
             var obj = enemy.GetComponent<CharacterObject>();

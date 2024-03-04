@@ -21,7 +21,6 @@ public class DealDamageEffect : IntegerEffect, IEntityEffect
         if (source.status != null)
         {
             var weak = source.status.GetValue("Weak");
-
             if (weak > 0)
             {
                 damage = (int)Mathf.Floor(damage * 0.75f);
