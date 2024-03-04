@@ -19,6 +19,9 @@ public class DealExtraDamageEffect : IntegerEffect, IEntityEffect
         var targetExtraHp = target.extraHp;
         var extraHp = targetExtraHp.Value;
 
+        var targetHp = target.hp;
+        var hp = targetHp.Value;
+        
         var targetShield = target.shield;
         var shield = targetShield.Value;
 
@@ -44,12 +47,20 @@ public class DealExtraDamageEffect : IntegerEffect, IEntityEffect
         if (damage >= shield)
         {
             var newExtraHp = extraHp - (damage - shield);
+            var newHp = hp - (damage - shield - extraHp);
             if (newExtraHp < 0)
             {
                 newExtraHp = 0;
+                if (newHp < 0)
+                {
+                    newHp = 0;
+                }
+                targetHp.setValue(newHp);
             }
             targetExtraHp.setValue(newExtraHp);
             targetShield.setValue(0);
+            
+            // if extra hp is empty then make damage to hp.
         }
         else
         {
