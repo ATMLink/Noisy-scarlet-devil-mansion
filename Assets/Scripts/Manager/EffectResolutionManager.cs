@@ -80,6 +80,22 @@ public class EffectResolutionManager : BaseManager
                 {
                     targetableEffect.Resolve(enemy.character, target.character);
                 }
+                
+                foreach (var groupManager in targetableEffect.sourceAction)
+                {
+                    foreach (var action in groupManager.group.actions)
+                    {
+                        action.execute(enemy.gameObject);
+                    }
+                }
+                
+                foreach (var groupManager in targetableEffect.targetAction)
+                {
+                    foreach (var action in groupManager.group.actions)
+                    {
+                        action.execute(player.gameObject);
+                    }
+                }
             }
         }
     }
