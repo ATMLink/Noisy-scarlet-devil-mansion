@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.PackageManager;
@@ -15,6 +16,10 @@ public class GameDriver : MonoBehaviour
 
     private GameObject player; 
     private List<GameObject> enemies = new List<GameObject>();
+
+    private int maxHp;
+
+    private float _timer = 0.0f;
     
     [Header("Managers")]
     [SerializeField] private CardsManager cardsManager;
@@ -26,6 +31,7 @@ public class GameDriver : MonoBehaviour
     [SerializeField] private EnemyAIManager enemyAIManager;
     [SerializeField] private PlayerSpManager playerSpManager;
     [SerializeField] private CharacterDeathManager characterDeathManager;
+    [SerializeField] private RealTimeRecoverManager realTimeRecoverManager;
 
     private List<CardTemplate> _playerDeck = new List<CardTemplate>();
 
@@ -71,6 +77,11 @@ public class GameDriver : MonoBehaviour
         _mainCamera = Camera.main;
     }
 
+    private void Update()
+    {
+        // realTimeRecoverManager.RecoverControl(true);
+    }
+
     private void setCursorTexture()
     {
         float x, y;
@@ -89,9 +100,10 @@ public class GameDriver : MonoBehaviour
             Assert.IsNotNull(player);
 
             _playerHp.Value = 30;
+            maxHp = _playerHp.Value;
             _playerShield.Value = 0;
             playerSpManager.SetDefaultSp(3);
-            createHpWidget(_playerHpWidget, player, _playerHp, _playerHp.Value, _playerShield);
+            createHpWidget(_playerHpWidget, player, _playerHp, maxHp, _playerShield);
             CreateStatusWidget(_playerStatusWidget, player);
             
             _playerSpWidget.Initialize(playerSpManager.playerSpVariable, playerSpManager.GetMaxSp());

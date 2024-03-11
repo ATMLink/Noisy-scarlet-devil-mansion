@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RealTimeRecoverManager : MonoBehaviour
+public class RealTimeRecoverManager : BaseManager
 {
-    public void RecoverControl(RuntimeCharacter enemy)
+    private RealTimeRecover realTimeRecover;
+    
+    private float timer = 0.0f;
+
+    public void RecoverControl(bool state)
     {
-        
+        if(state)
+            realTimeRecover.Recover(enemies, timer);
     }
 }

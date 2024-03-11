@@ -4,10 +4,25 @@ using UnityEngine;
 
 public class RealTimeRecover : MonoBehaviour
 {
-    private void Recover(IntVariable hp)
+    /// <summary>
+    /// to control if recover 
+    /// </summary>
+    /// <param name="enemies"></param>
+    public void Recover(List<CharacterObject> enemies, float timer)
     {
-        var time = Time.deltaTime;
-        if(time%1.5f==0)
-            hp.setValue(hp.Value+1);
+        foreach (var enemy in enemies)
+        {
+            var currentHp = enemy.character.hp.Value;
+            timer += Time.deltaTime;
+            if (timer % 1.5f != 0)
+                return;
+            currentHp++;
+            // can not exceed max hp
+            if (currentHp >= enemy.character.maxHp)
+            {
+                currentHp = enemy.character.maxHp;
+            }
+            enemy.character.hp.setValue(currentHp);
+        }
     }
 }
