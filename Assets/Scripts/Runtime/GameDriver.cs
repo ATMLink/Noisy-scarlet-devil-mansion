@@ -58,6 +58,11 @@ public class GameDriver : MonoBehaviour
     [SerializeField] private IntVariable _enemyExtraHp;
     [SerializeField] private IntVariable _playerHp;
     [SerializeField] private StatusVariable _playerStatusVariable;
+    [SerializeField] private IntVariable _enemyMaxHp;
+    [SerializeField] private IntVariable _enemyMaxExtraHp;
+    [SerializeField] private IntVariable _overDamage;
+    [SerializeField] private IntVariable _recoverHpCounter;
+    [SerializeField] private IntVariable _playerMaxHp;
     
     [Header("Character Template")]
     [SerializeField] private AssetReference _enemyTemplate;
@@ -75,6 +80,7 @@ public class GameDriver : MonoBehaviour
         createPlayer(_playerTemplate);
         createEnemy(_enemyTemplate);
         _mainCamera = Camera.main;
+        _recoverHpCounter.setValue(0);
     }
 
     private void Update()
@@ -99,11 +105,10 @@ public class GameDriver : MonoBehaviour
             player = Instantiate(template.prefab, playerPivot);
             Assert.IsNotNull(player);
 
-            _playerHp.Value = 30;
-            maxHp = _playerHp.Value;
+            _playerHp.setValue(_playerMaxHp.Value);
             _playerShield.Value = 0;
             playerSpManager.SetDefaultSp(3);
-            createHpWidget(_playerHpWidget, player, _playerHp, maxHp, _playerShield);
+            createHpWidget(_playerHpWidget, player, _playerHp, _playerMaxHp.Value, _playerShield);
             CreateStatusWidget(_playerStatusWidget, player);
             
             _playerSpWidget.Initialize(playerSpManager.playerSpVariable, playerSpManager.GetMaxSp());
@@ -123,7 +128,7 @@ public class GameDriver : MonoBehaviour
                 hp = _playerHp,
                 shield = _playerShield,
                 status = _playerStatusVariable,
-                maxHp = _playerHp.Value
+                maxHp = _playerMaxHp.Value
             };
             obj.character.status.value.Clear();
             
@@ -145,8 +150,8 @@ public class GameDriver : MonoBehaviour
             
             Assert.IsNotNull(enemy);
 
-            _enemyHp.Value = 20;
-            _enemyExtraHp.Value = 30;
+            _enemyHp.setValue(_enemyMaxHp.Value);
+            _enemyExtraHp.setValue(_enemyMaxExtraHp.Value);
             _enemyShield.Value = 0;
             createHpWidget(_enemyHpWidget, enemy, _enemyHp,_enemyHp.Value, _enemyShield);
             createHpWidget(_enemyExtraHpWidget, enemy, _enemyExtraHp, _enemyExtraHp.Value, _enemyShield, 0.3f);
@@ -159,8 +164,8 @@ public class GameDriver : MonoBehaviour
                 hp = _enemyHp,
                 shield = _enemyShield,
                 extraHp = _enemyExtraHp,
-                maxHp = _enemyHp.Value,
-                maxExtraHp = _enemyExtraHp.Value
+                maxHp = _enemyMaxHp.Value,
+                maxExtraHp = _enemyMaxExtraHp.Value
             };
             
             enemies.Add(enemy);

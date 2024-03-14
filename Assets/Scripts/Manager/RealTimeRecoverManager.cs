@@ -4,13 +4,45 @@ using UnityEngine;
 
 public class RealTimeRecoverManager : BaseManager
 {
-    private RealTimeRecover realTimeRecover;
+    [Header("IntVariables")]
+    [SerializeField] private List<IntVariable> enemyHPs;
+    [SerializeField] private List<IntVariable> enemyMaxHPs;
+    [SerializeField] private IntVariable recoverHPCounter;
     
-    private float timer = 0.0f;
+    public float healthPerSecond = 1.0f;
 
-    public void RecoverControl(bool state)
+    public Coroutine recoverHpCoroutine;
+    
+    public void OnPlayerTurnBegan()
     {
-        if(state)
-            realTimeRecover.Recover(enemies, timer);
+        // if the coroutine already works stop it 
+        if(recoverHpCoroutine != null)
+            StopCoroutine(recoverHpCoroutine);
+        recoverHpCoroutine = StartCoroutine(RecoverEnemyHP());
+    }
+
+    public void OnEnemyTurnBegan()
+    {
+        if (recoverHpCoroutine == null)
+            return;
+        StopCoroutine(recoverHpCoroutine);
+        recoverHpCoroutine = null;
+    }
+
+    private IEnumerator RecoverEnemyHP()
+    {
+        while (true)
+        {
+            for (int i = 0; i < enemyHPs.Count; i++)
+            {
+                if (enemyHPs[i].Value < enemyMaxHPs[i].Value && enemyHPs[i].Value > 0)
+                {
+                    enemyHPs[i].setValue(enemyHPs[i].Value + 1);
+                    recoverHPCounter.setValue(recoverHPCounter.Value + 1);
+                }
+            }
+
+            yield return new WaitForSeconds(1.0f);// wait for one second
+        }
     }
 }

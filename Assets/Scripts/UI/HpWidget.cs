@@ -55,10 +55,10 @@ public class HpWidget : MonoBehaviour
     public void onHpChanged(int value)
     {
         setHp(value);
-        if (value <= 0)
-        {
-            gameObject.SetActive(false);
-        }
+        // if (value <= 0)
+        // {
+        //     gameObject.SetActive(false);
+        // }
     }
 
     public void onShieldChanged(int value)

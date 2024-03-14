@@ -367,6 +367,11 @@ MonoBehaviour:
   _enemyExtraHp: {fileID: 11400000, guid: f185ccd1e8ef32942bf0f7a4c42a7a5f, type: 2}
   _playerHp: {fileID: 11400000, guid: 7a481d1fd84d12b4788bd7d100baf0c6, type: 2}
   _playerStatusVariable: {fileID: 11400000, guid: d8b8b8050b1cd5145a0ac6fb91ee1b84, type: 2}
+  _enemyMaxHp: {fileID: 11400000, guid: 5a0ff855ffa6a6c4eac70fb70a227225, type: 2}
+  _enemyMaxExtraHp: {fileID: 11400000, guid: 5c6f00d8997d1ad48bce841dd4730b42, type: 2}
+  _overDamage: {fileID: 11400000, guid: b32739bb767a8af4ea79f72a5a73d17c, type: 2}
+  _recoverHpCounter: {fileID: 11400000, guid: c36abf4f02586f144b3464ed510116a0, type: 2}
+  _playerMaxHp: {fileID: 11400000, guid: 2917179fbd348f1408fdec41d6ea11f3, type: 2}
   _enemyTemplate:
     m_AssetGUID: c5b0ca1418949ab4397a29f41471f9fb
     m_SubObjectName: 
@@ -1879,6 +1884,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1280925253}
   - component: {fileID: 1280925252}
+  - component: {fileID: 1280925255}
+  - component: {fileID: 1280925254}
   m_Layer: 0
   m_Name: RealTimeRecoverManager
   m_TagString: Untagged
@@ -1898,6 +1905,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15fe9e0376478074ab93b0cf612d2331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyHPs:
+  - {fileID: 11400000, guid: 05c232fa577328b4d8e20d5a69bb727b, type: 2}
+  enemyMaxHPs:
+  - {fileID: 11400000, guid: 5a0ff855ffa6a6c4eac70fb70a227225, type: 2}
+  recoverHPCounter: {fileID: 11400000, guid: c36abf4f02586f144b3464ed510116a0, type: 2}
+  healthPerSecond: 1
 --- !u!4 &1280925253
 Transform:
   m_ObjectHideFlags: 0
@@ -1913,6 +1926,62 @@ Transform:
   m_Children: []
   m_Father: {fileID: 333644584}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1280925254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280925251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a03bd7654a9dfa249bde7d05d05c6433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: d12de842d08d2804ca63e56d3d5a58a3, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1280925252}
+        m_TargetAssemblyTypeName: RealTimeRecoverManager, Assembly-CSharp
+        m_MethodName: OnEnemyTurnBegan
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1280925255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280925251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a03bd7654a9dfa249bde7d05d05c6433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 654e662f7deec8b45b7c92ccbd667527, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1280925252}
+        m_TargetAssemblyTypeName: RealTimeRecoverManager, Assembly-CSharp
+        m_MethodName: OnPlayerTurnBegan
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1371702546
 GameObject:
   m_ObjectHideFlags: 0
