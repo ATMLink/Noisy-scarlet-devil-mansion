@@ -9,7 +9,6 @@ using UnityEngine;
 
 public class DealExtraDamageEffect : IntegerEffect, IEntityEffect
 {
-    [SerializeField] private IntVariable overDamage;
     public override string getName()
     {
         return $"Deal {value.ToString()} extra damage";
@@ -54,7 +53,7 @@ public class DealExtraDamageEffect : IntegerEffect, IEntityEffect
                 newExtraHp = 0;
                 if (newHp < 0)
                 {
-                    overDamage.setValue(Mathf.Abs(newHp));
+                    overDamage.setValue(damage - shield - extraHp - hp);
                     newHp = 0;
                 }
                 targetHp.setValue(newHp);

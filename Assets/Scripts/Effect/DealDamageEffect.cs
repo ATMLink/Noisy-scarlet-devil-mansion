@@ -8,7 +8,6 @@ using UnityEngine;
     order = 4)]
 public class DealDamageEffect : IntegerEffect, IEntityEffect
 {
-    [SerializeField] private IntVariable overDamage;
     public override void Resolve(RuntimeCharacter source, RuntimeCharacter target)
     {
         var targetHp = target.hp;
@@ -40,7 +39,7 @@ public class DealDamageEffect : IntegerEffect, IEntityEffect
             var newHp = hp - (damage - shield);
             if (newHp < 0)
             {
-                overDamage.setValue(Mathf.Abs(newHp));
+                overDamage.setValue(damage - shield - hp);
                 newHp = 0;
             }
             targetHp.setValue(newHp);

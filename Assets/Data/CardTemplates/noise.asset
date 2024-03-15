@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 0
   name: get away
   cost: 1
-  illustration: {fileID: 21300000, guid: c34bd77facf784754b39c071c8d81187, type: 3}
+  illustration: {fileID: 21300000, guid: e480fbe3436c0bb4a8a717ba4a0d44c2, type: 3}
   type: {fileID: 11400000, guid: 3b5e13aed438e064ebc62171d6ac039f, type: 2}
   Effects:
   - {fileID: 11400000, guid: 5e9edffc40df3c64faa1c6d5c2933b83, type: 2}
