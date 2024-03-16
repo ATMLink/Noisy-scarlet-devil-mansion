@@ -19,3 +19,4 @@ MonoBehaviour:
   - group: {fileID: 11400000, guid: 378b9bab0835abe44b1b66f32adacbb1, type: 2}
   target: 1
   value: 20
+  overDamage: {fileID: 11400000, guid: b32739bb767a8af4ea79f72a5a73d17c, type: 2}
