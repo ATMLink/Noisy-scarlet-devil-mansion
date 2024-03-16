@@ -68,6 +68,7 @@ public class CardObject : MonoBehaviour
         nameText.text = template.name;
         typeText.text = template.type.typeName;
         var builder = new StringBuilder();
+        builder.Append(template.description);
         descriptionText.text = builder.ToString();
         illustration.sprite = template.illustration;
     }
