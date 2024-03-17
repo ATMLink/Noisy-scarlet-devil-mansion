@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 1
   name: silence
   cost: 1
-  illustration: {fileID: 21300000, guid: 8aa1cb5e30688e24a848546ba6f03aa5, type: 3}
+  illustration: {fileID: 21300000, guid: 9f5aaba11b2a8be47beb0abba39faba8, type: 3}
   type: {fileID: 11400000, guid: 5fe459210564f0c44867c817aa706a63, type: 2}
   description: I'm a thick-skinned people it can not works
   Effects:
