@@ -15,7 +15,8 @@ MonoBehaviour:
   id: 3
   name: extra get away
   cost: 1
-  illustration: {fileID: 21300000, guid: c34bd77facf784754b39c071c8d81187, type: 3}
+  illustration: {fileID: 21300000, guid: f3cde17ec5125da4d9527528182385eb, type: 3}
   type: {fileID: 11400000, guid: 3b5e13aed438e064ebc62171d6ac039f, type: 2}
+  description: huh? are you defiant me?
   Effects:
   - {fileID: 11400000, guid: d5323aa9b6c70b0469096bd509552866, type: 2}

@@ -9,6 +9,8 @@ using UnityEngine;
 
 public class DealExtraDamageEffect : IntegerEffect, IEntityEffect
 {
+    
+    public IntVariable overDamage;
     public override string getName()
     {
         return $"Deal {value.ToString()} extra damage";

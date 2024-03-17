@@ -5,5 +5,4 @@ using UnityEngine;
 public abstract class IntegerEffect : TargetableEffect
 {
     public int value;
-    public IntVariable overDamage;
 }

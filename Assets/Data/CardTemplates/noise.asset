@@ -17,6 +17,6 @@ MonoBehaviour:
   cost: 1
   illustration: {fileID: 21300000, guid: e480fbe3436c0bb4a8a717ba4a0d44c2, type: 3}
   type: {fileID: 11400000, guid: 3b5e13aed438e064ebc62171d6ac039f, type: 2}
-  description: "\u6EDA\\n\u4E0D\u8981\u5728\u4F60\\n\u5927\u5C0F\u59D0\u9762\u524D\\n\u5413\u4EBA"
+  description: fuck away, and don't scare in front of your lady
   Effects:
   - {fileID: 11400000, guid: 5e9edffc40df3c64faa1c6d5c2933b83, type: 2}

@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(
-    menuName = "CardGame/Effects/IntegerEffect/Deal Damage Effect",
-    fileName = "DealDamageEffect",
-    order = 4)]
-public class DealDamageEffect : IntegerEffect, IEntityEffect
+    menuName = "CardGame/Effects/IntegerEffect/Deal Enemy Damage Effect",
+    fileName = "DealEnemyDamage",
+    order = 10)]
+
+public class DealEnemyDamageEffect : IntegerEffect, IEntityEffect
 {
-    
-    public IntVariable overDamage;
+    public override string getName()
+    {
+        return "deal enemy damage";
+    }
+
     public override void Resolve(RuntimeCharacter source, RuntimeCharacter target)
     {
-        
         var targetHp = target.hp;
         var hp = targetHp.Value;
 
@@ -42,7 +45,6 @@ public class DealDamageEffect : IntegerEffect, IEntityEffect
             var newHp = hp - (damage - shield);
             if (newHp < 0)
             {
-                overDamage.setValue(damage - shield - hp);
                 newHp = 0;
             }
             targetHp.setValue(newHp);
@@ -53,18 +55,6 @@ public class DealDamageEffect : IntegerEffect, IEntityEffect
             targetShield.setValue(shield - damage);
         }
             
-        Debug.Log("deal damage"+damage);
-
-        // var newHp = hp - damage;
-        // if (newHp < 0)
-        // {
-        //     newHp = 0;
-        // }
-        
-        // targetHp.setValue(newHp);
-    }
-    public override string getName()
-    {
-        return $"Deal {value.ToString()} damage";
+        Debug.Log(getName()+damage);
     }
 }
