@@ -38,7 +38,7 @@ public class GameDriver : MonoBehaviour
     [Header("Character pivots")] [SerializeField]
     public Transform playerPivot;
     [SerializeField]
-    public Transform enemyPivot;
+    public List<Transform> enemyPivots;
 
     [Header("UI")]
     [SerializeField] private Canvas _canvas;
@@ -65,7 +65,7 @@ public class GameDriver : MonoBehaviour
     [SerializeField] private IntVariable _playerMaxHp;
     
     [Header("Character Template")]
-    [SerializeField] private AssetReference _enemyTemplate;
+    [SerializeField] private List<AssetReference> _enemyTemplates;
     [SerializeField] private AssetReference _playerTemplate;
 
     
@@ -78,7 +78,11 @@ public class GameDriver : MonoBehaviour
         setCursorTexture();
         
         createPlayer(_playerTemplate);
-        createEnemy(_enemyTemplate);
+        for (int i = 0; i < _enemyTemplates.Count; i++)
+        {
+            createEnemy(_enemyTemplates[i], enemyPivots[i]);
+        }
+        
         _mainCamera = Camera.main;
         _recoverHpCounter.setValue(0);
     }
@@ -139,7 +143,7 @@ public class GameDriver : MonoBehaviour
         
     }
 
-    private void createEnemy(AssetReference templateReference)
+    private void createEnemy(AssetReference templateReference, Transform enemyPivot)
     {
         var handle = Addressables.LoadAssetAsync<EnemyTemplate>(templateReference);
         handle.Completed += operationResult =>
