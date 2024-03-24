@@ -54,15 +54,15 @@ public class GameDriver : MonoBehaviour
     [SerializeField] private DiscardPileWidget _discardPileWidget;
  
     [Header("Variables")]
-    [SerializeField] private IntVariable _enemyHp;
-    [SerializeField] private IntVariable _enemyExtraHp;
+    [SerializeField] private List<IntVariable> _enemyHPs;
+    [SerializeField] private List<IntVariable> _enemyExtraHPs;
+    [SerializeField] private List<IntVariable> _enemyMaxHPs;
+    [SerializeField] private List<IntVariable> _enemyMaxExtraHPs;
     [SerializeField] private IntVariable _playerHp;
     [SerializeField] private StatusVariable _playerStatusVariable;
-    [SerializeField] private IntVariable _enemyMaxHp;
-    [SerializeField] private IntVariable _enemyMaxExtraHp;
+    [SerializeField] private IntVariable _playerMaxHp;
     [SerializeField] private IntVariable _overDamage;
     [SerializeField] private IntVariable _recoverHpCounter;
-    [SerializeField] private IntVariable _playerMaxHp;
     
     [Header("Character Template")]
     [SerializeField] private List<AssetReference> _enemyTemplates;
@@ -80,7 +80,8 @@ public class GameDriver : MonoBehaviour
         createPlayer(_playerTemplate);
         for (int i = 0; i < _enemyTemplates.Count; i++)
         {
-            createEnemy(_enemyTemplates[i], enemyPivots[i]);
+            createEnemy(_enemyTemplates[i], enemyPivots[i],
+                _enemyHPs[i], _enemyMaxHPs[i], _enemyExtraHPs[i], _enemyMaxExtraHPs[i]);
         }
         
         _mainCamera = Camera.main;
@@ -143,7 +144,8 @@ public class GameDriver : MonoBehaviour
         
     }
 
-    private void createEnemy(AssetReference templateReference, Transform enemyPivot)
+    private void createEnemy(AssetReference templateReference, Transform enemyPivot,
+        IntVariable enemyHP, IntVariable enemyMaxHP, IntVariable enemyExtraHP, IntVariable enemyMaxExtraHP)
     {
         var handle = Addressables.LoadAssetAsync<EnemyTemplate>(templateReference);
         handle.Completed += operationResult =>
@@ -154,22 +156,22 @@ public class GameDriver : MonoBehaviour
             
             Assert.IsNotNull(enemy);
 
-            _enemyHp.setValue(_enemyMaxHp.Value);
-            _enemyExtraHp.setValue(_enemyMaxExtraHp.Value);
+            enemyHP.setValue(enemyMaxHP.Value);
+            enemyExtraHP.setValue(enemyMaxExtraHP.Value);
             _enemyShield.Value = 0;
-            createHpWidget(_enemyHpWidget, enemy, _enemyHp,_enemyHp.Value, _enemyShield);
-            createHpWidget(_enemyExtraHpWidget, enemy, _enemyExtraHp, _enemyExtraHp.Value, _enemyShield, 0.3f);
+            createHpWidget(_enemyHpWidget, enemy, enemyHP,enemyHP.Value, _enemyShield);
+            createHpWidget(_enemyExtraHpWidget, enemy, enemyExtraHP, enemyExtraHP.Value, _enemyShield, 0.3f);
             CreateIntentWidget(_enemyIntentWidget, enemy);
             
             var obj = enemy.GetComponent<CharacterObject>();
             obj.characterTemplate = template;
             obj.character = new RuntimeCharacter()
             {
-                hp = _enemyHp,
+                hp = enemyHP,
                 shield = _enemyShield,
-                extraHp = _enemyExtraHp,
-                maxHp = _enemyMaxHp.Value,
-                maxExtraHp = _enemyMaxExtraHp.Value
+                extraHp = enemyExtraHP,
+                maxHp = enemyMaxHP.Value,
+                maxExtraHp = enemyMaxExtraHP.Value
             };
             
             enemies.Add(enemy);

@@ -398,21 +398,29 @@ MonoBehaviour:
   _playerSpWidget: {fileID: 1177507320}
   _deckWidget: {fileID: 1424283735}
   _discardPileWidget: {fileID: 2102300831}
-  _enemyHp: {fileID: 11400000, guid: 05c232fa577328b4d8e20d5a69bb727b, type: 2}
-  _enemyExtraHp: {fileID: 11400000, guid: f185ccd1e8ef32942bf0f7a4c42a7a5f, type: 2}
+  _enemyHPs:
+  - {fileID: 11400000, guid: 05c232fa577328b4d8e20d5a69bb727b, type: 2}
+  - {fileID: 11400000, guid: 89a927b44ba483b49a056d6308536410, type: 2}
+  _enemyExtraHPs:
+  - {fileID: 11400000, guid: f185ccd1e8ef32942bf0f7a4c42a7a5f, type: 2}
+  - {fileID: 11400000, guid: 7911f5208ec1067479a26761204766ef, type: 2}
+  _enemyMaxHPs:
+  - {fileID: 11400000, guid: 5a0ff855ffa6a6c4eac70fb70a227225, type: 2}
+  - {fileID: 11400000, guid: d262d821d3666ad4dac3fa0073aeea37, type: 2}
+  _enemyMaxExtraHPs:
+  - {fileID: 11400000, guid: 5c6f00d8997d1ad48bce841dd4730b42, type: 2}
+  - {fileID: 11400000, guid: 93619d083575ad4448e5375d898f8ab4, type: 2}
   _playerHp: {fileID: 11400000, guid: 7a481d1fd84d12b4788bd7d100baf0c6, type: 2}
   _playerStatusVariable: {fileID: 11400000, guid: d8b8b8050b1cd5145a0ac6fb91ee1b84, type: 2}
-  _enemyMaxHp: {fileID: 11400000, guid: 5a0ff855ffa6a6c4eac70fb70a227225, type: 2}
-  _enemyMaxExtraHp: {fileID: 11400000, guid: 5c6f00d8997d1ad48bce841dd4730b42, type: 2}
+  _playerMaxHp: {fileID: 11400000, guid: 2917179fbd348f1408fdec41d6ea11f3, type: 2}
   _overDamage: {fileID: 11400000, guid: b32739bb767a8af4ea79f72a5a73d17c, type: 2}
   _recoverHpCounter: {fileID: 11400000, guid: c36abf4f02586f144b3464ed510116a0, type: 2}
-  _playerMaxHp: {fileID: 11400000, guid: 2917179fbd348f1408fdec41d6ea11f3, type: 2}
   _enemyTemplates:
   - m_AssetGUID: c5b0ca1418949ab4397a29f41471f9fb
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  - m_AssetGUID: 
+  - m_AssetGUID: f685d7462b8aead42973ff9d5e557251
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
