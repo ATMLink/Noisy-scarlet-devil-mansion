@@ -35,13 +35,14 @@ public class RealTimeRecoverManager : BaseManager
         {
             for (int i = 0; i < enemyHPs.Count; i++)
             {
-                if (enemyHPs[i].Value < enemyMaxHPs[i].Value && enemyHPs[i].Value > 0)
+                if (enemyHPs[i].Value == enemyMaxHPs[i].Value || enemyHPs[i].Value <= 0)
                 {
-                    enemyHPs[i].setValue(enemyHPs[i].Value + 1);
-                    recoverHPCounter.setValue(recoverHPCounter.Value + 1);
+                    continue;
                 }
+                enemyHPs[i].setValue(enemyHPs[i].Value + 1);
+                recoverHPCounter.setValue(recoverHPCounter.Value + 1);
             }
-
+    
             yield return new WaitForSeconds(1.0f);// wait for one second
         }
     }

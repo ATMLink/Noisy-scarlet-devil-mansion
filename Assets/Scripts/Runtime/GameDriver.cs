@@ -41,13 +41,13 @@ public class GameDriver : MonoBehaviour
     public List<Transform> enemyPivots;
 
     [Header("UI")]
-    [SerializeField] private Canvas _canvas;
-    [SerializeField] private GameObject _enemyHpWidget;
-    [SerializeField] private GameObject _enemyExtraHpWidget;
-    [SerializeField] private GameObject _playerHpWidget;
+    [SerializeField] private List<GameObject> _enemyHpWidget;
+    [SerializeField] private List<GameObject> _enemyExtraHpWidget;
     [SerializeField] private GameObject _enemyIntentWidget;
-    [SerializeField] private IntVariable _playerShield;
     [SerializeField] private IntVariable _enemyShield;
+    [SerializeField] private Canvas _canvas;
+    [SerializeField] private GameObject _playerHpWidget;
+    [SerializeField] private IntVariable _playerShield;
     [SerializeField] private GameObject _playerStatusWidget;
     [SerializeField] private SpWidget _playerSpWidget;
     [SerializeField] private DeckWidget _deckWidget;
@@ -80,7 +80,7 @@ public class GameDriver : MonoBehaviour
         createPlayer(_playerTemplate);
         for (int i = 0; i < _enemyTemplates.Count; i++)
         {
-            createEnemy(_enemyTemplates[i], enemyPivots[i],
+            createEnemy(_enemyTemplates[i], _enemyHpWidget[i],_enemyExtraHpWidget[i], enemyPivots[i],
                 _enemyHPs[i], _enemyMaxHPs[i], _enemyExtraHPs[i], _enemyMaxExtraHPs[i]);
         }
         
@@ -144,8 +144,9 @@ public class GameDriver : MonoBehaviour
         
     }
 
-    private void createEnemy(AssetReference templateReference, Transform enemyPivot,
-        IntVariable enemyHP, IntVariable enemyMaxHP, IntVariable enemyExtraHP, IntVariable enemyMaxExtraHP)
+    private void createEnemy(AssetReference templateReference, GameObject enemyHPWidget, GameObject enemyExtraHPWidget, 
+        Transform enemyPivot, IntVariable enemyHP, IntVariable enemyMaxHP, IntVariable enemyExtraHP,
+        IntVariable enemyMaxExtraHP)
     {
         var handle = Addressables.LoadAssetAsync<EnemyTemplate>(templateReference);
         handle.Completed += operationResult =>
@@ -159,8 +160,8 @@ public class GameDriver : MonoBehaviour
             enemyHP.setValue(enemyMaxHP.Value);
             enemyExtraHP.setValue(enemyMaxExtraHP.Value);
             _enemyShield.Value = 0;
-            createHpWidget(_enemyHpWidget, enemy, enemyHP,enemyHP.Value, _enemyShield);
-            createHpWidget(_enemyExtraHpWidget, enemy, enemyExtraHP, enemyExtraHP.Value, _enemyShield, 0.3f);
+            createHpWidget(enemyHPWidget, enemy, enemyHP,enemyHP.Value, _enemyShield);
+            createHpWidget(enemyExtraHPWidget, enemy, enemyExtraHP, enemyExtraHP.Value, _enemyShield, 0.3f);
             CreateIntentWidget(_enemyIntentWidget, enemy);
             
             var obj = enemy.GetComponent<CharacterObject>();

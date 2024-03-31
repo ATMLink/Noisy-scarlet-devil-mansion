@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8d398ec86a365b44af27c26ff52c437, type: 3}
-  m_Name: HongMeirinHP
+  m_Script: {fileID: 11500000, guid: a6f7d8607e7bb3d4e89ee14b44c59196, type: 3}
+  m_Name: MeirinHpChanged
   m_EditorClassIdentifier: 
-  Value: 10
-  valueChangedEvent: {fileID: 11400000, guid: 8a2bd8f3622025344be73d2e27c5a3cc, type: 2}

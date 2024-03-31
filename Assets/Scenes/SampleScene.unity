@@ -387,13 +387,17 @@ MonoBehaviour:
   - {fileID: 350402313}
   - {fileID: 50262242}
   - {fileID: 2140172781}
-  _canvas: {fileID: 588680263}
-  _enemyHpWidget: {fileID: 5413707640302368337, guid: ebcaa688c658ed4488bdfc8852f9c07c, type: 3}
-  _enemyExtraHpWidget: {fileID: 526203124491878315, guid: c9578b911c12ed24e99ae88fd3436d4e, type: 3}
-  _playerHpWidget: {fileID: 8064718915905596853, guid: 692ac44bc6489f145a596672115d6ec7, type: 3}
+  _enemyHpWidget:
+  - {fileID: 5413707640302368337, guid: ebcaa688c658ed4488bdfc8852f9c07c, type: 3}
+  - {fileID: 7290689577285978694, guid: f4cf4479392c9e24e8c210d485938288, type: 3}
+  _enemyExtraHpWidget:
+  - {fileID: 526203124491878315, guid: c9578b911c12ed24e99ae88fd3436d4e, type: 3}
+  - {fileID: 3344312737865350397, guid: 07624415d427251469a7de0bdb061336, type: 3}
   _enemyIntentWidget: {fileID: 8925898010794102450, guid: b889b4a68d4524d4292e1fed9760c578, type: 3}
-  _playerShield: {fileID: 11400000, guid: 6f4b1bff482a88c44be832106d60e899, type: 2}
   _enemyShield: {fileID: 11400000, guid: 265ed6f7decf5124f9c16f2fcca80a11, type: 2}
+  _canvas: {fileID: 588680263}
+  _playerHpWidget: {fileID: 8064718915905596853, guid: 692ac44bc6489f145a596672115d6ec7, type: 3}
+  _playerShield: {fileID: 11400000, guid: 6f4b1bff482a88c44be832106d60e899, type: 2}
   _playerStatusWidget: {fileID: 6071048346792047865, guid: bf54f871c78872c43968ba9983f6260a, type: 3}
   _playerSpWidget: {fileID: 1177507320}
   _deckWidget: {fileID: 1424283735}
@@ -1987,8 +1991,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHPs:
   - {fileID: 11400000, guid: 05c232fa577328b4d8e20d5a69bb727b, type: 2}
+  - {fileID: 11400000, guid: 89a927b44ba483b49a056d6308536410, type: 2}
   enemyMaxHPs:
   - {fileID: 11400000, guid: 5a0ff855ffa6a6c4eac70fb70a227225, type: 2}
+  - {fileID: 11400000, guid: d262d821d3666ad4dac3fa0073aeea37, type: 2}
   recoverHPCounter: {fileID: 11400000, guid: c36abf4f02586f144b3464ed510116a0, type: 2}
   healthPerSecond: 1
 --- !u!4 &1280925253
