@@ -17,11 +17,11 @@ public class CharacterDeathManager : BaseManager
 
     public void OnEnemyHpChanged(int hp)
     {
-        if (hp <= 0)
-        {
-            enemies[0].OnCharacterDead();
-            EndGame(false);
-        }
+            if (hp <= 0)
+            {
+                enemies[0].OnCharacterDead();
+                EndGame(false);
+            }
     }
 
     public void EndGame(bool characterDead)

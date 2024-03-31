@@ -1820,6 +1820,7 @@ GameObject:
   - component: {fileID: 1092579471}
   - component: {fileID: 1092579470}
   - component: {fileID: 1092579469}
+  - component: {fileID: 1092579472}
   m_Layer: 0
   m_Name: CharacterDeathManager
   m_TagString: Untagged
@@ -1912,6 +1913,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endBattlePopupDelay: 1
   endBattlePopup: {fileID: 522974250}
+--- !u!114 &1092579472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092579467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d66bdf7e6b390864daa3e840eedaa41a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventInt: {fileID: 11400000, guid: 8a2bd8f3622025344be73d2e27c5a3cc, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1092579471}
+        m_TargetAssemblyTypeName: CharacterDeathManager, Assembly-CSharp
+        m_MethodName: OnEnemyHpChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1107152676
 GameObject:
   m_ObjectHideFlags: 0
