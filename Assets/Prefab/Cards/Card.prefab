@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.06, y: -0.36}
+  m_AnchoredPosition: {x: -0.32, y: 1.05}
   m_SizeDelta: {x: 0.9, y: 0.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &6698892234105354062
@@ -205,7 +205,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.8, y: 2.48}
+  m_AnchoredPosition: {x: -1.93, y: 3.85}
   m_SizeDelta: {x: 0.48, y: 0.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &5673461556403925581
@@ -370,8 +370,8 @@ Transform:
   m_GameObject: {fileID: 1380972084990119194}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.42, y: 2.47, z: 0}
-  m_LocalScale: {x: 1.03089, y: 1, z: 1}
+  m_LocalPosition: {x: -0.4418, y: 2.638, z: 0}
+  m_LocalScale: {x: 1.000459, y: 1.0187894, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7439331202177523747}
@@ -418,7 +418,7 @@ SpriteMask:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9f3d8e6a4cc679f4a885272b2940609b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b109350cb2c0b834887a9c6552e6288c, type: 3}
   m_MaskAlphaCutoff: 0.2
   m_FrontSortingLayerID: 0
   m_BackSortingLayerID: 0
@@ -546,7 +546,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.007, y: 2.234}
+  m_AnchoredPosition: {x: -0.33, y: 1.34}
   m_SizeDelta: {x: 1.5, y: 0.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &2379336776383270086
@@ -884,7 +884,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.103, y: -0.85}
+  m_AnchoredPosition: {x: -1.45, y: 0.49}
   m_SizeDelta: {x: 0.48, y: 0.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &500060052943350824
@@ -1014,7 +1014,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.32414877, y: -0.05893606, z: -2.6423032, w: -1.5618073}
+  m_margin: {x: -0.021810174, y: -0.05893606, z: -1.8108709, w: -1.8641468}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
