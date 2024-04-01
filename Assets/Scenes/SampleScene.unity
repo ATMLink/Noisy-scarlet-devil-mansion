@@ -1913,6 +1913,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endBattlePopupDelay: 1
   endBattlePopup: {fileID: 522974250}
+  enemyHPs:
+  - {fileID: 11400000, guid: 05c232fa577328b4d8e20d5a69bb727b, type: 2}
+  - {fileID: 11400000, guid: 89a927b44ba483b49a056d6308536410, type: 2}
 --- !u!114 &1092579472
 MonoBehaviour:
   m_ObjectHideFlags: 0

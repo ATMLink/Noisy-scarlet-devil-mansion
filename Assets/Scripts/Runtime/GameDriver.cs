@@ -200,6 +200,7 @@ public class GameDriver : MonoBehaviour
         enemyAIManager.Initialize(playerCharacter, enemyCharacters);
         effectResolutionManager.Initialize(playerCharacter, enemyCharacters);
         characterDeathManager.Initialize(playerCharacter, enemyCharacters);
+        // enemyCharacters with every enemy
         
         turnManager.BeginGame();
     }

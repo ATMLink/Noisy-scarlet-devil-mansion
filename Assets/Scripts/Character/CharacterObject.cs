@@ -9,10 +9,12 @@ public class CharacterObject : MonoBehaviour
 
     public void OnCharacterDead()
     {
-        if (character.hp.Value <= 0)
+        Debug.Log("enemy dead");
+        if (character.hp.Value <= 0)// accurate hp
         {
+            Debug.Log("enemy dead accurately executed");
             GetComponent<BoxCollider2D>().enabled = false;
-            var numberOfChildObjects = transform.childCount;
+            var numberOfChildObjects = transform.childCount;// not executed
 
             for (var i = numberOfChildObjects - 1; i >= 0; i--)
             {
