@@ -1934,7 +1934,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1092579471}
         m_TargetAssemblyTypeName: CharacterDeathManager, Assembly-CSharp
-        m_MethodName: OnEnemyHpChanged
+        m_MethodName: OnEnemyTwoHPChanged
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

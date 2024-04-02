@@ -188,11 +188,15 @@ public class GameDriver : MonoBehaviour
         cardDeckManager.shuffleDeck();
         cardDisplayManager.initialize(cardsManager, _deckWidget, _discardPileWidget);
 
+        Assert.IsNotNull(enemies);
+        Assert.IsNotNull(player);
+        
         var playerCharacter = player.GetComponent<CharacterObject>();
         var enemyCharacters = new List<CharacterObject>(enemies.Count);
 
         foreach (var enemy in enemies)
         {
+            Debug.Log("enemy has been created");
             enemyCharacters.Add(enemy.GetComponent<CharacterObject>());
         }
 
