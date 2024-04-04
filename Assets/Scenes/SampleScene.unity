@@ -1916,6 +1916,11 @@ MonoBehaviour:
   enemyHPs:
   - {fileID: 11400000, guid: 05c232fa577328b4d8e20d5a69bb727b, type: 2}
   - {fileID: 11400000, guid: 89a927b44ba483b49a056d6308536410, type: 2}
+  HPWidgets:
+  - {fileID: 5413707640302368337, guid: ebcaa688c658ed4488bdfc8852f9c07c, type: 3}
+  - {fileID: 526203124491878315, guid: c9578b911c12ed24e99ae88fd3436d4e, type: 3}
+  - {fileID: 7290689577285978694, guid: f4cf4479392c9e24e8c210d485938288, type: 3}
+  - {fileID: 3344312737865350397, guid: 07624415d427251469a7de0bdb061336, type: 3}
 --- !u!114 &1092579472
 MonoBehaviour:
   m_ObjectHideFlags: 0

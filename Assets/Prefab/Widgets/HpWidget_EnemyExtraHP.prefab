@@ -100,6 +100,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HpWidget_EnemyExtraHP
       objectReference: {fileID: 0}
+    - target: {fileID: 2238900094587200569, guid: ad73e723a8b7e479aa17468702bfd512, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7066501255817790679, guid: ad73e723a8b7e479aa17468702bfd512, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -119,5 +123,52 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2238900094587200569, guid: ad73e723a8b7e479aa17468702bfd512, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4507271653630737906}
   m_SourcePrefab: {fileID: 100100000, guid: ad73e723a8b7e479aa17468702bfd512, type: 3}
+--- !u!1 &526203124491878315 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2238900094587200569, guid: ad73e723a8b7e479aa17468702bfd512, type: 3}
+  m_PrefabInstance: {fileID: 1756220451828046738}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-4507271653630737906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526203124491878315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d66bdf7e6b390864daa3e840eedaa41a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventInt: {fileID: 11400000, guid: 45e342b595fa04c46890c28b2fe454d1, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2727196761376159837}
+        m_TargetAssemblyTypeName: HpWidget, Assembly-CSharp
+        m_MethodName: OnHPChangedToDisableWidget
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2727196761376159837 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4433699495801742287, guid: ad73e723a8b7e479aa17468702bfd512, type: 3}
+  m_PrefabInstance: {fileID: 1756220451828046738}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526203124491878315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 577b6e788ba145f429f83709927445c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

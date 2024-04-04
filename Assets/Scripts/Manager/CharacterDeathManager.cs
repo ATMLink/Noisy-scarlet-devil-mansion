@@ -20,24 +20,26 @@ public class CharacterDeathManager : BaseManager
     }
 
     
-    public void OnEnemyHpChanged(int hp)
-    {
-        if (hp <= 0)
-        {
-            enemies[0].OnCharacterDead();
-            counter++;
-            // EndGame(false);
-            if(counter == enemies.Count)
-                EndGame(false);
-        }
-        //return;
-    }
+    // public void OnEnemyHpChanged(int hp)
+    // {
+    //     if (hp <= 0)
+    //     {
+    //         enemies[0].OnCharacterDead();
+    //         counter++;
+    //         // EndGame(false);
+    //         if(counter == enemies.Count)
+    //             EndGame(false);
+    //     }
+    //     //return;
+    // }
 
-    public void OnEnemyHpChanged1(int hp)
+    public void OnEnemyHpChanged(int hp)
     {
         if (hp > 0)
             return;
         enemies[0].OnCharacterDead();
+        // HPWidgets[0].SetActive(false);
+        // HPWidgets[1].SetActive(false);
         counter++;
         // EndGame(false);
         if(counter == enemies.Count)
@@ -48,6 +50,8 @@ public class CharacterDeathManager : BaseManager
         if (hp > 0)
             return;
         enemies[1].OnCharacterDead();
+        // HPWidgets[2].SetActive(false);
+        // HPWidgets[3].SetActive(false);
         counter++;
         if (counter == enemies.Count)
             EndGame(false);
