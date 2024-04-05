@@ -393,7 +393,9 @@ MonoBehaviour:
   _enemyExtraHpWidget:
   - {fileID: 526203124491878315, guid: c9578b911c12ed24e99ae88fd3436d4e, type: 3}
   - {fileID: 3344312737865350397, guid: 07624415d427251469a7de0bdb061336, type: 3}
-  _enemyIntentWidget: {fileID: 8925898010794102450, guid: b889b4a68d4524d4292e1fed9760c578, type: 3}
+  _enemyIntentWidget:
+  - {fileID: 8925898010794102450, guid: b889b4a68d4524d4292e1fed9760c578, type: 3}
+  - {fileID: 386965903751467493, guid: 92d60f9dc6731414abe14ef71062b7e7, type: 3}
   _enemyShield: {fileID: 11400000, guid: 265ed6f7decf5124f9c16f2fcca80a11, type: 2}
   _canvas: {fileID: 588680263}
   _playerHpWidget: {fileID: 8064718915905596853, guid: 692ac44bc6489f145a596672115d6ec7, type: 3}
@@ -758,6 +760,7 @@ MonoBehaviour:
   effectResolutionManager: {fileID: 1499062859}
   intentChangeEvents:
   - {fileID: 11400000, guid: 8147ae64fb3d02a47a79005712ba374d, type: 2}
+  - {fileID: 11400000, guid: b3cac793b0e67404789efff5f5312076, type: 2}
 --- !u!224 &469638304 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5210397244154365958, guid: 57bf0d66a828a964399af20d2d3d4e44, type: 3}
@@ -1916,11 +1919,6 @@ MonoBehaviour:
   enemyHPs:
   - {fileID: 11400000, guid: 05c232fa577328b4d8e20d5a69bb727b, type: 2}
   - {fileID: 11400000, guid: 89a927b44ba483b49a056d6308536410, type: 2}
-  HPWidgets:
-  - {fileID: 5413707640302368337, guid: ebcaa688c658ed4488bdfc8852f9c07c, type: 3}
-  - {fileID: 526203124491878315, guid: c9578b911c12ed24e99ae88fd3436d4e, type: 3}
-  - {fileID: 7290689577285978694, guid: f4cf4479392c9e24e8c210d485938288, type: 3}
-  - {fileID: 3344312737865350397, guid: 07624415d427251469a7de0bdb061336, type: 3}
 --- !u!114 &1092579472
 MonoBehaviour:
   m_ObjectHideFlags: 0
