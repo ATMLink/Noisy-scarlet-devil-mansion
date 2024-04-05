@@ -389,13 +389,10 @@ MonoBehaviour:
   - {fileID: 2140172781}
   _enemyHpWidget:
   - {fileID: 5413707640302368337, guid: ebcaa688c658ed4488bdfc8852f9c07c, type: 3}
-  - {fileID: 7290689577285978694, guid: f4cf4479392c9e24e8c210d485938288, type: 3}
   _enemyExtraHpWidget:
   - {fileID: 526203124491878315, guid: c9578b911c12ed24e99ae88fd3436d4e, type: 3}
-  - {fileID: 3344312737865350397, guid: 07624415d427251469a7de0bdb061336, type: 3}
   _enemyIntentWidget:
   - {fileID: 8925898010794102450, guid: b889b4a68d4524d4292e1fed9760c578, type: 3}
-  - {fileID: 386965903751467493, guid: 92d60f9dc6731414abe14ef71062b7e7, type: 3}
   _enemyShield: {fileID: 11400000, guid: 265ed6f7decf5124f9c16f2fcca80a11, type: 2}
   _canvas: {fileID: 588680263}
   _playerHpWidget: {fileID: 8064718915905596853, guid: 692ac44bc6489f145a596672115d6ec7, type: 3}
@@ -406,16 +403,12 @@ MonoBehaviour:
   _discardPileWidget: {fileID: 2102300831}
   _enemyHPs:
   - {fileID: 11400000, guid: 05c232fa577328b4d8e20d5a69bb727b, type: 2}
-  - {fileID: 11400000, guid: 89a927b44ba483b49a056d6308536410, type: 2}
   _enemyExtraHPs:
   - {fileID: 11400000, guid: f185ccd1e8ef32942bf0f7a4c42a7a5f, type: 2}
-  - {fileID: 11400000, guid: 7911f5208ec1067479a26761204766ef, type: 2}
   _enemyMaxHPs:
   - {fileID: 11400000, guid: 5a0ff855ffa6a6c4eac70fb70a227225, type: 2}
-  - {fileID: 11400000, guid: d262d821d3666ad4dac3fa0073aeea37, type: 2}
   _enemyMaxExtraHPs:
   - {fileID: 11400000, guid: 5c6f00d8997d1ad48bce841dd4730b42, type: 2}
-  - {fileID: 11400000, guid: 93619d083575ad4448e5375d898f8ab4, type: 2}
   _playerHp: {fileID: 11400000, guid: 7a481d1fd84d12b4788bd7d100baf0c6, type: 2}
   _playerStatusVariable: {fileID: 11400000, guid: d8b8b8050b1cd5145a0ac6fb91ee1b84, type: 2}
   _playerMaxHp: {fileID: 11400000, guid: 2917179fbd348f1408fdec41d6ea11f3, type: 2}
@@ -423,10 +416,6 @@ MonoBehaviour:
   _recoverHpCounter: {fileID: 11400000, guid: c36abf4f02586f144b3464ed510116a0, type: 2}
   _enemyTemplates:
   - m_AssetGUID: c5b0ca1418949ab4397a29f41471f9fb
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
-  - m_AssetGUID: f685d7462b8aead42973ff9d5e557251
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0

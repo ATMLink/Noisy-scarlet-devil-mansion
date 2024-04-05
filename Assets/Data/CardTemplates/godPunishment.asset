@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c226744ce3d6974f9208c8856cf3b4e, type: 3}
   m_Name: godPunishment
   m_EditorClassIdentifier: 
-  id: 0
-  name: 
-  cost: 0
-  illustration: {fileID: 0}
-  type: {fileID: 0}
-  description: 
-  Effects: []
+  id: 4
+  name: god punishment
+  cost: 2
+  illustration: {fileID: 21300000, guid: 305776b2fa3ac08409b8fcd624a974fb, type: 3}
+  type: {fileID: 11400000, guid: 3b5e13aed438e064ebc62171d6ac039f, type: 2}
+  description: What can I say, just close the touhou
+  Effects:
+  - {fileID: 11400000, guid: 5e9edffc40df3c64faa1c6d5c2933b83, type: 2}
+  - {fileID: 11400000, guid: d5323aa9b6c70b0469096bd509552866, type: 2}
