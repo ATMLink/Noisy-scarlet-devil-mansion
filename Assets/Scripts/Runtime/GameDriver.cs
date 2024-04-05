@@ -43,7 +43,7 @@ public class GameDriver : MonoBehaviour
     [Header("UI")]
     [SerializeField] private List<GameObject> _enemyHpWidget;
     [SerializeField] private List<GameObject> _enemyExtraHpWidget;
-    [SerializeField] private GameObject _enemyIntentWidget;
+    [SerializeField] private List<GameObject> _enemyIntentWidget;
     [SerializeField] private IntVariable _enemyShield;
     [SerializeField] private Canvas _canvas;
     [SerializeField] private GameObject _playerHpWidget;
@@ -81,7 +81,8 @@ public class GameDriver : MonoBehaviour
         for (int i = 0; i < _enemyTemplates.Count; i++)
         {
             createEnemy(_enemyTemplates[i], _enemyHpWidget[i],_enemyExtraHpWidget[i], enemyPivots[i],
-                _enemyHPs[i], _enemyMaxHPs[i], _enemyExtraHPs[i], _enemyMaxExtraHPs[i]);
+                _enemyHPs[i], _enemyMaxHPs[i], _enemyExtraHPs[i], _enemyMaxExtraHPs[i],
+                _enemyIntentWidget[i]);
         }
         
         _mainCamera = Camera.main;
@@ -146,7 +147,7 @@ public class GameDriver : MonoBehaviour
 
     private void createEnemy(AssetReference templateReference, GameObject enemyHPWidget, GameObject enemyExtraHPWidget, 
         Transform enemyPivot, IntVariable enemyHP, IntVariable enemyMaxHP, IntVariable enemyExtraHP,
-        IntVariable enemyMaxExtraHP)
+        IntVariable enemyMaxExtraHP, GameObject enemyIntentWidget)
     {
         var handle = Addressables.LoadAssetAsync<EnemyTemplate>(templateReference);
         handle.Completed += operationResult =>
@@ -162,7 +163,7 @@ public class GameDriver : MonoBehaviour
             _enemyShield.Value = 0;
             createHpWidget(enemyHPWidget, enemy, enemyHP,enemyHP.Value, _enemyShield);
             createHpWidget(enemyExtraHPWidget, enemy, enemyExtraHP, enemyExtraHP.Value, _enemyShield, 0.3f);
-            CreateIntentWidget(_enemyIntentWidget, enemy);
+            CreateIntentWidget(enemyIntentWidget, enemy);
             
             var obj = enemy.GetComponent<CharacterObject>();
             obj.characterTemplate = template;

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8672622124309593133
+--- !u!1001 &5343503935006962019
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -11,15 +11,15 @@ PrefabInstance:
     - target: {fileID: -2715745750584960186, guid: 4366d0920df9a4a40a3cf367ad5e1aaa, type: 3}
       propertyPath: eventInt
       value: 
-      objectReference: {fileID: 11400000, guid: 45e342b595fa04c46890c28b2fe454d1, type: 2}
+      objectReference: {fileID: 11400000, guid: 8a2bd8f3622025344be73d2e27c5a3cc, type: 2}
     - target: {fileID: 253467307405554335, guid: 4366d0920df9a4a40a3cf367ad5e1aaa, type: 3}
       propertyPath: m_Name
-      value: IntentWidget_Enemy
+      value: IntentWidget_EnemyTwo
       objectReference: {fileID: 0}
     - target: {fileID: 835308861403512810, guid: 4366d0920df9a4a40a3cf367ad5e1aaa, type: 3}
       propertyPath: intentChangeEvent
       value: 
-      objectReference: {fileID: 11400000, guid: 8147ae64fb3d02a47a79005712ba374d, type: 2}
+      objectReference: {fileID: 11400000, guid: b3cac793b0e67404789efff5f5312076, type: 2}
     - target: {fileID: 6004579814679689426, guid: 4366d0920df9a4a40a3cf367ad5e1aaa, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
