@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8fdd3838af4fd14419749c8da30dea4c, type: 3}
-  m_Name: Deal Extra Damage Effect-20
+  m_Name: Deal Extra Damage Effect_godPunishment-12
   m_EditorClassIdentifier: 
   sourceAction:
   - group: {fileID: 11400000, guid: 55b402ca2258581448805298d44c17fa, type: 2}
   targetAction:
-  - group: {fileID: 11400000, guid: bdc8feb05ea001b4897e0f579f977eaa, type: 2}
   - group: {fileID: 11400000, guid: 378b9bab0835abe44b1b66f32adacbb1, type: 2}
+  - group: {fileID: 11400000, guid: bdc8feb05ea001b4897e0f579f977eaa, type: 2}
   target: 1
-  value: 20
+  value: 12
   overDamage: {fileID: 11400000, guid: b32739bb767a8af4ea79f72a5a73d17c, type: 2}

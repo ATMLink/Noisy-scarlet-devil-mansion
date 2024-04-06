@@ -9,7 +9,8 @@ using UnityEngine;
 public class DealDamageEffect : IntegerEffect, IEntityEffect
 {
     
-    public IntVariable overDamage;
+    [SerializeField] private IntVariable overDamage;
+    [SerializeField] private IntVariable combo; 
     public override void Resolve(RuntimeCharacter source, RuntimeCharacter target)
     {
         
@@ -18,8 +19,8 @@ public class DealDamageEffect : IntegerEffect, IEntityEffect
 
         var targetShield = target.shield;
         var shield = targetShield.Value;
-
-        var damage = value;
+        var comboIncreasing = (int) (combo.Value * 0.2 * value);
+        var damage = value + comboIncreasing;
         
         if (source.status != null)
         {
@@ -53,6 +54,8 @@ public class DealDamageEffect : IntegerEffect, IEntityEffect
             targetShield.setValue(shield - damage);
         }
             
+        combo.setValue(combo.Value + 1);
+        
         Debug.Log("deal damage"+damage);
 
         // var newHp = hp - damage;
