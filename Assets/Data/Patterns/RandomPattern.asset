@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effects:
   - {fileID: 11400000, guid: 9d2469838a8b22e47bbed9e117a24034, type: 2}
-  - {fileID: 11400000, guid: e7d1005114efda24d814a04a35135ac7, type: 2}
+  - {fileID: 11400000, guid: 6277cdfe0342e4241a60321f7b3ced6f, type: 2}
   - {fileID: 11400000, guid: 6875eaa5b92b29d49aa577f785527d9f, type: 2}
   probabilities:
   - value: 75
     sprite: {fileID: 21300000, guid: c758bb61eb38b4f748fea98ac8d6fcba, type: 3}
   - value: 12
-    sprite: {fileID: 21300000, guid: efd7d5360c147470ba04b59b941ad598, type: 3}
+    sprite: {fileID: 21300000, guid: 5d47612d3445f4de4a2c87201ec8bef2, type: 3}
   - value: 13
     sprite: {fileID: 21300000, guid: f000c17778b3cc046b9c35a99b62ed77, type: 3}

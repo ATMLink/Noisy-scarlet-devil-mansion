@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: extraNoise
   m_EditorClassIdentifier: 
   id: 3
-  name: extra get away
+  name: fuck away
   cost: 1
   illustration: {fileID: 21300000, guid: 3a7d5004869e685488ec807dd50a22a1, type: 3}
   type: {fileID: 11400000, guid: 3b5e13aed438e064ebc62171d6ac039f, type: 2}

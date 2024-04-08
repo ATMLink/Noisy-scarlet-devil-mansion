@@ -750,7 +750,6 @@ MonoBehaviour:
   effectResolutionManager: {fileID: 1499062859}
   intentChangeEvents:
   - {fileID: 11400000, guid: 8147ae64fb3d02a47a79005712ba374d, type: 2}
-  - {fileID: 11400000, guid: b3cac793b0e67404789efff5f5312076, type: 2}
 --- !u!224 &469638304 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5210397244154365958, guid: 57bf0d66a828a964399af20d2d3d4e44, type: 3}
