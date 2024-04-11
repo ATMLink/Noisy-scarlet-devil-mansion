@@ -1059,7 +1059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4218343695338870498, guid: 016f76a12219e3d44af8dd62860aec30, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5136337128226262076, guid: 016f76a12219e3d44af8dd62860aec30, type: 3}
       propertyPath: template
@@ -1072,7 +1072,25 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1119212196800305315, guid: 016f76a12219e3d44af8dd62860aec30, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 5818868947539311772, guid: 016f76a12219e3d44af8dd62860aec30, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 3105598384668215693, guid: 016f76a12219e3d44af8dd62860aec30, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 498700947429350301, guid: 016f76a12219e3d44af8dd62860aec30, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 3062211139392068261, guid: 016f76a12219e3d44af8dd62860aec30, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 4770692332100280361, guid: 016f76a12219e3d44af8dd62860aec30, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 016f76a12219e3d44af8dd62860aec30, type: 3}
 --- !u!1001 &569878859
 PrefabInstance:
@@ -1732,7 +1750,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1020824453
 SpriteRenderer:
   m_ObjectHideFlags: 0
