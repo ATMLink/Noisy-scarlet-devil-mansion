@@ -13,10 +13,15 @@ public class CardObject : MonoBehaviour
     [SerializeField] private TextMeshPro costText;
     [SerializeField] private TextMeshPro nameText;
     [SerializeField] private TextMeshPro typeText;
+    [SerializeField] private TextMeshPro NHPText;
+    [SerializeField] private TextMeshPro EHPText;
     [SerializeField] private TextMeshPro descriptionText;
 
     [SerializeField] private SpriteRenderer illustration;
 
+    [SerializeField] private GameObject NHP;
+    [SerializeField] private GameObject EHP;
+    
     public CardTemplate template;
     public RuntimeCard runtimeCard;
 
@@ -70,8 +75,13 @@ public class CardObject : MonoBehaviour
         var builder = new StringBuilder();
         builder.Append(template.description);
         descriptionText.text = builder.ToString();
+        NHPText.text = template.NHP.ToString();
+        EHPText.text = template.EHP.ToString();
+        NHP.gameObject.SetActive(template.NHP != 0);
+        EHP.gameObject.SetActive(template.EHP != 0);
         illustration.sprite = template.illustration;
     }
+
 
     public void saveTransform(Vector3 position, Quaternion rotation)
     {

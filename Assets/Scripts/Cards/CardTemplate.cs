@@ -9,6 +9,8 @@ public class CardTemplate : ScriptableObject
     public int id;
     public string name;
     public int cost;
+    public int NHP;
+    public int EHP;
     public Sprite illustration;
     public CardType type;
     public string description;
