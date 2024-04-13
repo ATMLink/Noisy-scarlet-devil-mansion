@@ -15,6 +15,8 @@ MonoBehaviour:
   id: 3
   name: fuck away
   cost: 1
+  NHP: 0
+  EHP: 14
   illustration: {fileID: 21300000, guid: 3a7d5004869e685488ec807dd50a22a1, type: 3}
   type: {fileID: 11400000, guid: 3b5e13aed438e064ebc62171d6ac039f, type: 2}
   description: huh? are you defiant me?
