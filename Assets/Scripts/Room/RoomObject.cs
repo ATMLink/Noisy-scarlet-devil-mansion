@@ -36,8 +36,8 @@ public class RoomObject : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("clicked the room: "+_roomType);
+        // Debug.Log("clicked the room: "+_roomType);
         loadRoomEvent.RaisEvent(roomTemplate, this);
-        Debug.Log("event raised");
+        // Debug.Log("event raised");
     }
 }
