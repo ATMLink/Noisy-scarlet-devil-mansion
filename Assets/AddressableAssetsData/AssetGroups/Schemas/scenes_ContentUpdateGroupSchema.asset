@@ -9,16 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 087bd1c19b1d00a43b39904531b07995, type: 3}
-  m_Name: MapConfig
+  m_Script: {fileID: 11500000, guid: 5834b5087d578d24c926ce20cd31e6d6, type: 3}
+  m_Name: scenes_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
-  roomBlueprints:
-  - min: 1
-    max: 1
-    roomType: 32
-  - min: 1
-    max: 1
-    roomType: 128
-  - min: 1
-    max: 1
-    roomType: 256
+  m_Group: {fileID: 11400000, guid: 905fef6d21ca08740bda99f830273743, type: 2}
+  m_StaticContent: 0

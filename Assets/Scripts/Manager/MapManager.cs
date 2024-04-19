@@ -25,12 +25,20 @@ public class MapManager : MonoBehaviour
 
     private List<RoomObject> _rooms = new();
     private List<LineRenderer> _lines = new();
+
+    public List<RoomTemplate> roomTemplates = new();
+    private Dictionary<RoomType, RoomTemplate> _roomTemplateDict = new();
     private void Awake()
     {
         _screenHeight = Camera.main.orthographicSize * 2;
         _screenWidth = _screenHeight * Camera.main.aspect;
     
         _columnWidth = _screenWidth / (mapConfig.roomBlueprints.Count+1);
+
+        foreach (var roomTemplate in roomTemplates)
+        {
+            _roomTemplateDict.Add(roomTemplate.roomType, roomTemplate);
+        }
     }
 
     private void Start()
@@ -56,7 +64,9 @@ public class MapManager : MonoBehaviour
             {
                 var newPosition = new Vector3(-_screenWidth / 2 + _border, startHeight + i * (_screenHeight / (amount + 1)), 0);
                 var room = Instantiate(roomPrefab, newPosition, Quaternion.identity, transform);
+                RoomType newType = GetRandomRoomType(mapConfig.roomBlueprints[column].roomType);
                 
+                room.SetInfo(column, i, GetRoomTemplate(newType));
                 _rooms.Add(room);
                 currentColumnRoomObjects.Add(room);
             }
@@ -120,5 +130,18 @@ public class MapManager : MonoBehaviour
         _lines.Clear();
         
         Generate();
+    }
+
+    private RoomTemplate GetRoomTemplate(RoomType roomType)
+    {
+        return _roomTemplateDict[roomType];
+    }
+
+    private RoomType GetRandomRoomType(RoomType flags)
+    {
+        string[] options = flags.ToString().Split(',');
+        string randomOption = options[Random.Range(0, options.Length)];
+        RoomType roomType = (RoomType)Enum.Parse(typeof(RoomType), randomOption);
+        return roomType;
     }
 }

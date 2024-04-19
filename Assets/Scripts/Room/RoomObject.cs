@@ -6,31 +6,38 @@ using UnityEngine.AddressableAssets;
 
 public class RoomObject : MonoBehaviour
 {
-    [SerializeField] private RoomTemplate roomTemplate;
-    [SerializeField] private SpriteRenderer roomIcon;
+    public RoomTemplate roomTemplate;
+    
+    private SpriteRenderer roomIcon;
 
-    public int column;
-    public int line;
+    private int _column =0;
+    private int _line =0;
     
     public RoomState roomState;
     private RoomType _roomType;
     
     private AssetReference _sceneToLoad;
 
-    private void Start()
+    public ObjectEventSO loadRoomEvent;
+
+    private void Awake()
     {
-        SetInfo(column,line,roomTemplate);
+        roomIcon = GetComponentInChildren<SpriteRenderer>();
     }
 
     public void SetInfo(int column, int line,RoomTemplate roomTemplate)
     {
-        _roomType = roomTemplate.roomType;
-        _sceneToLoad = roomTemplate.sceneToLoad;
+        this._column = column;
+        this._line = line;
+        this.roomTemplate = roomTemplate;
+
         roomIcon.sprite = roomTemplate.roomImage;
     }
 
     private void OnMouseDown()
     {
         Debug.Log("clicked the room: "+_roomType);
+        loadRoomEvent.RaisEvent(roomTemplate, this);
+        Debug.Log("event raised");
     }
 }

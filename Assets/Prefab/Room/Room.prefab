@@ -81,11 +81,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc4e5ba8819c8c741ac8330211a6f7df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomTemplate: {fileID: 11400000, guid: 5d9cf0058c22ab74d9da2dbc553e6626, type: 2}
-  roomIcon: {fileID: 1541026839311341509}
-  column: 0
-  line: 0
-  roomState: 0
+  roomTemplate: {fileID: 0}
+  roomState: 2
+  loadRoomEvent: {fileID: 11400000, guid: dbcce23c5c87a4644ae68e9ca63e3673, type: 2}
 --- !u!1 &5590503635911064890
 GameObject:
   m_ObjectHideFlags: 0

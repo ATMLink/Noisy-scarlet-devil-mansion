@@ -9,7 +9,9 @@ public enum RoomType
     shopRoom = 8,
     treasureRoom = 16,
     bossRoom = 32,
-    eventRoom = 64
+    eventRoom = 64,
+    bossRoom2 = 128,
+    bossRoom3 = 256
     
 }
 
