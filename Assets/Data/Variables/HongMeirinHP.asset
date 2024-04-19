@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: HongMeirinHP
   m_EditorClassIdentifier: 
   Value: 10
-  valueChangedEvent: {fileID: 11400000, guid: 8a2bd8f3622025344be73d2e27c5a3cc, type: 2}
+  valueChangedEvent: {fileID: 11400000, guid: 45e342b595fa04c46890c28b2fe454d1, type: 2}

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: RecoverHPCounter
   m_EditorClassIdentifier: 
   Value: 0
-  valueChangedEvent: {fileID: 0}
+  valueChangedEvent: {fileID: 11400000, guid: 210b7637c1359be4ba0dae7660d736a5, type: 2}

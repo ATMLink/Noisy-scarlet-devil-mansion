@@ -15,4 +15,11 @@ MonoBehaviour:
   name: nitori
   prefab: {fileID: 5261624011219463490, guid: d5e14a93c019b8444a6e74c3adbd1586, type: 3}
   patterns:
+  - {fileID: 11400000, guid: 3b2b5d30be7400a4aafeb583f67454a7, type: 2}
+  - {fileID: 11400000, guid: 56611b6a47013824aa7ccc6acf55992c, type: 2}
+  - {fileID: 11400000, guid: bbf0977ebcf6e544cb34ca79b9164cb9, type: 2}
+  - {fileID: 11400000, guid: 56611b6a47013824aa7ccc6acf55992c, type: 2}
+  - {fileID: 11400000, guid: c4e6921ff34d74f4fb43320f68fe5df1, type: 2}
+  - {fileID: 11400000, guid: 56611b6a47013824aa7ccc6acf55992c, type: 2}
+  - {fileID: 11400000, guid: cd56c8e2d332c634d90c33a20e2a523b, type: 2}
   - {fileID: 11400000, guid: 56611b6a47013824aa7ccc6acf55992c, type: 2}

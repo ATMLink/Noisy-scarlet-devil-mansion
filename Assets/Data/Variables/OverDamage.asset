@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d398ec86a365b44af27c26ff52c437, type: 3}
   m_Name: OverDamage
   m_EditorClassIdentifier: 
-  Value: 0
-  valueChangedEvent: {fileID: 0}
+  Value: 1
+  valueChangedEvent: {fileID: 11400000, guid: b53c367119fce8c46b5db5658b22e05e, type: 2}

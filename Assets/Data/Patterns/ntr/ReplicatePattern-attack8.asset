@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe73c98327daab74aa75532b36268f83, type: 3}
   m_Name: ReplicatePattern-attack8
   m_EditorClassIdentifier: 
-  effects: []
-  times: 0
-  sprite: {fileID: 0}
+  effects:
+  - {fileID: 11400000, guid: a73c23d361859c6428c25b2fdfbc4282, type: 2}
+  times: 1
+  sprite: {fileID: 21300000, guid: 7e4ddb04acaea144e827f76e89edf61c, type: 3}
