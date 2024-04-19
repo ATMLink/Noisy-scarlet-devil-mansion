@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6504607962203733258}
   - component: {fileID: 6327096210913097249}
+  - component: {fileID: 3191896528820857585}
   m_Layer: 0
   m_Name: Room
   m_TagString: Untagged
@@ -65,9 +66,26 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
-  m_Direction: 0
+  m_Offset: {x: 0.027559524, y: 0.013779698}
+  m_Size: {x: 3.31117, y: 1.7953496}
+  m_Direction: 1
+--- !u!114 &3191896528820857585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494255800687761300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc4e5ba8819c8c741ac8330211a6f7df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomTemplate: {fileID: 11400000, guid: 5d9cf0058c22ab74d9da2dbc553e6626, type: 2}
+  roomIcon: {fileID: 1541026839311341509}
+  column: 0
+  line: 0
+  roomState: 0
 --- !u!1 &5590503635911064890
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,6 @@ using UnityEngine.AddressableAssets;
 public class RoomTemplate : ScriptableObject
 {
     public Sprite roomImage;
-    public roomType roomType;
+    public RoomType roomType;
     public AssetReference sceneToLoad;
 }
