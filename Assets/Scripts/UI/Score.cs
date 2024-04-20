@@ -9,7 +9,7 @@ public class Score : MonoBehaviour
 {
     [SerializeField] private IntVariable overDamage;
     [SerializeField] private IntVariable recover;
-        
+    [SerializeField] private IntVariable score;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI overDamageText;
     [SerializeField] private TextMeshProUGUI recoverText;
@@ -23,6 +23,7 @@ public class Score : MonoBehaviour
     {
         overDamage.setValue(0);
         recover.setValue(0);
+        score.setValue(0);
     }
     private void SetOverDamageValue(int value)
     {
@@ -36,7 +37,8 @@ public class Score : MonoBehaviour
 
     private void SetScoreValue(int overDamage, int recover)
     {
-        scoreText.text = $"Score: {(overDamage * 4 - recover)}";
+        score.setValue((overDamage * 5 - recover));
+        scoreText.text = $"Score: {score.Value.ToString()}";
     }
 
     public void OnOverDamageChanged(int value)
