@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab46c6c4187456540bc9d09b157081b1, type: 3}
   m_Name: RandomPattern-CN
   m_EditorClassIdentifier: 
-  effects: []
+  effects:
+  - {fileID: 11400000, guid: de603bcf07519254aa85a4cf3a1311e4, type: 2}
+  - {fileID: 11400000, guid: 87fca29307ca4834fb3a029f3fb135bb, type: 2}
   probabilities:
   - value: 40
     sprite: {fileID: 21300000, guid: 32834f4d1ba3f0f498053da31ad5e6f8, type: 3}
