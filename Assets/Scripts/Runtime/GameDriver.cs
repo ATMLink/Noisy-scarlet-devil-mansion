@@ -239,7 +239,7 @@ public class GameDriver : MonoBehaviour
         var size = character.GetComponent<BoxCollider2D>().bounds.size;
 
         var canvasPosition = _mainCamera.WorldToViewportPoint(
-            pivot.position + new Vector3(0.2f, size.y +0.7f, 0.0f)
+            pivot.position + new Vector3(0.2f, size.y/2 +1.5f, 0.0f)
             );
         widget.GetComponent<RectTransform>().anchorMin = canvasPosition;
         widget.GetComponent<RectTransform>().anchorMax = canvasPosition;
