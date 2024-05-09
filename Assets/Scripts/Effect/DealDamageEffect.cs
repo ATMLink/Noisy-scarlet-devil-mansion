@@ -24,15 +24,15 @@ public class DealDamageEffect : IntegerEffect, IEntityEffect
         
         if (source.status != null)
         {
-            var weak = source.status.GetValue("Weak");
-            if (weak > 0)
+            var currentWeakValue = source.status.GetValue("Weak");
+            if (currentWeakValue > 0)
             {
                 damage = (int)Mathf.Floor(damage * 0.75f);
             }
             
-            var strength = source.status.GetValue("Strength");
+            var currentStrengthValue = source.status.GetValue("Strength");
 
-            if (strength > 0)
+            if (currentStrengthValue > 0)
             {
                 damage = (int)Mathf.Floor(damage * 1.25f);
             }

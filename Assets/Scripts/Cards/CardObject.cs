@@ -57,14 +57,14 @@ public class CardObject : MonoBehaviour
         _sortingGroup = GetComponent<SortingGroup>();
     }
 
-    private void Start()
-    {
-        var testCard = new RuntimeCard
-        {
-            Template = template
-        };
-        SetInfo(testCard);
-    }
+    // private void Start()
+    // {
+    //     var testCard = new RuntimeCard
+    //     {
+    //         Template = template
+    //     };
+    //     SetInfo(testCard);
+    // }
     public void SetInfo(RuntimeCard card)
     {
         runtimeCard = card;

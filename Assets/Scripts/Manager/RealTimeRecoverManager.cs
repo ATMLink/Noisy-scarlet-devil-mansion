@@ -43,7 +43,7 @@ public class RealTimeRecoverManager : BaseManager
                 recoverHPCounter.setValue(recoverHPCounter.Value + 1);
             }
     
-            yield return new WaitForSeconds(1.0f);// wait for one second
+            yield return new WaitForSeconds(2.0f);// wait for one second
         }
     }
 }

@@ -33,6 +33,7 @@ public class GameDriver : MonoBehaviour
     [SerializeField] private PlayerSpManager playerSpManager;
     [SerializeField] private CharacterDeathManager characterDeathManager;
     [SerializeField] private RealTimeRecoverManager realTimeRecoverManager;
+    [SerializeField] private StatusTurnBaseManager statusTurnBaseManager; 
 
     private List<CardTemplate> _playerDeck = new List<CardTemplate>();
 
@@ -46,6 +47,7 @@ public class GameDriver : MonoBehaviour
     [SerializeField] private List<GameObject> _enemyExtraHpWidget;
     [SerializeField] private List<GameObject> _enemyIntentWidget;
     [SerializeField] private IntVariable _enemyShield;
+    [SerializeField] private GameObject _enemyStatusWidget;
     [SerializeField] private Canvas _canvas;
     [SerializeField] private GameObject _playerHpWidget;
     [SerializeField] private IntVariable _playerShield;
@@ -61,6 +63,7 @@ public class GameDriver : MonoBehaviour
     [SerializeField] private List<IntVariable> _enemyMaxExtraHPs;
     [SerializeField] private IntVariable _playerHp;
     [SerializeField] private StatusVariable _playerStatusVariable;
+    [SerializeField] private StatusVariable _enemyStatusVariable;
     [SerializeField] private IntVariable _playerMaxHp;
     [SerializeField] private IntVariable _overDamage;
     [SerializeField] private IntVariable _recoverHpCounter;
@@ -89,11 +92,12 @@ public class GameDriver : MonoBehaviour
         _recoverHpCounter.setValue(0);
     }
 
-    private void Update()
+    private void OnCharactersLoaded()
     {
-        // realTimeRecoverManager.RecoverControl(true);
+        initialize();
     }
 
+    
     private void setCursorTexture()
     {
         float x, y;
@@ -137,9 +141,9 @@ public class GameDriver : MonoBehaviour
                 maxHp = _playerMaxHp.Value
             };
             obj.character.status.value.Clear();
-            
-            initialize();
-            
+
+            if (player != null && enemies.Count == _enemyTemplates.Count)
+                OnCharactersLoaded();
         };
         
         
@@ -164,6 +168,7 @@ public class GameDriver : MonoBehaviour
             createHpWidget(enemyHPWidget, enemy, enemyHP,enemyHP.Value, _enemyShield);
             createHpWidget(enemyExtraHPWidget, enemy, enemyExtraHP, enemyExtraHP.Value, _enemyShield, 0.3f);
             CreateIntentWidget(enemyIntentWidget, enemy);
+            CreateStatusWidgetEnemy(_enemyStatusWidget, enemy);
             
             var obj = enemy.GetComponent<CharacterObject>();
             obj.characterTemplate = template;
@@ -173,11 +178,15 @@ public class GameDriver : MonoBehaviour
                 shield = _enemyShield,
                 extraHp = enemyExtraHP,
                 maxHp = enemyMaxHP.Value,
-                maxExtraHp = enemyMaxExtraHP.Value
+                maxExtraHp = enemyMaxExtraHP.Value,
+                status = _enemyStatusVariable
             };
+            obj.character.status.value.Clear();
             
             enemies.Add(enemy);
-
+            
+            if(player != null && enemies.Count == _enemyTemplates.Count)
+                OnCharactersLoaded();
         };
 
     }
@@ -200,11 +209,12 @@ public class GameDriver : MonoBehaviour
             Debug.Log("enemy has been created");
             enemyCharacters.Add(enemy.GetComponent<CharacterObject>());
         }
-
+        statusTurnBaseManager.Initialize(playerCharacter, enemyCharacters);
         cardSelectionWithArrow.Initialize(playerCharacter, enemyCharacters);
         enemyAIManager.Initialize(playerCharacter, enemyCharacters);
         effectResolutionManager.Initialize(playerCharacter, enemyCharacters);
         characterDeathManager.Initialize(playerCharacter, enemyCharacters);
+        
         // enemyCharacters with every enemy
         
         turnManager.BeginGame();
@@ -252,6 +262,16 @@ public class GameDriver : MonoBehaviour
         var pivot = character.transform;
         var canvasPosition = _mainCamera.WorldToViewportPoint(pivot.position + 
                                                               new Vector3(0.0f, -0.8f, 0.0f));
+        hpWidget.GetComponent<RectTransform>().anchorMin = canvasPosition;
+        hpWidget.GetComponent<RectTransform>().anchorMax = canvasPosition;
+    }
+
+    private void CreateStatusWidgetEnemy(GameObject prefab, GameObject character)
+    {
+        var hpWidget = Instantiate(prefab, _canvas.transform, false);
+        var pivot = character.transform;
+        var canvasPosition = _mainCamera.WorldToViewportPoint(pivot.position + 
+                                                              new Vector3(0.0f, 0.8f, 0.0f));
         hpWidget.GetComponent<RectTransform>().anchorMin = canvasPosition;
         hpWidget.GetComponent<RectTransform>().anchorMax = canvasPosition;
     }

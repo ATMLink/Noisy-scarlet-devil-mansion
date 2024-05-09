@@ -382,6 +382,7 @@ MonoBehaviour:
   playerSpManager: {fileID: 2083738066}
   characterDeathManager: {fileID: 1092579471}
   realTimeRecoverManager: {fileID: 1280925252}
+  statusTurnBaseManager: {fileID: 1241049200}
   playerPivot: {fileID: 1857802892}
   enemyPivots:
   - {fileID: 350402313}
@@ -394,6 +395,7 @@ MonoBehaviour:
   _enemyIntentWidget:
   - {fileID: 8925898010794102450, guid: b889b4a68d4524d4292e1fed9760c578, type: 3}
   _enemyShield: {fileID: 11400000, guid: 265ed6f7decf5124f9c16f2fcca80a11, type: 2}
+  _enemyStatusWidget: {fileID: 7875160353180656694, guid: a537ec466a04b1840920ecddbf4bbd33, type: 3}
   _canvas: {fileID: 588680263}
   _playerHpWidget: {fileID: 8064718915905596853, guid: 692ac44bc6489f145a596672115d6ec7, type: 3}
   _playerShield: {fileID: 11400000, guid: 6f4b1bff482a88c44be832106d60e899, type: 2}
@@ -411,6 +413,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5c6f00d8997d1ad48bce841dd4730b42, type: 2}
   _playerHp: {fileID: 11400000, guid: 7a481d1fd84d12b4788bd7d100baf0c6, type: 2}
   _playerStatusVariable: {fileID: 11400000, guid: d8b8b8050b1cd5145a0ac6fb91ee1b84, type: 2}
+  _enemyStatusVariable: {fileID: 11400000, guid: 663a0e7a63292e440b0e3f142e6a1a1f, type: 2}
   _playerMaxHp: {fileID: 11400000, guid: 2917179fbd348f1408fdec41d6ea11f3, type: 2}
   _overDamage: {fileID: 11400000, guid: b32739bb767a8af4ea79f72a5a73d17c, type: 2}
   _recoverHpCounter: {fileID: 11400000, guid: c36abf4f02586f144b3464ed510116a0, type: 2}
@@ -519,6 +522,7 @@ Transform:
   - {fileID: 1092579468}
   - {fileID: 1280925253}
   - {fileID: 1394637985}
+  - {fileID: 1241049198}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &338065842
@@ -1986,6 +1990,79 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecb15e172d7bfbb4db70d54ed7bb52d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1241049197
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1241049198}
+  - component: {fileID: 1241049200}
+  - component: {fileID: 1241049199}
+  m_Layer: 0
+  m_Name: StatusTurnBaseManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1241049198
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241049197}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 333644584}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1241049199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241049197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a03bd7654a9dfa249bde7d05d05c6433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 5e26cedb3cc4c09458214eccd71683f7, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1241049200}
+        m_TargetAssemblyTypeName: StatusTurnBaseManager, Assembly-CSharp
+        m_MethodName: OnPlayerTurnEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1241049200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241049197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c39f72cb765c4240b2df967e8731249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1280925251
