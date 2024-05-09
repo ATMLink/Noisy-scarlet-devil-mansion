@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c226744ce3d6974f9208c8856cf3b4e, type: 3}
-  m_Name: calmDown
+  m_Name: LockRecover
   m_EditorClassIdentifier: 
-  id: 2
-  name: calm down
+  id: 5
+  name: LockRecover
   cost: 1
   NHP: 0
   EHP: 0
-  illustration: {fileID: 21300000, guid: e6d7f01e32d5eac4795552b8a88b3911, type: 3}
-  type: {fileID: 11400000, guid: 48e9462defcb1e54abbb16681165a8bb, type: 2}
-  description: Smoke is not allowed in this place, but I can because I am cute
+  illustration: {fileID: 21300000, guid: b6455c791c4d28543b96d77f25b43e22, type: 3}
+  type: {fileID: 11400000, guid: 026c3a83ac9e2a94ea4825ffd7d12824, type: 2}
+  description: This card can stop enemy recover HP
   Effects:
-  - {fileID: 11400000, guid: e7d1005114efda24d814a04a35135ac7, type: 2}
+  - {fileID: 11400000, guid: d31be8575bfa1c14d87ce06c2d2ca05d, type: 2}
+  - {fileID: 11400000, guid: a78b3741404b3424b80e8ca3ebe2a9e1, type: 2}

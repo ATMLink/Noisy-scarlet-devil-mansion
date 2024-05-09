@@ -20,6 +20,11 @@ public class StatusTurnBaseManager : BaseManager
             
         }
         
+        
+    }
+
+    public void OnEnemyTurnEnd()
+    {
         // reduce enemies status value
         foreach (var enemy in enemies)
         {
@@ -37,7 +42,7 @@ public class StatusTurnBaseManager : BaseManager
             }
         }
     }
-
+    
     private int CalculateReducedValue(int currentValue, StatusTemplate template)
     {
         return Mathf.Max(0, currentValue - 1);

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01d71fb40059d624595d18bd4a18529a, type: 3}
-  m_Name: ApplyStatusEffect_Strength
+  m_Name: ApplyStatusEffect_LockRecover-1
   m_EditorClassIdentifier: 
   sourceAction: []
   targetAction: []
   target: 1
   value: 1
-  status: {fileID: 11400000, guid: 69726e701da3a0e4aa3f05667ac51be0, type: 2}
+  status: {fileID: 11400000, guid: 9a0b4862f6ac6d049a8419194267582f, type: 2}
