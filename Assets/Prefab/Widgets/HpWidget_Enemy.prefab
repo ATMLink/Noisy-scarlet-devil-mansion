@@ -104,6 +104,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2238900096232778227, guid: ad73e723a8b7e479aa17468702bfd512, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834053812294401021, guid: ad73e723a8b7e479aa17468702bfd512, type: 3}
+      propertyPath: m_Name
+      value: Bar
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834053812294401021, guid: ad73e723a8b7e479aa17468702bfd512, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8804803574714695038, guid: ad73e723a8b7e479aa17468702bfd512, type: 3}
       propertyPath: eventInt
       value: 
@@ -115,6 +127,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2238900094587200569, guid: ad73e723a8b7e479aa17468702bfd512, type: 3}
       insertIndex: -1
       addedObject: {fileID: 840301261820569748}
+    - targetCorrespondingSourceObject: {fileID: 2238900094587200569, guid: ad73e723a8b7e479aa17468702bfd512, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8323907654382437205}
   m_SourcePrefab: {fileID: 100100000, guid: ad73e723a8b7e479aa17468702bfd512, type: 3}
 --- !u!1 &5413707640302368337 stripped
 GameObject:
@@ -140,6 +155,34 @@ MonoBehaviour:
       - m_Target: {fileID: 7616954345928028583}
         m_TargetAssemblyTypeName: HpWidget, Assembly-CSharp
         m_MethodName: OnHPChangedToDisableWidget
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8323907654382437205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5413707640302368337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d66bdf7e6b390864daa3e840eedaa41a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventInt: {fileID: 11400000, guid: a9ff92f179f0ce44199719a135012fdf, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7616954345928028583}
+        m_TargetAssemblyTypeName: HpWidget, Assembly-CSharp
+        m_MethodName: OnMaxHPChanged
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

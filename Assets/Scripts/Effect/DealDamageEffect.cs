@@ -17,6 +17,9 @@ public class DealDamageEffect : IntegerEffect, IEntityEffect
         var targetHp = target.hp;
         var hp = targetHp.Value;
 
+        var targetMaxHp = target.maxHp;
+        var maxHp = targetMaxHp.Value;
+
         var targetShield = target.shield;
         var shield = targetShield.Value;
         var comboIncreasing = (int) (combo.Value * 0.2 * value);
@@ -41,12 +44,15 @@ public class DealDamageEffect : IntegerEffect, IEntityEffect
         if (damage >= shield)
         {
             var newHp = hp - (damage - shield);
-            if (newHp < 0)
+            var newMaxHp = maxHp - combo.Value;
+            if (newHp < 0 || newMaxHp < 0)
             {
-                overDamage.setValue(damage - shield - hp);
+                overDamage.setValue(damage - shield - hp - newMaxHp);
                 newHp = 0;
+                newMaxHp = 0;
             }
             targetHp.setValue(newHp);
+            targetMaxHp.setValue(newMaxHp);
             targetShield.setValue(0);
         }
         else

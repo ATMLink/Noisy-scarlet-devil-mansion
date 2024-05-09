@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8d398ec86a365b44af27c26ff52c437, type: 3}
-  m_Name: EnemyMaxHP
+  m_Name: EnemyAbsoluteMaxHP
   m_EditorClassIdentifier: 
-  Value: 27
-  valueChangedEvent: {fileID: 11400000, guid: a9ff92f179f0ce44199719a135012fdf, type: 2}
+  Value: 30
+  valueChangedEvent: {fileID: 0}

@@ -8,7 +8,7 @@ public class RuntimeCharacter
     public IntVariable shield;
     public IntVariable extraHp;
     public int life;
-    public int maxHp;
+    public IntVariable maxHp;
     public int maxSp;
     public int maxExtraHp;
     public const int maxLife = 3;
