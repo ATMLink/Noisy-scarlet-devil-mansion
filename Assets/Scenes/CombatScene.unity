@@ -411,10 +411,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5a0ff855ffa6a6c4eac70fb70a227225, type: 2}
   _enemyMaxExtraHPs:
   - {fileID: 11400000, guid: 5c6f00d8997d1ad48bce841dd4730b42, type: 2}
+  _enemyAbsoluteMaxHP:
+  - {fileID: 11400000, guid: d1499c2dbfd24b648ad1b99465a0478b, type: 2}
   _playerHp: {fileID: 11400000, guid: 7a481d1fd84d12b4788bd7d100baf0c6, type: 2}
   _playerStatusVariable: {fileID: 11400000, guid: d8b8b8050b1cd5145a0ac6fb91ee1b84, type: 2}
   _enemyStatusVariable: {fileID: 11400000, guid: 663a0e7a63292e440b0e3f142e6a1a1f, type: 2}
   _playerMaxHp: {fileID: 11400000, guid: 2917179fbd348f1408fdec41d6ea11f3, type: 2}
+  _playerAbsoluteMaxHP: {fileID: 11400000, guid: 71a075cd4cf00ca46a0bcc5a2f70049c, type: 2}
   _overDamage: {fileID: 11400000, guid: b32739bb767a8af4ea79f72a5a73d17c, type: 2}
   _recoverHpCounter: {fileID: 11400000, guid: c36abf4f02586f144b3464ed510116a0, type: 2}
   _enemyTemplates:
