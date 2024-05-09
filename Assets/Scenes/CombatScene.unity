@@ -2127,10 +2127,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHPs:
   - {fileID: 11400000, guid: 05c232fa577328b4d8e20d5a69bb727b, type: 2}
-  - {fileID: 11400000, guid: 89a927b44ba483b49a056d6308536410, type: 2}
   enemyMaxHPs:
   - {fileID: 11400000, guid: 5a0ff855ffa6a6c4eac70fb70a227225, type: 2}
-  - {fileID: 11400000, guid: d262d821d3666ad4dac3fa0073aeea37, type: 2}
+  enemyStatuses:
+  - {fileID: 11400000, guid: 663a0e7a63292e440b0e3f142e6a1a1f, type: 2}
   recoverHPCounter: {fileID: 11400000, guid: c36abf4f02586f144b3464ed510116a0, type: 2}
   healthPerSecond: 1
 --- !u!4 &1280925253
