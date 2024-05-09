@@ -8,6 +8,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.UI;
 using Button = UnityEngine.UI.Button;
+using UnityEngine.SceneManagement;
 
 public class EndBattlePopup : MonoBehaviour
 {
@@ -47,6 +48,7 @@ public class EndBattlePopup : MonoBehaviour
 
     public void OnEndOfGameBattlePressed()
     {
-        EditorApplication.isPlaying = false;
+        // EditorApplication.isPlaying = false;
+        SceneManager.LoadScene("MainMenu");
     }
 }

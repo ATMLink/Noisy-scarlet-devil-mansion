@@ -170,7 +170,7 @@ public class GameDriver : MonoBehaviour
             enemyExtraHP.setValue(enemyMaxExtraHP.Value);
             _enemyShield.Value = 0;
             createHpWidget(enemyHPWidget, enemy, enemyHP,enemyMaxHP, _enemyShield, enemyAbsoluteMaxHP);
-            createHpWidget(enemyExtraHPWidget, enemy, enemyExtraHP, enemyMaxExtraHP, _enemyShield, enemyAbsoluteMaxHP, 0.3f);
+            createHpWidget(enemyExtraHPWidget, enemy, enemyExtraHP, enemyMaxExtraHP, _enemyShield, enemyMaxExtraHP, 0.3f);
             CreateIntentWidget(enemyIntentWidget, enemy);
             CreateStatusWidgetEnemy(_enemyStatusWidget, enemy);
             
