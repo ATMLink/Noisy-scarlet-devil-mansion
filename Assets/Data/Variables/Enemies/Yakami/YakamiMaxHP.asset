@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d398ec86a365b44af27c26ff52c437, type: 3}
   m_Name: YakamiMaxHP
   m_EditorClassIdentifier: 
-  Value: 30
+  Value: 27
   valueChangedEvent: {fileID: 11400000, guid: e0cbcfbe32c4cde468c4aeea15a9b23d, type: 2}
