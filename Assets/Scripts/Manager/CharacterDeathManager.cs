@@ -45,17 +45,17 @@ public class CharacterDeathManager : BaseManager
         if(counter == enemies.Count)
             EndGame(false);
     }
-    public void OnEnemyTwoHPChanged(int hp)
-    {
-        if (hp > 0)
-            return;
-        enemies[1].OnCharacterDead();
-        // HPWidgets[2].SetActive(false);
-        // HPWidgets[3].SetActive(false);
-        counter++;
-        if (counter == enemies.Count)
-            EndGame(false);
-    }
+    // public void OnEnemyTwoHPChanged(int hp)
+    // {
+    //     if (hp > 0)
+    //         return;
+    //     enemies[1].OnCharacterDead();
+    //     // HPWidgets[2].SetActive(false);
+    //     // HPWidgets[3].SetActive(false);
+    //     counter++;
+    //     if (counter == enemies.Count)
+    //         EndGame(false);
+    // }
     public void EndGame(bool characterDead)
     {
         StartCoroutine(ShowEndBattlePopup(characterDead));// start a new coroutine
