@@ -412,7 +412,7 @@ MonoBehaviour:
   _enemyMaxExtraHPs:
   - {fileID: 11400000, guid: cb580536548e8ec44bcc48c3dbc6c32c, type: 2}
   _enemyAbsoluteMaxHP:
-  - {fileID: 11400000, guid: 76092bf4baa195040a7c79b955fdd734, type: 2}
+  - {fileID: 11400000, guid: d1499c2dbfd24b648ad1b99465a0478b, type: 2}
   _playerHp: {fileID: 11400000, guid: 7a481d1fd84d12b4788bd7d100baf0c6, type: 2}
   _playerStatusVariable: {fileID: 11400000, guid: d8b8b8050b1cd5145a0ac6fb91ee1b84, type: 2}
   _enemyStatusVariable: {fileID: 11400000, guid: bf229ad577a6c7543ae9896873fb62b1, type: 2}

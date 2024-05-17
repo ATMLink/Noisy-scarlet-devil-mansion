@@ -307,7 +307,6 @@ GameObject:
   - component: {fileID: 302900279}
   - component: {fileID: 302900278}
   - component: {fileID: 302900277}
-  - component: {fileID: 302900280}
   m_Layer: 5
   m_Name: HachiSaka
   m_TagString: Untagged
@@ -373,23 +372,11 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 302900278}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 302900280}
-        m_TargetAssemblyTypeName: YasakaRoom, Assembly-CSharp
-        m_MethodName: OnButtonPressed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &302900278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -428,18 +415,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 302900275}
   m_CullTransparentMesh: 0
---- !u!114 &302900280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 302900275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b3bc115b3766f94abac3d066eeb5a6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &678365222
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,9 +664,8 @@ GameObject:
   - component: {fileID: 1655196166}
   - component: {fileID: 1655196165}
   - component: {fileID: 1655196164}
-  - component: {fileID: 1655196167}
   m_Layer: 5
-  m_Name: baka
+  m_Name: meiRin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -706,15 +680,15 @@ RectTransform:
   m_GameObject: {fileID: 1655196162}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 193212976}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -95, y: -37.88}
-  m_SizeDelta: {x: 1873.56, y: 1090.4094}
+  m_AnchoredPosition: {x: -3.6692, y: 1.8346}
+  m_SizeDelta: {x: 1935.9106, y: 1090.4094}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1655196164
 MonoBehaviour:
@@ -755,23 +729,11 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1655196165}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1655196167}
-        m_TargetAssemblyTypeName: BakaRoom, Assembly-CSharp
-        m_MethodName: OnButtonPressed
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1655196165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -787,12 +749,12 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 1287.6, y: 414, z: 1035.6, w: 236.9}
+  m_RaycastPadding: {x: 838.21, y: 488.28, z: 918.11, w: 360.08}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: af22a3f9ab8b2b840a2f51eead8f8598, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e1190220d09cdee45bad161f1a152880, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -810,18 +772,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1655196162}
   m_CullTransparentMesh: 0
---- !u!114 &1655196167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1655196162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c1b1354f5cec834eb19a0d6cb04a15b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1698915157
 GameObject:
   m_ObjectHideFlags: 0
