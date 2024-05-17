@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
   m_Name: Default Local Group
-  m_EditorClassIdentifier: Unity.Addressables.Editor:UnityEditor.AddressableAssets.Settings:AddressableAssetGroup
+  m_EditorClassIdentifier: 
   m_GroupName: Default Local Group
   m_Data:
     m_SerializedData: []
-  m_GUID: 7ac23df307c871c489311b2d5d892a82
+  m_GUID: 5bf11c9ab5357d242b958843f795d184
   m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: fec32961faabc804cbc28d9ce0d31e41, type: 2}
