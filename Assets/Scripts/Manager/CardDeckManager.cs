@@ -7,10 +7,12 @@ public class CardDeckManager : MonoBehaviour
     private List<RuntimeCard> _deck;
     private List<RuntimeCard> _discardPile;
     private List<RuntimeCard> _hand;
+    // private List<RuntimeCard> _destroyPile;
     
     private const int deckCapacity = 30;
     private const int HandCapacity = 30;
     private const int DiscardPileCapacity = 30;
+    // private const int DestroyPileCapacity = 30;
     
     public CardDisplayManager cardDisplayManager;
 
@@ -22,6 +24,7 @@ public class CardDeckManager : MonoBehaviour
         _deck = new List<RuntimeCard>(deckCapacity);
         _discardPile = new List<RuntimeCard>(DiscardPileCapacity);
         _hand = new List<RuntimeCard>(HandCapacity);
+        // _destroyPile = new List<RuntimeCard>(DestroyPileCapacity);
     }
 
     public void Initialize(DeckWidget deckWidget, DiscardPileWidget discardPileWidget)
@@ -110,6 +113,8 @@ public class CardDeckManager : MonoBehaviour
     {
         _hand.Remove(card);
         _discardPile.Add(card);
+        // if (card.Template.type.typeName == "Curse")
+        //     _discardPile.Remove(card);
     }
     
     // execute when player turn end

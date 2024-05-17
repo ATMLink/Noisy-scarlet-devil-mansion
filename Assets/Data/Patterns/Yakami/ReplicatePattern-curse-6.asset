@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe73c98327daab74aa75532b36268f83, type: 3}
+  m_Name: ReplicatePattern-curse-6
+  m_EditorClassIdentifier: 
+  effects:
+  - {fileID: 11400000, guid: f6da0d3c96f5e394d881048218171db9, type: 2}
+  - {fileID: 11400000, guid: a73c23d361859c6428c25b2fdfbc4282, type: 2}
+  - {fileID: 11400000, guid: f6da0d3c96f5e394d881048218171db9, type: 2}
+  - {fileID: 11400000, guid: f6da0d3c96f5e394d881048218171db9, type: 2}
+  - {fileID: 11400000, guid: f6da0d3c96f5e394d881048218171db9, type: 2}
+  - {fileID: 11400000, guid: f6da0d3c96f5e394d881048218171db9, type: 2}
+  - {fileID: 11400000, guid: f6da0d3c96f5e394d881048218171db9, type: 2}
+  times: 1
+  sprite: {fileID: 21300000, guid: a9580b542e1f0fe4a8749709c3cf68e7, type: 3}

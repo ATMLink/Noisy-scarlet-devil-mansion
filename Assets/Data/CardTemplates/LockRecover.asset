@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 5
   name: LockRecover
   cost: 1
-  NHP: 0
+  NHP: 3
   EHP: 0
   illustration: {fileID: 21300000, guid: b6455c791c4d28543b96d77f25b43e22, type: 3}
   type: {fileID: 11400000, guid: 026c3a83ac9e2a94ea4825ffd7d12824, type: 2}

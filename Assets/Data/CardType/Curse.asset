@@ -9,15 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c226744ce3d6974f9208c8856cf3b4e, type: 3}
-  m_Name: mihashira
+  m_Script: {fileID: 11500000, guid: 3039159f1981a47498320636e5f9f431, type: 3}
+  m_Name: Curse
   m_EditorClassIdentifier: 
-  id: 6
-  name: mihashira
-  cost: 1
-  NHP: 0
-  EHP: 0
-  illustration: {fileID: 0}
-  type: {fileID: 0}
-  description: 
-  Effects: []
+  typeName: Curse

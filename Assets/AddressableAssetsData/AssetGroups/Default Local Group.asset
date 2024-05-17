@@ -16,7 +16,22 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 5131a4f4c94ca4045a0d9f3c89c636c1
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: c5b0ca1418949ab4397a29f41471f9fb
+    m_Address: Assets/Data/Enemies/kaapa.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 40fae388fbb1e9149a676aa04ece73dd
+    m_Address: Assets/Data/Enemies/Yakami.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 24f375a185cea6f4cafcbd2bd776fdb8
+    m_Address: Assets/Data/Remi/Remi.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: fec32961faabc804cbc28d9ce0d31e41, type: 2}
   m_SchemaSet:

@@ -15,4 +15,23 @@ MonoBehaviour:
   name: yakami
   prefab: {fileID: 5261624011219463490, guid: 416a0224a2a7c194b8bb0b4cc520c959, type: 3}
   patterns:
-  - {fileID: 11400000, guid: 8d0889a5da9a4314293c26303a393718, type: 2}
+  - {fileID: 11400000, guid: 56611b6a47013824aa7ccc6acf55992c, type: 2}
+  - {fileID: 11400000, guid: c452068e18873304581d2dd927476cdc, type: 2}
+  - {fileID: 11400000, guid: 191dc19216af9a04ba5aab1f24a2fef3, type: 2}
+  - {fileID: 11400000, guid: 56611b6a47013824aa7ccc6acf55992c, type: 2}
+  - {fileID: 11400000, guid: 56611b6a47013824aa7ccc6acf55992c, type: 2}
+  - {fileID: 11400000, guid: c3749e56252c8f247936c6aa61018ca7, type: 2}
+  - {fileID: 11400000, guid: 56611b6a47013824aa7ccc6acf55992c, type: 2}
+  - {fileID: 11400000, guid: 56611b6a47013824aa7ccc6acf55992c, type: 2}
+  - {fileID: 11400000, guid: 56611b6a47013824aa7ccc6acf55992c, type: 2}
+  - {fileID: 11400000, guid: 5b90b334806f4f74a942839e1c62ae1d, type: 2}
+  - {fileID: 11400000, guid: 56611b6a47013824aa7ccc6acf55992c, type: 2}
+  - {fileID: 11400000, guid: 191dc19216af9a04ba5aab1f24a2fef3, type: 2}
+  - {fileID: 11400000, guid: 56611b6a47013824aa7ccc6acf55992c, type: 2}
+  - {fileID: 11400000, guid: 56611b6a47013824aa7ccc6acf55992c, type: 2}
+  - {fileID: 11400000, guid: 5f652260358db31478e6bfa00b7b68ec, type: 2}
+  - {fileID: 11400000, guid: 56611b6a47013824aa7ccc6acf55992c, type: 2}
+  - {fileID: 11400000, guid: c452068e18873304581d2dd927476cdc, type: 2}
+  - {fileID: 11400000, guid: 26b2229199b4a984ea0cfbdd7d9024df, type: 2}
+  - {fileID: 11400000, guid: 56611b6a47013824aa7ccc6acf55992c, type: 2}
+  - {fileID: 11400000, guid: 4b7cde8fee1e2464b95a24757ec149c8, type: 2}

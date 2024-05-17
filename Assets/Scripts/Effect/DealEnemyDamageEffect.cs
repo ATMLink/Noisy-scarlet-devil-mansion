@@ -40,6 +40,13 @@ public class DealEnemyDamageEffect : IntegerEffect, IEntityEffect
             }
         }
 
+        if (target.status != null)
+        {
+            var curse = target.status.GetValue("Mihashira");
+            if (curse >= 5)
+                damage *= 10;
+        }
+
         if (damage >= shield)
         {
             var newHp = hp - (damage - shield);

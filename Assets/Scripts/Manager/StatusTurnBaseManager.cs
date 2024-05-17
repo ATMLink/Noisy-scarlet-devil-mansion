@@ -42,6 +42,28 @@ public class StatusTurnBaseManager : BaseManager
             }
         }
     }
+
+    public void OnEnemyMaxHPChanged(int value)
+    {
+        // 检查 player 和 character 对象
+        if (player != null && player.character != null && player.character.status != null) 
+        {
+            // 检查状态模板 "Mihashira" 是否存在
+            if (player.character.status.template.ContainsKey("Mihashira"))
+            {
+                var statusTemplate = player.character.status.template["Mihashira"];
+
+                if (statusTemplate != null)
+                {
+                    var currentStatusValue = player.character.status.GetValue(statusTemplate.Name);
+
+                    var newStatusValue = CalculateReducedValue(currentStatusValue, statusTemplate);
+
+                    player.character.status.SetValue(statusTemplate, newStatusValue);
+                }
+            }
+        }
+    }
     
     private int CalculateReducedValue(int currentValue, StatusTemplate template)
     {
