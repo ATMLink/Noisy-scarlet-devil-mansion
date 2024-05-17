@@ -15,6 +15,6 @@ MonoBehaviour:
   sourceAction: []
   targetAction: []
   target: 0
-  value: 0
+  value: 3
   overDamage: {fileID: 0}
   combo: {fileID: 0}
