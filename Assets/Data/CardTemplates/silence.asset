@@ -15,8 +15,11 @@ MonoBehaviour:
   id: 1
   name: silence
   cost: 1
+  NHP: 0
+  EHP: 0
   illustration: {fileID: 21300000, guid: 9f5aaba11b2a8be47beb0abba39faba8, type: 3}
   type: {fileID: 11400000, guid: 5fe459210564f0c44867c817aa706a63, type: 2}
-  description: I'm a thick-skinned people it can not works
+  description: Gain 6 shield and it will not decay. I'm a thick-skinned people it
+    can not works
   Effects:
   - {fileID: 11400000, guid: 883009e19902fcf4bb62e76fb4a3fa89, type: 2}

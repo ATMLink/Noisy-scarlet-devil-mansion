@@ -389,13 +389,13 @@ MonoBehaviour:
   - {fileID: 50262242}
   - {fileID: 2140172781}
   _enemyHpWidget:
-  - {fileID: 5413707640302368337, guid: 50dfa2a98edd20442a76d079712b2992, type: 3}
+  - {fileID: 5413707640302368337, guid: 5520fc1b1e7af3d4885408c5d79d2b7a, type: 3}
   _enemyExtraHpWidget:
-  - {fileID: 526203124491878315, guid: 3a5c6a80a7a880d4f86a0ed583b0fa53, type: 3}
+  - {fileID: 526203124491878315, guid: 6322694d87c4fa84f89b6c7918448181, type: 3}
   _enemyIntentWidget:
-  - {fileID: 8925898010794102450, guid: deeb8fbb1f1a4cf42a53e7fb2d59681c, type: 3}
-  _enemyShield: {fileID: 11400000, guid: 0f719b80ee432a44aa075dd1b69d8aaf, type: 2}
-  _enemyStatusWidget: {fileID: 3905705002973963143, guid: e20139f7117253f4ca39adf4eef83458, type: 3}
+  - {fileID: 8925898010794102450, guid: 74f2ce52cb754b74c80331096331d4bf, type: 3}
+  _enemyShield: {fileID: 11400000, guid: cb613b65669da5f43a372a13f9393a1d, type: 2}
+  _enemyStatusWidget: {fileID: 3905705002973963143, guid: 3b5914005c71e394e87fdebce38a67e4, type: 3}
   _canvas: {fileID: 588680263}
   _playerHpWidget: {fileID: 8064718915905596853, guid: 692ac44bc6489f145a596672115d6ec7, type: 3}
   _playerShield: {fileID: 11400000, guid: 6f4b1bff482a88c44be832106d60e899, type: 2}
@@ -404,24 +404,24 @@ MonoBehaviour:
   _deckWidget: {fileID: 1424283735}
   _discardPileWidget: {fileID: 2102300831}
   _enemyHPs:
-  - {fileID: 11400000, guid: a68302e7e7c7c414c8942f1f9c37e7f6, type: 2}
+  - {fileID: 11400000, guid: 8617fb3b2add0e04aa4be3189e0e49e7, type: 2}
   _enemyExtraHPs:
-  - {fileID: 11400000, guid: 8c8bbb094c39fc940986f78018c31d88, type: 2}
+  - {fileID: 11400000, guid: 3a5b0c1b3e94bcf41a9ee8523e4d0479, type: 2}
   _enemyMaxHPs:
-  - {fileID: 11400000, guid: 6dd3b93afbcff8d46accfddeb8fdcb25, type: 2}
+  - {fileID: 11400000, guid: 55a5c1cba55f9834c8647d0b26c376b1, type: 2}
   _enemyMaxExtraHPs:
-  - {fileID: 11400000, guid: cb580536548e8ec44bcc48c3dbc6c32c, type: 2}
+  - {fileID: 11400000, guid: f13a3649f27196c4facd4a0319ee1387, type: 2}
   _enemyAbsoluteMaxHP:
-  - {fileID: 11400000, guid: 76092bf4baa195040a7c79b955fdd734, type: 2}
+  - {fileID: 11400000, guid: 132823f5476ee0844baf8651abaeb0d9, type: 2}
   _playerHp: {fileID: 11400000, guid: 7a481d1fd84d12b4788bd7d100baf0c6, type: 2}
   _playerStatusVariable: {fileID: 11400000, guid: d8b8b8050b1cd5145a0ac6fb91ee1b84, type: 2}
-  _enemyStatusVariable: {fileID: 11400000, guid: bf229ad577a6c7543ae9896873fb62b1, type: 2}
+  _enemyStatusVariable: {fileID: 11400000, guid: 10806ea9a4d3fda4c8af30d6842ca4d0, type: 2}
   _playerMaxHp: {fileID: 11400000, guid: 2917179fbd348f1408fdec41d6ea11f3, type: 2}
   _playerAbsoluteMaxHP: {fileID: 11400000, guid: 71a075cd4cf00ca46a0bcc5a2f70049c, type: 2}
   _overDamage: {fileID: 11400000, guid: b32739bb767a8af4ea79f72a5a73d17c, type: 2}
   _recoverHpCounter: {fileID: 11400000, guid: c36abf4f02586f144b3464ed510116a0, type: 2}
   _enemyTemplates:
-  - m_AssetGUID: 40fae388fbb1e9149a676aa04ece73dd
+  - m_AssetGUID: 8b467b7d1d276a34a805d90a5377c932
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
@@ -761,7 +761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectResolutionManager: {fileID: 1499062859}
   intentChangeEvents:
-  - {fileID: 11400000, guid: 922e1815ca0fb304bb9f51573a76d59b, type: 2}
+  - {fileID: 11400000, guid: 2ff6ea5e9ab8f2e4f9d13032cb322c80, type: 2}
 --- !u!224 &469638304 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5210397244154365958, guid: 57bf0d66a828a964399af20d2d3d4e44, type: 3}
@@ -1859,7 +1859,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d66bdf7e6b390864daa3e840eedaa41a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventInt: {fileID: 11400000, guid: 996a6417a8a008f4db1b015256fb780a, type: 2}
+  eventInt: {fileID: 11400000, guid: 28e8e5d2da07f804185170915e609810, type: 2}
   response:
     m_PersistentCalls:
       m_Calls:
@@ -1918,7 +1918,8 @@ MonoBehaviour:
   endBattlePopupDelay: 1
   endBattlePopup: {fileID: 522974250}
   enemyHPs:
-  - {fileID: 11400000, guid: a68302e7e7c7c414c8942f1f9c37e7f6, type: 2}
+  - {fileID: 11400000, guid: 05c232fa577328b4d8e20d5a69bb727b, type: 2}
+  - {fileID: 11400000, guid: 89a927b44ba483b49a056d6308536410, type: 2}
 --- !u!1 &1107152676
 GameObject:
   m_ObjectHideFlags: 0
@@ -1977,7 +1978,6 @@ GameObject:
   - component: {fileID: 1241049200}
   - component: {fileID: 1241049199}
   - component: {fileID: 1241049201}
-  - component: {fileID: 1241049202}
   m_Layer: 0
   m_Name: StatusTurnBaseManager
   m_TagString: Untagged
@@ -2068,34 +2068,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1241049202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1241049197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d66bdf7e6b390864daa3e840eedaa41a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventInt: {fileID: 11400000, guid: e0cbcfbe32c4cde468c4aeea15a9b23d, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1241049200}
-        m_TargetAssemblyTypeName: StatusTurnBaseManager, Assembly-CSharp
-        m_MethodName: OnEnemyMaxHPChanged
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1280925251
 GameObject:
   m_ObjectHideFlags: 0
@@ -2128,11 +2100,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHPs:
-  - {fileID: 11400000, guid: a68302e7e7c7c414c8942f1f9c37e7f6, type: 2}
+  - {fileID: 11400000, guid: 8617fb3b2add0e04aa4be3189e0e49e7, type: 2}
   enemyMaxHPs:
-  - {fileID: 11400000, guid: 6dd3b93afbcff8d46accfddeb8fdcb25, type: 2}
+  - {fileID: 11400000, guid: 55a5c1cba55f9834c8647d0b26c376b1, type: 2}
   enemyStatuses:
-  - {fileID: 11400000, guid: bf229ad577a6c7543ae9896873fb62b1, type: 2}
+  - {fileID: 11400000, guid: 10806ea9a4d3fda4c8af30d6842ca4d0, type: 2}
   recoverHPCounter: {fileID: 11400000, guid: c36abf4f02586f144b3464ed510116a0, type: 2}
   healthPerSecond: 1
 --- !u!4 &1280925253

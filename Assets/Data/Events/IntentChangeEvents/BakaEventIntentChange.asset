@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8d398ec86a365b44af27c26ff52c437, type: 3}
-  m_Name: YakamiAbsoluteMaxHP
+  m_Script: {fileID: 11500000, guid: ed806f79349aee5469bf6c32ca48ca07, type: 3}
+  m_Name: BakaEventIntentChange
   m_EditorClassIdentifier: 
-  Value: 56
-  valueChangedEvent: {fileID: 0}

@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8d398ec86a365b44af27c26ff52c437, type: 3}
-  m_Name: YakamiAbsoluteMaxHP
+  m_Script: {fileID: 11500000, guid: 0fee48dc4a832f4488007a91bdd093a0, type: 3}
+  m_Name: Baka
   m_EditorClassIdentifier: 
-  Value: 56
-  valueChangedEvent: {fileID: 0}
+  name: ChiRuno
+  prefab: {fileID: 5261624011219463490, guid: bbb63ee90bd61714889b5cc2678991ed, type: 3}
+  patterns:
+  - {fileID: 11400000, guid: 8d0889a5da9a4314293c26303a393718, type: 2}

@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: RandomPattern-CN
   m_EditorClassIdentifier: 
   effects:
-  - {fileID: 11400000, guid: de603bcf07519254aa85a4cf3a1311e4, type: 2}
+  - {fileID: 11400000, guid: 34037c741d7ddaf4dbccc22d4f336ddb, type: 2}
   - {fileID: 11400000, guid: 87fca29307ca4834fb3a029f3fb135bb, type: 2}
   probabilities:
-  - value: 40
-    sprite: {fileID: 21300000, guid: 32834f4d1ba3f0f498053da31ad5e6f8, type: 3}
-  - value: 60
-    sprite: {fileID: 21300000, guid: 32834f4d1ba3f0f498053da31ad5e6f8, type: 3}
+  - value: 35
+    sprite: {fileID: 21300000, guid: d22b09a96776f2e459d11c09e4f8ade3, type: 3}
+  - value: 65
+    sprite: {fileID: 21300000, guid: 7a1ae919c87520841bfc41d0c4b5fe05, type: 3}
